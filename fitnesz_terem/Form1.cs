@@ -22,5 +22,11 @@ namespace fitnesz_terem
             fogado_szoveg.Visible = false;
             
         }
+
+        private void bejiregi_Click(object sender, EventArgs e)
+        {
+            Belepes f2 = new Belepes();
+            f2.ShowDialog();
+        }
     }
 }
