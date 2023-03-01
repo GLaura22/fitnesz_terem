@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace fitnesz_terem.Database_Backend.Modells_Tables
 {
-    internal class Item
+    public class Item
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace fitnesz_terem.Database_Backend.Modells_Tables
 {
-    internal class TrainingClass
+     public class TrainingClass
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
