@@ -20,6 +20,9 @@ namespace fitnesz_terem.Database_Backend.Modells_Tables
         [ForeignKey("LocationID")]
         public int LocationID { get; set; }
 
+        [Required]
+        public string ClassName { get; set; }
+
         [ForeignKey("UserID")]
         public int CoachID { get; set; }
 
