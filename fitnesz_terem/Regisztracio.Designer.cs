@@ -28,334 +28,364 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cim = new System.Windows.Forms.Label();
-            this.regicim = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.veznevbox = new System.Windows.Forms.TextBox();
-            this.kernevbox = new System.Windows.Forms.TextBox();
-            this.kartyakodbox = new System.Windows.Forms.TextBox();
-            this.jelszobox = new System.Windows.Forms.TextBox();
-            this.jelszoismbox = new System.Windows.Forms.TextBox();
-            this.emailbox = new System.Windows.Forms.TextBox();
-            this.lejaratibox = new System.Windows.Forms.TextBox();
-            this.felhnevbox = new System.Windows.Forms.TextBox();
-            this.bankszamlabox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.SuspendLayout();
+            cim = new Label();
+            regicim = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            veznevbox = new TextBox();
+            kernevbox = new TextBox();
+            kartyakodbox = new TextBox();
+            jelszobox = new TextBox();
+            jelszoismbox = new TextBox();
+            emailbox = new TextBox();
+            lejaratibox = new TextBox();
+            felhnevbox = new TextBox();
+            bankszamlabox = new TextBox();
+            groupBox1 = new GroupBox();
+            pictureBox1 = new PictureBox();
+            groupBox2 = new GroupBox();
+            pictureBox2 = new PictureBox();
+            groupBox3 = new GroupBox();
+            pictureBox3 = new PictureBox();
+            button1 = new Button();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            SuspendLayout();
             // 
             // cim
             // 
-            this.cim.AutoSize = true;
-            this.cim.BackColor = System.Drawing.Color.Transparent;
-            this.cim.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cim.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cim.ForeColor = System.Drawing.Color.White;
-            this.cim.Location = new System.Drawing.Point(0, 0);
-            this.cim.Name = "cim";
-            this.cim.Size = new System.Drawing.Size(519, 65);
-            this.cim.TabIndex = 1;
-            this.cim.Text = "Balaton Fitnesz terem";
-            this.cim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            cim.AutoSize = true;
+            cim.BackColor = Color.Transparent;
+            cim.Dock = DockStyle.Left;
+            cim.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            cim.ForeColor = Color.White;
+            cim.Location = new Point(0, 0);
+            cim.Margin = new Padding(2, 0, 2, 0);
+            cim.Name = "cim";
+            cim.Size = new Size(344, 45);
+            cim.TabIndex = 1;
+            cim.Text = "Balaton Fitnesz terem";
+            cim.TextAlign = ContentAlignment.MiddleRight;
             // 
             // regicim
             // 
-            this.regicim.AutoSize = true;
-            this.regicim.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.regicim.ForeColor = System.Drawing.Color.White;
-            this.regicim.Location = new System.Drawing.Point(379, 102);
-            this.regicim.Name = "regicim";
-            this.regicim.Size = new System.Drawing.Size(158, 36);
-            this.regicim.TabIndex = 2;
-            this.regicim.Text = "Regisztráció";
+            regicim.AutoSize = true;
+            regicim.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            regicim.ForeColor = Color.White;
+            regicim.Location = new Point(265, 61);
+            regicim.Margin = new Padding(2, 0, 2, 0);
+            regicim.Name = "regicim";
+            regicim.Size = new Size(112, 25);
+            regicim.TabIndex = 2;
+            regicim.Text = "Regisztráció";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Vezetéknév:";
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(10, 23);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(68, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Vezetéknév:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(15, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Keresztnév:";
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(10, 49);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Keresztnév:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Felhasználónév:";
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(9, 22);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Felhasználónév:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Jelszó:";
+            label4.AutoSize = true;
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(9, 49);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(40, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Jelszó:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(13, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Jelszó még egyszer:";
+            label5.AutoSize = true;
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(9, 79);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(109, 15);
+            label5.TabIndex = 7;
+            label5.Text = "Jelszó még egyszer:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(19, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 25);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Email:";
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(13, 79);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(39, 15);
+            label6.TabIndex = 8;
+            label6.Text = "Email:";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(13, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 25);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Bankszámlaszám:";
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(9, 28);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(99, 15);
+            label7.TabIndex = 9;
+            label7.Text = "Bankszámlaszám:";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(13, 132);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 25);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Lejárati dátum:";
+            label8.AutoSize = true;
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(9, 79);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(86, 15);
+            label8.TabIndex = 10;
+            label8.Text = "Lejárati dátum:";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(13, 89);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 25);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "CVC2/CVV2 kód:";
+            label9.AutoSize = true;
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(9, 53);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(95, 15);
+            label9.TabIndex = 11;
+            label9.Text = "CVC2/CVV2 kód:";
             // 
             // veznevbox
             // 
-            this.veznevbox.Location = new System.Drawing.Point(134, 35);
-            this.veznevbox.Name = "veznevbox";
-            this.veznevbox.Size = new System.Drawing.Size(210, 31);
-            this.veznevbox.TabIndex = 12;
+            veznevbox.Location = new Point(94, 21);
+            veznevbox.Margin = new Padding(2, 2, 2, 2);
+            veznevbox.Name = "veznevbox";
+            veznevbox.Size = new Size(148, 23);
+            veznevbox.TabIndex = 12;
             // 
             // kernevbox
             // 
-            this.kernevbox.Location = new System.Drawing.Point(134, 82);
-            this.kernevbox.Name = "kernevbox";
-            this.kernevbox.Size = new System.Drawing.Size(230, 31);
-            this.kernevbox.TabIndex = 13;
+            kernevbox.Location = new Point(94, 49);
+            kernevbox.Margin = new Padding(2, 2, 2, 2);
+            kernevbox.Name = "kernevbox";
+            kernevbox.Size = new Size(162, 23);
+            kernevbox.TabIndex = 13;
             // 
             // kartyakodbox
             // 
-            this.kartyakodbox.Location = new System.Drawing.Point(164, 89);
-            this.kartyakodbox.Name = "kartyakodbox";
-            this.kartyakodbox.Size = new System.Drawing.Size(95, 31);
-            this.kartyakodbox.TabIndex = 14;
+            kartyakodbox.Location = new Point(115, 53);
+            kartyakodbox.Margin = new Padding(2, 2, 2, 2);
+            kartyakodbox.Name = "kartyakodbox";
+            kartyakodbox.Size = new Size(68, 23);
+            kartyakodbox.TabIndex = 14;
             // 
             // jelszobox
             // 
-            this.jelszobox.Location = new System.Drawing.Point(98, 82);
-            this.jelszobox.Name = "jelszobox";
-            this.jelszobox.Size = new System.Drawing.Size(293, 31);
-            this.jelszobox.TabIndex = 15;
+            jelszobox.Location = new Point(69, 49);
+            jelszobox.Margin = new Padding(2, 2, 2, 2);
+            jelszobox.Name = "jelszobox";
+            jelszobox.Size = new Size(206, 23);
+            jelszobox.TabIndex = 15;
             // 
             // jelszoismbox
             // 
-            this.jelszoismbox.Location = new System.Drawing.Point(187, 131);
-            this.jelszoismbox.Name = "jelszoismbox";
-            this.jelszoismbox.Size = new System.Drawing.Size(248, 31);
-            this.jelszoismbox.TabIndex = 16;
+            jelszoismbox.Location = new Point(131, 79);
+            jelszoismbox.Margin = new Padding(2, 2, 2, 2);
+            jelszoismbox.Name = "jelszoismbox";
+            jelszoismbox.Size = new Size(175, 23);
+            jelszoismbox.TabIndex = 16;
             // 
             // emailbox
             // 
-            this.emailbox.Location = new System.Drawing.Point(92, 129);
-            this.emailbox.Name = "emailbox";
-            this.emailbox.Size = new System.Drawing.Size(232, 31);
-            this.emailbox.TabIndex = 17;
+            emailbox.Location = new Point(64, 77);
+            emailbox.Margin = new Padding(2, 2, 2, 2);
+            emailbox.Name = "emailbox";
+            emailbox.Size = new Size(164, 23);
+            emailbox.TabIndex = 17;
             // 
             // lejaratibox
             // 
-            this.lejaratibox.Location = new System.Drawing.Point(147, 132);
-            this.lejaratibox.Name = "lejaratibox";
-            this.lejaratibox.Size = new System.Drawing.Size(138, 31);
-            this.lejaratibox.TabIndex = 18;
+            lejaratibox.Location = new Point(103, 79);
+            lejaratibox.Margin = new Padding(2, 2, 2, 2);
+            lejaratibox.Name = "lejaratibox";
+            lejaratibox.Size = new Size(98, 23);
+            lejaratibox.TabIndex = 18;
             // 
             // felhnevbox
             // 
-            this.felhnevbox.Location = new System.Drawing.Point(154, 37);
-            this.felhnevbox.Name = "felhnevbox";
-            this.felhnevbox.Size = new System.Drawing.Size(267, 31);
-            this.felhnevbox.TabIndex = 19;
+            felhnevbox.Location = new Point(108, 22);
+            felhnevbox.Margin = new Padding(2, 2, 2, 2);
+            felhnevbox.Name = "felhnevbox";
+            felhnevbox.Size = new Size(188, 23);
+            felhnevbox.TabIndex = 19;
             // 
             // bankszamlabox
             // 
-            this.bankszamlabox.Location = new System.Drawing.Point(168, 46);
-            this.bankszamlabox.Name = "bankszamlabox";
-            this.bankszamlabox.Size = new System.Drawing.Size(317, 31);
-            this.bankszamlabox.TabIndex = 20;
+            bankszamlabox.Location = new Point(118, 28);
+            bankszamlabox.Margin = new Padding(2, 2, 2, 2);
+            bankszamlabox.Name = "bankszamlabox";
+            bankszamlabox.Size = new Size(223, 23);
+            bankszamlabox.TabIndex = 20;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.emailbox);
-            this.groupBox1.Controls.Add(this.kernevbox);
-            this.groupBox1.Controls.Add(this.veznevbox);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(77, 146);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 207);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(emailbox);
+            groupBox1.Controls.Add(kernevbox);
+            groupBox1.Controls.Add(veznevbox);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(54, 88);
+            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Size = new Size(270, 124);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::fitnesz_terem.Properties.Resources.sulyzo;
-            this.pictureBox1.Location = new System.Drawing.Point(19, -4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.sulyzo;
+            pictureBox1.Location = new Point(13, -2);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 23);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.felhnevbox);
-            this.groupBox2.Controls.Add(this.jelszoismbox);
-            this.groupBox2.Controls.Add(this.jelszobox);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(455, 218);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(478, 194);
-            this.groupBox2.TabIndex = 22;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(pictureBox2);
+            groupBox2.Controls.Add(felhnevbox);
+            groupBox2.Controls.Add(jelszoismbox);
+            groupBox2.Controls.Add(jelszobox);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(label3);
+            groupBox2.ForeColor = Color.White;
+            groupBox2.Location = new Point(318, 131);
+            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(2, 2, 2, 2);
+            groupBox2.Size = new Size(335, 116);
+            groupBox2.TabIndex = 22;
+            groupBox2.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::fitnesz_terem.Properties.Resources.sulyzo;
-            this.pictureBox2.Location = new System.Drawing.Point(22, -5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(72, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources.sulyzo;
+            pictureBox2.Location = new Point(15, -3);
+            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(50, 23);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pictureBox3);
-            this.groupBox3.Controls.Add(this.bankszamlabox);
-            this.groupBox3.Controls.Add(this.lejaratibox);
-            this.groupBox3.Controls.Add(this.kartyakodbox);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(77, 377);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(525, 188);
-            this.groupBox3.TabIndex = 23;
-            this.groupBox3.TabStop = false;
+            groupBox3.Controls.Add(pictureBox3);
+            groupBox3.Controls.Add(bankszamlabox);
+            groupBox3.Controls.Add(lejaratibox);
+            groupBox3.Controls.Add(kartyakodbox);
+            groupBox3.Controls.Add(label9);
+            groupBox3.Controls.Add(label8);
+            groupBox3.Controls.Add(label7);
+            groupBox3.ForeColor = Color.White;
+            groupBox3.Location = new Point(54, 226);
+            groupBox3.Margin = new Padding(2, 2, 2, 2);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(2, 2, 2, 2);
+            groupBox3.Size = new Size(368, 113);
+            groupBox3.TabIndex = 23;
+            groupBox3.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::fitnesz_terem.Properties.Resources.sulyzo;
-            this.pictureBox3.Location = new System.Drawing.Point(19, -4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(72, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Resources.sulyzo;
+            pictureBox3.Location = new Point(13, -2);
+            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(50, 23);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 24;
+            pictureBox3.TabStop = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(626, 516);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 49);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Regisztrálok!";
-            this.button1.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Black;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(438, 310);
+            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 29);
+            button1.TabIndex = 24;
+            button1.Text = "Regisztrálok!";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Regisztracio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(934, 605);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.regicim);
-            this.Controls.Add(this.cim);
-            this.Controls.Add(this.groupBox3);
-            this.Name = "Regisztracio";
-            this.Text = "Regisztracio";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            ClientSize = new Size(654, 363);
+            Controls.Add(button1);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(regicim);
+            Controls.Add(cim);
+            Controls.Add(groupBox3);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "Regisztracio";
+            Text = "Regisztracio";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

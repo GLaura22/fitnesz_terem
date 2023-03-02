@@ -21,7 +21,9 @@ namespace fitnesz_terem
         {
             Regisztracio f3 = new Regisztracio();
             f3.ShowDialog();
-            
+
         }
+
+        //valami komment
     }
 }
