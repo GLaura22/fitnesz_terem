@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace fitnesz_terem.Database_Backend.Modells_Tables
 {
-    internal class TrainingClass
+     public class TrainingClass
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -19,6 +19,9 @@ namespace fitnesz_terem.Database_Backend.Modells_Tables
         public int MaxPeople { get; set; }
         [ForeignKey("LocationID")]
         public int LocationID { get; set; }
+
+        [Required]
+        public string ClassName { get; set; }
 
         [ForeignKey("UserID")]
         public int CoachID { get; set; }

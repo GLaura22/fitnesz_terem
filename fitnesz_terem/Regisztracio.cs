@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace fitnesz_terem
 {
-    public partial class Belepes : Form
+    public partial class Regisztracio : Form
     {
-        public Belepes()
+        public Regisztracio()
         {
             InitializeComponent();
-        }
-
-        private void regilabel_Click(object sender, EventArgs e)
-        {
-            Regisztracio f3 = new Regisztracio();
-            f3.ShowDialog();
-            
         }
     }
 }
