@@ -7,14 +7,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace fitnesz_terem
 {
     public partial class Belepes : Form
     {
+        private Rectangle felhlabelRect;
+        private Rectangle jelszolabelRect;
+        private Rectangle textBox1Rect;
+        private Rectangle textBox2Rect;
+        private Rectangle cimRect;
+        private Rectangle regilabelRect;
+
+        private Size FormSize;
+
+        private void resizeChildren()
+        {
+            resizeControl(felhlabelRect, felhlabel);
+            resizeControl(jelszolabelRect, jelszolabel);
+            resizeControl(textBox1Rect, textBox1);
+            resizeControl(textBox2Rect, textBox2);
+            resizeControl(cimRect, cim);
+            resizeControl(regilabelRect, regilabel);
+
+        }
+        private void resizeControl(Rectangle Rect, Control control)
+        {
+            float xRation = (float)(this.Width) / (float)(FormSize.Width);
+            float yRation = (float)(this.Height) / (float)(FormSize.Height);
+
+            int newX = (int)(Rect.X * xRation);
+            int newY = (int)(Rect.Y * yRation);
+            int newWeight = (int)(Rect.Width * xRation);
+            int newHeight = (int)(Rect.Height * yRation);
+
+            control.Location = new Point(newX, newY);
+            control.Size = new Size(newWeight, newHeight);
+        }
         public Belepes()
         {
             InitializeComponent();
+        }
+
+
+
+        private void Belepes_Load(object sender, EventArgs e)
+        {
+            FormSize = this.Size;
+            cimRect = new Rectangle(cim.Location.X, cim.Location.Y, cim.Width, cim.Height);
+            felhlabelRect = new Rectangle(felhlabel.Location.X, felhlabel.Location.Y, felhlabel.Width, felhlabel.Height);
+            jelszolabelRect = new Rectangle(jelszolabel.Location.X, jelszolabel.Location.Y, jelszolabel.Width, jelszolabel.Height);
+            textBox1Rect = new Rectangle(textBox1.Location.X, textBox1.Location.Y, textBox1.Width, textBox1.Height);
+            textBox2Rect = new Rectangle(textBox2.Location.X, textBox2.Location.Y, textBox2.Width, textBox2.Height);
+            regilabelRect = new Rectangle(regilabel.Location.X, regilabel.Location.Y, regilabel.Width, regilabel.Height);
+
+        }
+
+        private void Belepes_Resize(object sender, EventArgs e)
+        {
+            resizeChildren();
         }
     }
 }
