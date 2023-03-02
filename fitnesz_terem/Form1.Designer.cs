@@ -1,10 +1,7 @@
-﻿using System.DirectoryServices.ActiveDirectory;
-
-namespace fitnesz_terem
+﻿namespace fitnesz_terem
 {
     partial class indulo_felulet
     {
-
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -24,7 +21,6 @@ namespace fitnesz_terem
             base.Dispose(disposing);
         }
 
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -33,150 +29,145 @@ namespace fitnesz_terem
         /// </summary>
         private void InitializeComponent()
         {
-            cim = new Label();
-            bejiregi = new Label();
-            fokep = new PictureBox();
-            fomenu = new MenuStrip();
-            formenu1 = new ToolStripMenuItem();
-            foszmenu2 = new ToolStripMenuItem();
-            foemenu3 = new ToolStripMenuItem();
-            fowmenu4 = new ToolStripMenuItem();
-            textBoxRolunk = new TextBox();
-            fogado_szoveg = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)fokep).BeginInit();
-            fomenu.SuspendLayout();
-            SuspendLayout();
+            this.cim = new System.Windows.Forms.Label();
+            this.bejiregi = new System.Windows.Forms.Label();
+            this.fokep = new System.Windows.Forms.PictureBox();
+            this.fomenu = new System.Windows.Forms.MenuStrip();
+            this.formenu1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.foszmenu2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.foemenu3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fowmenu4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxRolunk = new System.Windows.Forms.TextBox();
+            this.fogado_szoveg = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.fokep)).BeginInit();
+            this.fomenu.SuspendLayout();
+            this.SuspendLayout();
             // 
             // cim
             // 
-            cim.AutoSize = true;
-            cim.BackColor = Color.Transparent;
-            cim.Dock = DockStyle.Left;
-            cim.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            cim.ForeColor = Color.White;
-            cim.Location = new Point(0, 24);
-            cim.Margin = new Padding(2, 0, 2, 0);
-            cim.Name = "cim";
-            cim.Size = new Size(344, 45);
-            cim.TabIndex = 0;
-            cim.Text = "Balaton Fitnesz terem";
-            cim.TextAlign = ContentAlignment.MiddleRight;
+            this.cim.AutoSize = true;
+            this.cim.BackColor = System.Drawing.Color.Transparent;
+            this.cim.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cim.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cim.ForeColor = System.Drawing.Color.White;
+            this.cim.Location = new System.Drawing.Point(0, 33);
+            this.cim.Name = "cim";
+            this.cim.Size = new System.Drawing.Size(519, 65);
+            this.cim.TabIndex = 0;
+            this.cim.Text = "Balaton Fitnesz terem";
+            this.cim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // bejiregi
             // 
-            bejiregi.Dock = DockStyle.Top;
-            bejiregi.Font = new Font("Segoe UI", 10F, FontStyle.Underline, GraphicsUnit.Point);
-            bejiregi.ForeColor = SystemColors.ButtonHighlight;
-            bejiregi.ImageAlign = ContentAlignment.MiddleRight;
-            bejiregi.Location = new Point(344, 24);
-            bejiregi.Margin = new Padding(2, 0, 2, 0);
-            bejiregi.Name = "bejiregi";
-            bejiregi.RightToLeft = RightToLeft.Yes;
-            bejiregi.Size = new Size(244, 20);
-            bejiregi.TabIndex = 1;
-            bejiregi.Text = "Bejelentkezés/Regisztráció";
-            bejiregi.Click += bejiregi_Click;
+            this.bejiregi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bejiregi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.bejiregi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bejiregi.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bejiregi.Location = new System.Drawing.Point(519, 33);
+            this.bejiregi.Name = "bejiregi";
+            this.bejiregi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bejiregi.Size = new System.Drawing.Size(384, 34);
+            this.bejiregi.TabIndex = 1;
+            this.bejiregi.Text = "Bejelentkezés/Regisztráció";
+            this.bejiregi.Click += new System.EventHandler(this.bejiregi_Click);
             // 
             // fokep
             // 
-            fokep.Image = Properties.Resources.gym_hatter;
-            fokep.Location = new Point(172, 80);
-            fokep.Margin = new Padding(2);
-            fokep.Name = "fokep";
-            fokep.Size = new Size(265, 112);
-            fokep.SizeMode = PictureBoxSizeMode.CenterImage;
-            fokep.TabIndex = 2;
-            fokep.TabStop = false;
+            this.fokep.Image = global::fitnesz_terem.Properties.Resources.gym_hatter;
+            this.fokep.Location = new System.Drawing.Point(246, 133);
+            this.fokep.Name = "fokep";
+            this.fokep.Size = new System.Drawing.Size(378, 187);
+            this.fokep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.fokep.TabIndex = 2;
+            this.fokep.TabStop = false;
             // 
             // fomenu
             // 
-            fomenu.BackColor = Color.White;
-            fomenu.ImageScalingSize = new Size(24, 24);
-            fomenu.Items.AddRange(new ToolStripItem[] { formenu1, foszmenu2, foemenu3, fowmenu4 });
-            fomenu.Location = new Point(0, 0);
-            fomenu.Name = "fomenu";
-            fomenu.Padding = new Padding(4, 1, 0, 1);
-            fomenu.Size = new Size(588, 24);
-            fomenu.TabIndex = 3;
-            fomenu.Text = "menuStrip1";
+            this.fomenu.BackColor = System.Drawing.Color.White;
+            this.fomenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.fomenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.formenu1,
+            this.foszmenu2,
+            this.foemenu3,
+            this.fowmenu4});
+            this.fomenu.Location = new System.Drawing.Point(0, 0);
+            this.fomenu.Name = "fomenu";
+            this.fomenu.Size = new System.Drawing.Size(903, 33);
+            this.fomenu.TabIndex = 3;
+            this.fomenu.Text = "menuStrip1";
             // 
             // formenu1
             // 
-            formenu1.ForeColor = Color.Black;
-            formenu1.Name = "formenu1";
-            formenu1.Size = new Size(56, 22);
-            formenu1.Text = "Rólunk";
-            formenu1.Click += formenu1_Click;
+            this.formenu1.ForeColor = System.Drawing.Color.Black;
+            this.formenu1.Name = "formenu1";
+            this.formenu1.Size = new System.Drawing.Size(82, 29);
+            this.formenu1.Text = "Rólunk";
+            this.formenu1.Click += new System.EventHandler(this.formenu1_Click);
             // 
             // foszmenu2
             // 
-            foszmenu2.Name = "foszmenu2";
-            foszmenu2.Size = new Size(103, 22);
-            foszmenu2.Text = "Szolgáltatásaink";
-            foszmenu2.Click += foszmenu2_Click;
+            this.foszmenu2.Name = "foszmenu2";
+            this.foszmenu2.Size = new System.Drawing.Size(154, 29);
+            this.foszmenu2.Text = "Szolgáltatásaink";
+            this.foszmenu2.Click += new System.EventHandler(this.foszmenu2_Click);
             // 
             // foemenu3
             // 
-            foemenu3.Name = "foemenu3";
-            foemenu3.Size = new Size(60, 22);
-            foemenu3.Text = "Edzőink";
+            this.foemenu3.Name = "foemenu3";
+            this.foemenu3.Size = new System.Drawing.Size(90, 29);
+            this.foemenu3.Text = "Edzőink";
             // 
             // fowmenu4
             // 
-            fowmenu4.Name = "fowmenu4";
-            fowmenu4.Size = new Size(110, 22);
-            fowmenu4.Text = " Webshop kínálat";
+            this.fowmenu4.Name = "fowmenu4";
+            this.fowmenu4.Size = new System.Drawing.Size(165, 29);
+            this.fowmenu4.Text = " Webshop kínálat";
             // 
             // textBoxRolunk
             // 
-            textBoxRolunk.BackColor = Color.Black;
-            textBoxRolunk.ForeColor = Color.White;
-            textBoxRolunk.Location = new Point(63, 261);
-            textBoxRolunk.Margin = new Padding(2);
-            textBoxRolunk.Name = "textBoxRolunk";
-            textBoxRolunk.Size = new Size(474, 23);
-            textBoxRolunk.TabIndex = 4;
-            textBoxRolunk.Text = "Ez egy nagyon cuki gym gyere ide kigyúrod magad szép leszel\r\n";
-            textBoxRolunk.TextAlign = HorizontalAlignment.Center;
+            this.textBoxRolunk.BackColor = System.Drawing.Color.Black;
+            this.textBoxRolunk.ForeColor = System.Drawing.Color.White;
+            this.textBoxRolunk.Location = new System.Drawing.Point(90, 435);
+            this.textBoxRolunk.Name = "textBoxRolunk";
+            this.textBoxRolunk.Size = new System.Drawing.Size(675, 31);
+            this.textBoxRolunk.TabIndex = 4;
+            this.textBoxRolunk.Text = "Ez egy nagyon cuki gym gyere ide kigyúrod magad szép leszel\r\n";
+            this.textBoxRolunk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fogado_szoveg
             // 
-            fogado_szoveg.BackColor = Color.Black;
-            fogado_szoveg.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            fogado_szoveg.ForeColor = Color.White;
-            fogado_szoveg.Location = new Point(57, 227);
-            fogado_szoveg.Margin = new Padding(2);
-            fogado_szoveg.Name = "fogado_szoveg";
-            fogado_szoveg.Size = new Size(488, 36);
-            fogado_szoveg.TabIndex = 5;
-            fogado_szoveg.Text = "Üdvözlünk a Balaton Fitness terem honlapján!";
-            fogado_szoveg.TextAlign = HorizontalAlignment.Center;
+            this.fogado_szoveg.BackColor = System.Drawing.Color.Black;
+            this.fogado_szoveg.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.fogado_szoveg.ForeColor = System.Drawing.Color.White;
+            this.fogado_szoveg.Location = new System.Drawing.Point(81, 379);
+            this.fogado_szoveg.Name = "fogado_szoveg";
+            this.fogado_szoveg.Size = new System.Drawing.Size(696, 50);
+            this.fogado_szoveg.TabIndex = 5;
+            this.fogado_szoveg.Text = "Üdvözlünk a Balaton Fitness terem honlapján!";
+            this.fogado_szoveg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // indulo_felulet
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
-            ClientSize = new Size(588, 355);
-            Controls.Add(fogado_szoveg);
-            Controls.Add(textBoxRolunk);
-            Controls.Add(fokep);
-            Controls.Add(bejiregi);
-            Controls.Add(cim);
-            Controls.Add(fomenu);
-            MainMenuStrip = fomenu;
-            Margin = new Padding(2);
-            MinimumSize = new Size(549, 394);
-            Name = "indulo_felulet";
-            Text = "Kezdőoldal";
-            TransparencyKey = Color.FromArgb(255, 192, 192);
-            Load += indulo_felulet_Load;
-            Resize += indulo_felulet_Resize;
-            ((System.ComponentModel.ISupportInitialize)fokep).EndInit();
-            fomenu.ResumeLayout(false);
-            fomenu.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(903, 549);
+            this.Controls.Add(this.fogado_szoveg);
+            this.Controls.Add(this.textBoxRolunk);
+            this.Controls.Add(this.fokep);
+            this.Controls.Add(this.bejiregi);
+            this.Controls.Add(this.cim);
+            this.Controls.Add(this.fomenu);
+            this.MainMenuStrip = this.fomenu;
+            this.Name = "indulo_felulet";
+            this.Text = "Kezdőoldal";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            ((System.ComponentModel.ISupportInitialize)(this.fokep)).EndInit();
+            this.fomenu.ResumeLayout(false);
+            this.fomenu.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

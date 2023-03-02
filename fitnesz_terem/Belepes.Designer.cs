@@ -28,97 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            felhlabel = new Label();
-            jelszolabel = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            cim = new Label();
-            regilabel = new Label();
-            SuspendLayout();
+            this.felhlabel = new System.Windows.Forms.Label();
+            this.jelszolabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cim = new System.Windows.Forms.Label();
+            this.regilabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // felhlabel
             // 
-            felhlabel.AutoSize = true;
-            felhlabel.Location = new Point(141, 103);
-            felhlabel.Margin = new Padding(2, 0, 2, 0);
-            felhlabel.Name = "felhlabel";
-            felhlabel.Size = new Size(90, 15);
-            felhlabel.TabIndex = 0;
-            felhlabel.Text = "Felhasználónév:";
+            this.felhlabel.AutoSize = true;
+            this.felhlabel.Location = new System.Drawing.Point(201, 172);
+            this.felhlabel.Name = "felhlabel";
+            this.felhlabel.Size = new System.Drawing.Size(135, 25);
+            this.felhlabel.TabIndex = 0;
+            this.felhlabel.Text = "Felhasználónév:";
             // 
             // jelszolabel
             // 
-            jelszolabel.AutoSize = true;
-            jelszolabel.Location = new Point(141, 155);
-            jelszolabel.Margin = new Padding(2, 0, 2, 0);
-            jelszolabel.Name = "jelszolabel";
-            jelszolabel.Size = new Size(40, 15);
-            jelszolabel.TabIndex = 1;
-            jelszolabel.Text = "Jelszó:";
+            this.jelszolabel.AutoSize = true;
+            this.jelszolabel.Location = new System.Drawing.Point(201, 259);
+            this.jelszolabel.Name = "jelszolabel";
+            this.jelszolabel.Size = new System.Drawing.Size(62, 25);
+            this.jelszolabel.TabIndex = 1;
+            this.jelszolabel.Text = "Jelszó:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(146, 130);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(229, 23);
-            textBox1.TabIndex = 2;
+            this.textBox1.Location = new System.Drawing.Point(209, 216);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(325, 31);
+            this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(146, 184);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(229, 23);
-            textBox2.TabIndex = 3;
+            this.textBox2.Location = new System.Drawing.Point(209, 307);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(325, 31);
+            this.textBox2.TabIndex = 3;
             // 
             // cim
             // 
-            cim.AutoSize = true;
-            cim.BackColor = Color.Transparent;
-            cim.Dock = DockStyle.Left;
-            cim.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            cim.ForeColor = Color.White;
-            cim.Location = new Point(0, 0);
-            cim.Margin = new Padding(2, 0, 2, 0);
-            cim.Name = "cim";
-            cim.Size = new Size(344, 45);
-            cim.TabIndex = 4;
-            cim.Text = "Balaton Fitnesz terem";
-            cim.TextAlign = ContentAlignment.MiddleRight;
+            this.cim.AutoSize = true;
+            this.cim.BackColor = System.Drawing.Color.Transparent;
+            this.cim.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cim.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cim.ForeColor = System.Drawing.Color.White;
+            this.cim.Location = new System.Drawing.Point(0, 0);
+            this.cim.Name = "cim";
+            this.cim.Size = new System.Drawing.Size(519, 65);
+            this.cim.TabIndex = 4;
+            this.cim.Text = "Balaton Fitnesz terem";
+            this.cim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // regilabel
             // 
-            regilabel.AutoSize = true;
-            regilabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            regilabel.Location = new Point(300, 223);
-            regilabel.Margin = new Padding(2, 0, 2, 0);
-            regilabel.Name = "regilabel";
-            regilabel.Size = new Size(70, 15);
-            regilabel.TabIndex = 5;
-            regilabel.Text = "Regisztráció";
+            this.regilabel.AutoSize = true;
+            this.regilabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.regilabel.Location = new System.Drawing.Point(428, 371);
+            this.regilabel.Name = "regilabel";
+            this.regilabel.Size = new System.Drawing.Size(106, 25);
+            this.regilabel.TabIndex = 5;
+            this.regilabel.Text = "Regisztráció";
             // 
             // Belepes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
-            ClientSize = new Size(531, 307);
-            Controls.Add(regilabel);
-            Controls.Add(cim);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(jelszolabel);
-            Controls.Add(felhlabel);
-            ForeColor = Color.White;
-            Margin = new Padding(2);
-            MinimumSize = new Size(420, 289);
-            Name = "Belepes";
-            Text = "Bejelentkezés";
-            Load += Belepes_Load;
-            Resize += Belepes_Resize;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.regilabel);
+            this.Controls.Add(this.cim);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.jelszolabel);
+            this.Controls.Add(this.felhlabel);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Name = "Belepes";
+            this.Text = "Bejelentkezés";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
