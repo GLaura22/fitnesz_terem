@@ -16,5 +16,10 @@ namespace fitnesz_terem
         {
             InitializeComponent();
         }
+
+        private void Register_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

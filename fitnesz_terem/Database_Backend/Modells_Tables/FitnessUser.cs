@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace fitnesz_terem.Database_Backend.Modells_Tables
 {
-    public class User
+    public class FitnessUser
     {
         [Key]
         public int UserID { get; set; }
-
-        [ForeignKey ("RoleID") ]
         public int DataId { get; set; }
+
+        [ForeignKey("RoleID")]
         public int Role { get; set; }
 
     }

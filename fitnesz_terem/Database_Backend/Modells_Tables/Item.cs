@@ -14,13 +14,9 @@ namespace fitnesz_terem.Database_Backend.Modells_Tables
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int itemID { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         public int Price { get; set; }
-
-        [Required]
         public int NumberInStock { get; set; }
     }
 }

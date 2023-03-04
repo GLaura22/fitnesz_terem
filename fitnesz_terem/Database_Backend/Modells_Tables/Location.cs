@@ -13,10 +13,7 @@ namespace fitnesz_terem.Database_Backend.Modells_Tables
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int  LocationID { get; set; }
-
-        [Required]
         public string LocationName { get; set; }
-        [Required]
         public int Level { get; set; }
 
     }

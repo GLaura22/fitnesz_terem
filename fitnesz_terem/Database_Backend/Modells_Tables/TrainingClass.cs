@@ -19,8 +19,6 @@ namespace fitnesz_terem.Database_Backend.Modells_Tables
         public int MaxPeople { get; set; }
         [ForeignKey("LocationID")]
         public int LocationID { get; set; }
-
-        [Required]
         public string ClassName { get; set; }
 
         [ForeignKey("UserID")]
