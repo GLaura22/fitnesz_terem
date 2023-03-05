@@ -147,6 +147,8 @@
             Margin = new Padding(2);
             Name = "Belepes";
             Text = "Bejelentkezés";
+            Load += Belepes_Load;
+            Resize += Belepes_Resize;
             groupBoxbelep.ResumeLayout(false);
             groupBoxbelep.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

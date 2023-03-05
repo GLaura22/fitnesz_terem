@@ -192,7 +192,7 @@
             // veznevbox
             // 
             veznevbox.Location = new Point(94, 21);
-            veznevbox.Margin = new Padding(2, 2, 2, 2);
+            veznevbox.Margin = new Padding(2);
             veznevbox.Name = "veznevbox";
             veznevbox.Size = new Size(148, 23);
             veznevbox.TabIndex = 12;
@@ -200,7 +200,7 @@
             // kernevbox
             // 
             kernevbox.Location = new Point(94, 49);
-            kernevbox.Margin = new Padding(2, 2, 2, 2);
+            kernevbox.Margin = new Padding(2);
             kernevbox.Name = "kernevbox";
             kernevbox.Size = new Size(162, 23);
             kernevbox.TabIndex = 13;
@@ -208,7 +208,7 @@
             // kartyakodbox
             // 
             kartyakodbox.Location = new Point(115, 53);
-            kartyakodbox.Margin = new Padding(2, 2, 2, 2);
+            kartyakodbox.Margin = new Padding(2);
             kartyakodbox.Name = "kartyakodbox";
             kartyakodbox.Size = new Size(68, 23);
             kartyakodbox.TabIndex = 14;
@@ -216,7 +216,7 @@
             // jelszobox
             // 
             jelszobox.Location = new Point(69, 49);
-            jelszobox.Margin = new Padding(2, 2, 2, 2);
+            jelszobox.Margin = new Padding(2);
             jelszobox.Name = "jelszobox";
             jelszobox.Size = new Size(206, 23);
             jelszobox.TabIndex = 15;
@@ -224,7 +224,7 @@
             // jelszoismbox
             // 
             jelszoismbox.Location = new Point(131, 79);
-            jelszoismbox.Margin = new Padding(2, 2, 2, 2);
+            jelszoismbox.Margin = new Padding(2);
             jelszoismbox.Name = "jelszoismbox";
             jelszoismbox.Size = new Size(175, 23);
             jelszoismbox.TabIndex = 16;
@@ -232,7 +232,7 @@
             // emailbox
             // 
             emailbox.Location = new Point(64, 77);
-            emailbox.Margin = new Padding(2, 2, 2, 2);
+            emailbox.Margin = new Padding(2);
             emailbox.Name = "emailbox";
             emailbox.Size = new Size(164, 23);
             emailbox.TabIndex = 17;
@@ -240,7 +240,7 @@
             // lejaratibox
             // 
             lejaratibox.Location = new Point(103, 79);
-            lejaratibox.Margin = new Padding(2, 2, 2, 2);
+            lejaratibox.Margin = new Padding(2);
             lejaratibox.Name = "lejaratibox";
             lejaratibox.Size = new Size(98, 23);
             lejaratibox.TabIndex = 18;
@@ -248,7 +248,7 @@
             // felhnevbox
             // 
             felhnevbox.Location = new Point(108, 22);
-            felhnevbox.Margin = new Padding(2, 2, 2, 2);
+            felhnevbox.Margin = new Padding(2);
             felhnevbox.Name = "felhnevbox";
             felhnevbox.Size = new Size(188, 23);
             felhnevbox.TabIndex = 19;
@@ -256,7 +256,7 @@
             // bankszamlabox
             // 
             bankszamlabox.Location = new Point(118, 28);
-            bankszamlabox.Margin = new Padding(2, 2, 2, 2);
+            bankszamlabox.Margin = new Padding(2);
             bankszamlabox.Name = "bankszamlabox";
             bankszamlabox.Size = new Size(223, 23);
             bankszamlabox.TabIndex = 20;
@@ -272,9 +272,9 @@
             groupBox1.Controls.Add(label1);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(54, 88);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(270, 124);
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
@@ -283,7 +283,7 @@
             // 
             pictureBox1.Image = Properties.Resources.sulyzo;
             pictureBox1.Location = new Point(13, -2);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 23);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -301,9 +301,9 @@
             groupBox2.Controls.Add(label3);
             groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(318, 131);
-            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2, 2, 2, 2);
+            groupBox2.Padding = new Padding(2);
             groupBox2.Size = new Size(335, 116);
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
@@ -312,7 +312,7 @@
             // 
             pictureBox2.Image = Properties.Resources.sulyzo;
             pictureBox2.Location = new Point(15, -3);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(50, 23);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -330,9 +330,9 @@
             groupBox3.Controls.Add(label7);
             groupBox3.ForeColor = Color.White;
             groupBox3.Location = new Point(54, 226);
-            groupBox3.Margin = new Padding(2, 2, 2, 2);
+            groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2, 2, 2, 2);
+            groupBox3.Padding = new Padding(2);
             groupBox3.Size = new Size(368, 113);
             groupBox3.TabIndex = 23;
             groupBox3.TabStop = false;
@@ -341,7 +341,7 @@
             // 
             pictureBox3.Image = Properties.Resources.sulyzo;
             pictureBox3.Location = new Point(13, -2);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(50, 23);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -353,7 +353,7 @@
             button1.BackColor = Color.Black;
             button1.ForeColor = Color.White;
             button1.Location = new Point(438, 310);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(138, 29);
             button1.TabIndex = 24;
@@ -372,9 +372,10 @@
             Controls.Add(regicim);
             Controls.Add(cim);
             Controls.Add(groupBox3);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Regisztracio";
             Text = "Regisztracio";
+            Resize += Regisztracio_Resize;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
