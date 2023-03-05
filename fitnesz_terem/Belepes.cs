@@ -1,4 +1,7 @@
-﻿using System;
+﻿using fitnesz_terem.Database_Backend.Controllers;
+using fitnesz_terem.Database_Backend.Modells_Tables;
+using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,14 +52,7 @@ namespace fitnesz_terem
         public Belepes()
         {
             InitializeComponent();
-           
-        }
 
-        private void regilabel_Click(object sender, EventArgs e)
-        {
-            Regisztracio f3 = new Regisztracio();
-            f3.ShowDialog();
-            this.Close();
         }
 
         private void Belepes_Load(object sender, EventArgs e)
@@ -75,6 +71,47 @@ namespace fitnesz_terem
         {
             resizeChildren();
         }
-        
+
+        private void belepButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                /* Initialize UserController. */
+                UserController userController = new();
+
+                //==============================
+                // Validation(s)
+                //==============================
+
+                if (textBox1.Text == "")
+                {
+                    throw new Exception("Felhasználónév nem lehet üres!");
+                }
+                else if (textBox2.Text == "")
+                {
+                    throw new Exception("Jelszó nem lehet üres!");
+                }
+
+                FitnessUser fitnessUser = userController.Login(textBox1.Text, textBox2.Text);
+
+                if (fitnessUser.UserID == 0)
+                {
+                    throw new Exception("Felhasználónév vagy jelszó helytelen!");
+                }
+
+                MessageBox.Show("Felhasználó sikeresen bejelentkezve!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Bejelentkezés sikertelen. ('{exception.Message}')");
+            }
+        }
+
+        private void regilabel_Click(object sender, EventArgs e)
+        {
+            Regisztracio f3 = new Regisztracio();
+            f3.ShowDialog();
+            this.Close();
+        }
     }
 }

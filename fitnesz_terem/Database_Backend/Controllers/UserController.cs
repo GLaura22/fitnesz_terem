@@ -1,11 +1,6 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fitnesz_terem.Database_Backend.Connection;
+﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Modells_Tables;
+using System;
 
 namespace fitnesz_terem.Database_Backend.Controllers
 {
@@ -28,10 +23,9 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 /* Return the previously saved ID. */
                 return id.UserID;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 /* On error. */
-                MessageBox.Show("Failed to register! (" + exception.Message + ")");
                 return 0; // Return 0 to easily check if there is a problem or not.
             }
         }
@@ -47,9 +41,8 @@ namespace fitnesz_terem.Database_Backend.Controllers
 
                 return true;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                MessageBox.Show("Failed to register! (" + exception.Message + ")");
                 return false;
             }
         }
@@ -58,6 +51,29 @@ namespace fitnesz_terem.Database_Backend.Controllers
             using (var context = new FitnessDbContext())
             {
                 return context.Roles.ToList();
+            }
+        }
+
+        public FitnessUser Login(string username, string password)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                /* Get fitness user ID by the given username & password. */
+                var data = context.Datas
+                    .Single(row => row.Name == username && row.Password == password);
+
+                /* Get fitness user by previously fetched ID. */
+                var fitnessUser = context.FitnessUsers
+                    .Single(row => row.UserID == data.UserId);
+
+                return fitnessUser;
+            }
+            catch (Exception)
+            {
+                return new FitnessUser { UserID = 0, DataId = 0, Role = 0 };
             }
         }
     }
