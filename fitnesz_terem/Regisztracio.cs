@@ -26,12 +26,19 @@ namespace fitnesz_terem
             try
             {
                 /* Initialize UserController. */
-                UserController userController = new UserController();
+                UserController userController = new();
 
                 //==============================
                 // Validation(s)
                 //==============================
 
+                /* TODO: Add more fields to Database
+                   Few of the fields that we are having in the form are
+                   not getting stored in the database.
+                   In my opinion we
+                   should consider saving them also. For example the
+                   following fields: */
+                /*
                 if (veznevbox.Text == "")
                 {
                     throw new Exception("Vezetéknév nem lehet üres!");
@@ -40,9 +47,11 @@ namespace fitnesz_terem
                 {
                     throw new Exception("Keresztnévnév nem lehet üres!");
                 }
-                else if (bankszamlabox.Text == "")
+                */
+
+                if (felhnevbox.Text == "")
                 {
-                    throw new Exception("Bankszámlaszám nem lehet üres!");
+                    throw new Exception("Felhasználónév nem lehet üres!");
                 }
                 else if (jelszobox.Text == "")
                 {
@@ -52,8 +61,13 @@ namespace fitnesz_terem
                 {
                     throw new Exception("A jelszó nem egyezik a megerősítő jelszóval!");
                 }
+                /* FIXME: Value was either too large or too small for an int32. */
+                else if (bankszamlabox.Text == "")
+                {
+                    throw new Exception("Bankszámlaszám nem lehet üres!");
+                }
 
-                /* Comment added by: JANI [2023-03-05 16:17:00]
+                /* TODO: Adding more roles
                    The following variable (role) will probably change due more roles.
                    For now I just hard coded 4 as "Guest". */
                 int role = 4;
@@ -84,7 +98,7 @@ namespace fitnesz_terem
                 Data data = new Data
                 {
                     UserId = userID,
-                    Name = veznevbox.Text + " " + kernevbox.Text.ToString(),
+                    Name = felhnevbox.Text,
                     Password = jelszobox.Text.ToString(),
                     AccountNumber = int.Parse(bankszamlabox.Text),
                     Money = startingMoney
