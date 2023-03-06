@@ -102,7 +102,7 @@
             this.regilabel.Size = new System.Drawing.Size(70, 15);
             this.regilabel.TabIndex = 5;
             this.regilabel.Text = "Regisztráció";
-            this.regilabel.Click += new System.EventHandler(this.regilabel_Click_1);
+            this.regilabel.Click += new System.EventHandler(this.regilabel_Click);
             // 
             // groupBoxbelep
             // 
@@ -136,7 +136,7 @@
             this.belepButton.TabIndex = 8;
             this.belepButton.Text = "Belépés";
             this.belepButton.UseVisualStyleBackColor = true;
-            this.belepButton.Click += new System.EventHandler(this.belepButton_Click_1);
+            this.belepButton.Click += new System.EventHandler(this.belepButton_Click);
             // 
             // pictureBox1
             // 
@@ -161,7 +161,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Belepes";
             this.Text = "Bejelentkezés";
-            this.Load += new System.EventHandler(this.Belepes_Load_1);
+            this.Load += new System.EventHandler(this.Belepes_Load);
             this.Resize += new System.EventHandler(this.Belepes_Resize);
             this.groupBoxbelep.ResumeLayout(false);
             this.groupBoxbelep.PerformLayout();

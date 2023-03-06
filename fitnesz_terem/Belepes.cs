@@ -59,7 +59,7 @@ namespace fitnesz_terem
             resizeChildren();
         }
 
-        private void belepButton_Click_1(object sender, EventArgs e)
+        private void belepButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,14 +94,14 @@ namespace fitnesz_terem
             }
         }
 
-        private void regilabel_Click_1(object sender, EventArgs e)
+        private void regilabel_Click(object sender, EventArgs e)
         {
             Regisztracio f3 = new Regisztracio();
             f3.ShowDialog();
             this.Close();
         }
 
-        private void Belepes_Load_1(object sender, EventArgs e)
+        private void Belepes_Load(object sender, EventArgs e)
         {
             FormSize = this.Size;
             cimRect = new Rectangle(cim.Location.X, cim.Location.Y, cim.Width, cim.Height);
