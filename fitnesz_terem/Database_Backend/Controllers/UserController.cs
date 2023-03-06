@@ -76,5 +76,43 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 return new FitnessUser { UserID = 0, DataId = 0, Role = 0 };
             }
         }
+
+
+        public List<UserViewModel> GetUsers()
+        {
+            using (var context = new FitnessDbContext())
+            {
+                List<UserViewModel> users = context.Datas.Join(context.FitnessUsers,d => d.UserId,u => u.UserID,(d, u) => new UserViewModel
+                {
+                    UserId = d.UserId,
+                    Name = d.Name,
+                    Password = d.Password,
+                    AccountNumber = d.AccountNumber,
+                    Money = d.Money,
+                    Role = u.Role
+                }).ToList();
+
+
+                return users;
+            }
+        }
+
+
+
+
+
+
     }
+
+    public class UserViewModel
+    {
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
+        public int AccountNumber { get; set; }
+        public int Money { get; set; }
+        public int Role { get; set; }
+    }
+
+
 }

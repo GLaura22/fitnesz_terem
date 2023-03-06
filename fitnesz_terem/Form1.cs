@@ -73,5 +73,11 @@ namespace fitnesz_terem
         {
             resizeChildren();
         }
+
+        private void adminLabel_Click(object sender, EventArgs e)
+        {
+            AdminForm form = new AdminForm();
+            form.ShowDialog();
+        }
     }
 }
