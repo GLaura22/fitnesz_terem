@@ -59,7 +59,7 @@ namespace fitnesz_terem
             resizeChildren();
         }
 
-        private void belepButton_Click_1(object sender, EventArgs e)
+        private void belepButton_Click(object sender, EventArgs e)
         {
             try
             {
