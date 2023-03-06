@@ -1,4 +1,5 @@
-﻿using fitnesz_terem.Database_Backend.Controllers;
+﻿using fitnesz_terem.Database_Backend.Connection;
+using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,40 @@ namespace fitnesz_terem
             List<UserViewModel> users = forLoad.GetUsers();
 
             Users_with_data.DataSource = users;
+        }
+
+        private void Users_with_data_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+                // Get the updated data from the DataGridView
+                var updatedUser = (UserViewModel)Users_with_data.Rows[e.RowIndex].DataBoundItem;
+
+                // Update the corresponding records in the database
+                using (var context = new FitnessDbContext())
+                {
+                    // Retrieve the Data record associated with the user
+                    var dataRecord = context.Datas.FirstOrDefault(d => d.UserId == updatedUser.UserId);
+
+                    if (dataRecord != null)
+                    {
+                        // Update the Data record
+                        dataRecord.Name = updatedUser.Name;
+                        dataRecord.Password = updatedUser.Password;
+                        dataRecord.AccountNumber = updatedUser.AccountNumber;
+                        dataRecord.Money = updatedUser.Money;
+                    }
+
+                    // Retrieve the FitnessUser record associated with the user
+                    var fitnessUserRecord = context.FitnessUsers.FirstOrDefault(u => u.UserID == updatedUser.UserId);
+
+                    if (fitnessUserRecord != null)
+                    {
+                        // Update the FitnessUser record
+                        fitnessUserRecord.Role = updatedUser.Role;
+                    }
+
+                    // Save the changes to the database
+                    context.SaveChanges();
+                }
         }
     }
 }

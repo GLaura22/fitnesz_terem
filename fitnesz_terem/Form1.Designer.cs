@@ -72,6 +72,7 @@
             this.bejiregi.Size = new System.Drawing.Size(288, 20);
             this.bejiregi.TabIndex = 1;
             this.bejiregi.Text = "Bejelentkezés/Regisztráció";
+            this.bejiregi.Click += new System.EventHandler(this.bejiregi_Click);
             // 
             // fokep
             // 

@@ -47,8 +47,9 @@
             this.Users_with_data.Location = new System.Drawing.Point(12, 12);
             this.Users_with_data.Name = "Users_with_data";
             this.Users_with_data.RowTemplate.Height = 25;
-            this.Users_with_data.Size = new System.Drawing.Size(618, 226);
+            this.Users_with_data.Size = new System.Drawing.Size(640, 234);
             this.Users_with_data.TabIndex = 1;
+            this.Users_with_data.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Users_with_data_CellEndEdit);
             // 
             // AdminForm
             // 
