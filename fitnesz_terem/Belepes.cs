@@ -25,6 +25,7 @@ namespace fitnesz_terem
         private Rectangle regilabelRect;
 
         private Size FormSize;
+        public FitnessUser felhasznalo;
 
         private void resizeChildren()
         {
@@ -52,6 +53,7 @@ namespace fitnesz_terem
         public Belepes()
         {
             InitializeComponent();
+            felhasznalo = new FitnessUser { UserID = 0, DataId = 0, Role = 0 };
 
         }
         private void Belepes_Resize(object sender, EventArgs e)
@@ -59,6 +61,7 @@ namespace fitnesz_terem
             resizeChildren();
         }
 
+        
         private void belepButton_Click(object sender, EventArgs e)
         {
             try
@@ -79,9 +82,9 @@ namespace fitnesz_terem
                     throw new Exception("Jelszó nem lehet üres!");
                 }
 
-                FitnessUser fitnessUser = userController.Login(textBox1.Text, textBox2.Text);
+                felhasznalo = userController.Login(textBox1.Text, textBox2.Text);
 
-                if (fitnessUser.UserID == 0)
+                if (felhasznalo.UserID == 0)
                 {
                     throw new Exception("Felhasználónév vagy jelszó helytelen!");
                 }
@@ -93,12 +96,13 @@ namespace fitnesz_terem
                 MessageBox.Show($"Bejelentkezés sikertelen. ('{exception.Message}')");
             }
         }
+        
 
         private void regilabel_Click(object sender, EventArgs e)
         {
             Regisztracio f3 = new Regisztracio();
             f3.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         private void Belepes_Load(object sender, EventArgs e)
@@ -110,7 +114,12 @@ namespace fitnesz_terem
             textBox1Rect = new Rectangle(textBox1.Location.X, textBox1.Location.Y, textBox1.Width, textBox1.Height);
             textBox2Rect = new Rectangle(textBox2.Location.X, textBox2.Location.Y, textBox2.Width, textBox2.Height);
             regilabelRect = new Rectangle(regilabel.Location.X, regilabel.Location.Y, regilabel.Width, regilabel.Height);
+        }
 
+        public FitnessUser UserId()
+        {
+            this.ShowDialog();
+            return felhasznalo;
         }
     }
 }

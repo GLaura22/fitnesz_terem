@@ -1,7 +1,12 @@
+using fitnesz_terem.Database_Backend.Modells_Tables;
+
 namespace fitnesz_terem
 {
     public partial class indulo_felulet : Form
     {
+        private FitnessUser fitnessUser;
+        private Belepes f2 = new Belepes();
+
         private Rectangle cimRect;
         private Rectangle bejiregiRect;
         private Rectangle fokepRect;
@@ -12,9 +17,11 @@ namespace fitnesz_terem
         public indulo_felulet()
         {
             InitializeComponent();
+            fitnessUser = new FitnessUser{ UserID = 0, DataId = 0, Role = 0 };
             textBoxRolunk.Visible = false;
             fogado_szoveg.BorderStyle = BorderStyle.None;
             textBoxRolunk.BorderStyle = BorderStyle.None;
+            
         }
 
         private void formenu1_Click(object sender, EventArgs e)
@@ -32,8 +39,8 @@ namespace fitnesz_terem
 
         private void bejiregi_Click(object sender, EventArgs e)
         {
-            Belepes f2 = new Belepes();
-            f2.ShowDialog();
+            
+            MessageBox.Show(f2.UserId().UserID.ToString());
         }
         private void resizeChildren()
         {

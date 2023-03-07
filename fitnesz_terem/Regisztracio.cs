@@ -139,6 +139,8 @@ namespace fitnesz_terem
                 userController.InsertIntoDatas(data);
 
                 MessageBox.Show("Felhasználó sikeresen regisztrálva!");
+                this.Close();   
+                
             }
             catch (Exception exception)
             {
