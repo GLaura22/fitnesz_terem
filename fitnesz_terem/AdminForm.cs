@@ -55,7 +55,7 @@ namespace fitnesz_terem
                     // Retrieve the Data record associated with the user
                     var dataRecord = context.Datas.FirstOrDefault(d => d.UserId == updatedUser.UserId);
 
-                    if (dataRecord != null)
+                    if(dataRecord != null)
                     {
                         // Update the Data record
                         dataRecord.Name = updatedUser.Name;

@@ -6,6 +6,7 @@ using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -42,7 +43,6 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                         context.SaveChanges();
                     }
                 }
-
                 //eladó termékek feltöltése.
                 using (var context = new FitnessDbContext())
                 {
@@ -109,9 +109,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                         context.SaveChanges();
                     }
                 }
-
                 //termek feltöltése
-
                 using (var context = new FitnessDbContext())
                 {
                     if (!context.Locations.Any())
@@ -164,8 +162,206 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                         context.SaveChanges();
                     }
                 }
+                //edzés órák feltöltése
+                using (var context = new FitnessDbContext())
+                {
+                    if (!context.TrainingClasses.Any())
+                    {
+                        var newTrainingClasses = new List<TrainingClass>
+                            {
+                                new TrainingClass
+                                {
+                                    ClassName = "Yoga",
+                                    StartTime = new DateTime(2023, 3, 10, 9, 0, 0),
+                                    EndTime = new DateTime(2023, 3, 10, 10, 0, 0),
+                                    MaxPeople = 20,
+                                    LocationID = 1,
+                                    CoachID = 1
+                                },
+                                new TrainingClass
+                                {
+                                    ClassName = "Pilates",
+                                    StartTime = new DateTime(2023, 3, 11, 10, 0, 0),
+                                    EndTime = new DateTime(2023, 3, 11, 11, 0, 0),
+                                    MaxPeople = 15,
+                                    LocationID = 7,
+                                    CoachID = 2
+                                },
+                                new TrainingClass
+                                {
+                                    ClassName = "Spinning",
+                                    StartTime = new DateTime(2023, 3, 12, 12, 0, 0),
+                                    EndTime = new DateTime(2023, 3, 12, 13, 0, 0),
+                                    MaxPeople = 10,
+                                    LocationID = 5,
+                                    CoachID = 3
+                                },
+                                // add more training classes here
+                            };
 
-                
+                        context.TrainingClasses.AddRange(newTrainingClasses);
+                        context.SaveChanges();
+                    }
+                }
+                // users
+                using (var context = new FitnessDbContext())
+                {
+                    context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Datas', RESEED, 0)");
+                    context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('FitnessUsers', RESEED, 0)");
+                    if (!context.Datas.Any())
+                    {
+                        var newData = new List<Data>
+                        {
+                            new Data
+                            {
+                                UserId = 1,
+                                Name = "John Smith",
+                                Password = "password",
+                                AccountNumber = 123459,
+                                Money = 100
+                            },
+                            new Data
+                            {
+                                 UserId = 2,
+                                Name = "Jane Doe",
+                                Password = "password",
+                                AccountNumber = 7654321,
+                                Money = 50
+                            },
+                            new Data
+                            {
+                                 UserId = 3,
+                                Name = "Alice Cooper",
+                                Password = "password",
+                                AccountNumber = 24681012,
+                                Money = 200
+                            },
+                            new Data
+                            {
+                                 UserId = 4,
+                                Name = "Bob Lee",
+                                Password = "password",
+                                AccountNumber = 369518,
+                                Money = 75
+                            },
+                            new Data
+                            {
+
+                                 UserId = 5,
+                                Name = "David Kim",
+                                Password = "password",
+                                AccountNumber = 1123321,
+                                Money = 150
+                            },
+                            new Data
+                            {   
+                                UserId = 6,
+                                Name = "Emily Chen",
+                                Password = "password",
+                                AccountNumber = 1416535,
+                                Money = 125
+                            },
+                            new Data
+                            {
+
+                                 UserId = 7,
+                                Name = "Frank Wang",
+                                Password = "password",
+                                AccountNumber = 1732050808,
+                                Money = 300
+                            },
+                            new Data
+                            {
+                                 UserId = 8,
+                                Name = "Grace Lee",
+                                Password = "password",
+                                AccountNumber = 11235813,
+                                Money = 25
+                            },
+                            new Data
+                            {
+                                UserId = 9,
+                                Name = "Henry Liu",
+                                Password = "password",
+                                AccountNumber = 31592653,
+                                Money = 175
+                            },
+                            new Data
+                            {
+                                 UserId = 10,
+                                Name = "Isabella Wu",
+                                Password = "password",
+                                AccountNumber = 2711828,
+                                Money = 250
+                            }
+                        };
+
+                        context.Datas.AddRange(newData);
+                        context.SaveChanges();
+                    }
+
+                    if (!context.FitnessUsers.Any())
+                    {
+                        var newUsers = new List<FitnessUser>
+                        {
+                            new FitnessUser
+                            {
+                                DataId = 1,
+                                Role = 1
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 2,
+                                Role = 2
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 3,
+                                Role = 3
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 4,
+                                Role = 4
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 5,
+                                Role = 1
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 6,
+                                Role = 2
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 7,
+                                Role = 3
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 8,
+                                Role = 4
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 9,
+                                Role = 1
+                            },
+                            new FitnessUser
+                            {
+                                DataId = 10,
+                                Role = 2
+                            }
+                        };
+                        
+                        context.FitnessUsers.AddRange(newUsers);
+                        context.SaveChanges();
+                    }
+                }
+
+
             });
         }
     }
