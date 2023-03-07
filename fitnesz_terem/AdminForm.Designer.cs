@@ -32,6 +32,7 @@
             Users_with_data = new DataGridView();
             label1 = new Label();
             filter_Text_Box = new TextBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)Users_with_data).BeginInit();
             SuspendLayout();
             // 
@@ -71,11 +72,19 @@
             filter_Text_Box.TabIndex = 3;
             filter_Text_Box.TextChanged += textBox1_TextChanged;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(548, 69);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 4;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel1);
             Controls.Add(filter_Text_Box);
             Controls.Add(label1);
             Controls.Add(Users_with_data);
@@ -94,5 +103,6 @@
         private DataGridView Users_with_data;
         private Label label1;
         private TextBox filter_Text_Box;
+        private Panel panel1;
     }
 }

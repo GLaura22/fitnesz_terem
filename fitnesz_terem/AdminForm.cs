@@ -87,7 +87,7 @@ namespace fitnesz_terem
             UserController forLoad = new UserController();
             List<Role> roles = forLoad.GetRoles();
 
-          
+
             // Call the GetUsers() function to get the list of view model objects
             List<UserViewModel> users = forLoad.GetUsers();
 
@@ -99,7 +99,7 @@ namespace fitnesz_terem
             string filterText = filter_Text_Box.Text;
             if (string.IsNullOrEmpty(filterText))
             {
-               Users_with_data.DataSource = resetData(); // Reset the DataGridView to show all rows
+                Users_with_data.DataSource = resetData(); // Reset the DataGridView to show all rows
             }
             else
             {
