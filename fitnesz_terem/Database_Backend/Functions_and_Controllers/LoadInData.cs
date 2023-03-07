@@ -27,7 +27,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                     // Check if the Roles DbSet is empty
                     if (!context.Roles.Any())
                     {
-                        string[] labels = { "Administrator", "Private Coach", "Trainee", "Guest" };
+                        string[] labels = { "Adminisztrátor", "Személyi Edző", "Tag"};
 
                         // Create a new Role object for each label and add it to the Roles table
                         foreach (string label in labels)
@@ -312,7 +312,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                             new FitnessUser
                             {
                                 DataId = 2,
-                                Role = 2
+                                Role = 3
                             },
                             new FitnessUser
                             {
@@ -322,12 +322,12 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                             new FitnessUser
                             {
                                 DataId = 4,
-                                Role = 4
+                                Role = 2
                             },
                             new FitnessUser
                             {
                                 DataId = 5,
-                                Role = 1
+                                Role = 2
                             },
                             new FitnessUser
                             {
@@ -342,12 +342,12 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                             new FitnessUser
                             {
                                 DataId = 8,
-                                Role = 4
+                                Role = 3
                             },
                             new FitnessUser
                             {
                                 DataId = 9,
-                                Role = 1
+                                Role = 3
                             },
                             new FitnessUser
                             {

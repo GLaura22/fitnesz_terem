@@ -28,47 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Users_with_data = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).BeginInit();
-            this.SuspendLayout();
+            comboBox1 = new ComboBox();
+            Users_with_data = new DataGridView();
+            label1 = new Label();
+            filter_Text_Box = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)Users_with_data).BeginInit();
+            SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(667, 352);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(667, 415);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // Users_with_data
             // 
-            this.Users_with_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Users_with_data.Location = new System.Drawing.Point(12, 12);
-            this.Users_with_data.Name = "Users_with_data";
-            this.Users_with_data.RowTemplate.Height = 25;
-            this.Users_with_data.Size = new System.Drawing.Size(640, 234);
-            this.Users_with_data.TabIndex = 1;
-            this.Users_with_data.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Users_with_data_CellEndEdit);
+            Users_with_data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Users_with_data.Location = new Point(13, 69);
+            Users_with_data.Name = "Users_with_data";
+            Users_with_data.RowTemplate.Height = 25;
+            Users_with_data.Size = new Size(293, 145);
+            Users_with_data.TabIndex = 1;
+            Users_with_data.CellEndEdit += Users_with_data_CellEndEdit;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(13, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(292, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Felhasználók (Cellába adatmódosítás élesben történik)";
+            // 
+            // filter_Text_Box
+            // 
+            filter_Text_Box.Location = new Point(12, 40);
+            filter_Text_Box.Name = "filter_Text_Box";
+            filter_Text_Box.Size = new Size(294, 23);
+            filter_Text_Box.TabIndex = 3;
+            filter_Text_Box.TextChanged += textBox1_TextChanged;
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Users_with_data);
-            this.Controls.Add(this.comboBox1);
-            this.Name = "AdminForm";
-            this.Text = "AdmiNForm";
-            this.Load += new System.EventHandler(this.AdminForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(filter_Text_Box);
+            Controls.Add(label1);
+            Controls.Add(Users_with_data);
+            Controls.Add(comboBox1);
+            Name = "AdminForm";
+            Text = "AdmiNForm";
+            Load += AdminForm_Load;
+            ((System.ComponentModel.ISupportInitialize)Users_with_data).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ComboBox comboBox1;
         private DataGridView Users_with_data;
+        private Label label1;
+        private TextBox filter_Text_Box;
     }
 }
