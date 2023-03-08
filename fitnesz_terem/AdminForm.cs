@@ -24,22 +24,15 @@ namespace fitnesz_terem
         {
 
             // Get the list of roles
-            UserController forLoad = new UserController();
-            List<Role> roles = forLoad.GetRoles();
-
-            // Clear any existing items in the ComboBox
-            comboBox1.Items.Clear();
-
-            // Add each role to the ComboBox
-            foreach (Role role in roles)
-            {
-                comboBox1.Items.Add(role.Label); // Replace "Name" with the property of the Role object that you want to display in the ComboBox
-            }
-
+            UserController userC = new UserController();
+            ItemController itemC = new ItemController();
             // Call the GetUsers() function to get the list of view model objects
-            List<UserViewModel> users = forLoad.GetUsers();
-
+            List<UserViewModel> users = userC.GetUsers();
+            List<Item> items = itemC.GetItems();
             Users_with_data.DataSource = users;
+            Items_with_data.DataSource = items; 
+
+
         }
 
         private void Users_with_data_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -74,11 +67,6 @@ namespace fitnesz_terem
                 // Save the changes to the database
                 context.SaveChanges();
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private List<UserViewModel> resetData()

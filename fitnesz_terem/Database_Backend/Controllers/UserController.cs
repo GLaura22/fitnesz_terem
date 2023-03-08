@@ -77,7 +77,6 @@ namespace fitnesz_terem.Database_Backend.Controllers
             }
         }
 
-
         public List<UserViewModel> GetUsers()
         {
             using (var context = new FitnessDbContext())
@@ -96,12 +95,6 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 return users;
             }
         }
-
-
-
-
-
-
     }
 
     public class UserViewModel
