@@ -61,7 +61,7 @@ namespace fitnesz_terem
             resizeChildren();
         }
 
-        
+
         private void belepButton_Click(object sender, EventArgs e)
         {
             try
@@ -96,7 +96,7 @@ namespace fitnesz_terem
                 MessageBox.Show($"Bejelentkezés sikertelen. ('{exception.Message}')");
             }
         }
-        
+
 
         private void regilabel_Click(object sender, EventArgs e)
         {
