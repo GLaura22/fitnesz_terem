@@ -73,9 +73,29 @@ namespace fitnesz_terem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lilaatmenet {
+            get {
+                object obj = ResourceManager.GetObject("lilaatmenet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pilates {
             get {
                 object obj = ResourceManager.GetObject("pilates", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sotetbgr {
+            get {
+                object obj = ResourceManager.GetObject("sotetbgr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
