@@ -39,6 +39,8 @@ namespace fitnesz_terem
 
         private void formenu1_Click(object sender, EventArgs e)
         {
+            fokep.Image = altalanos;
+            szolgLabel.Visible = false;
             textBoxRolunk.Visible = true;
             fogado_szoveg.Visible = false;
             comboBox1.Visible = false;
