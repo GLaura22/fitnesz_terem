@@ -73,6 +73,7 @@ namespace fitnesz_terem
                 // Validation(s)
                 //==============================
 
+
                 if (textBox1.Text == "")
                 {
                     throw new Exception("Felhasználónév nem lehet üres!");
@@ -90,6 +91,38 @@ namespace fitnesz_terem
                 }
 
                 MessageBox.Show("Felhasználó sikeresen bejelentkezve!");
+                if (textBox1.Text == "Bob Lee")
+                {
+                    Edzo e1 = new Edzo();
+                    e1.setcoachID(3);
+                    e1.ShowDialog();
+
+
+                }
+                if (textBox1.Text == "David Kim")
+                {
+                    Edzo e1 = new Edzo();
+                    e1.setcoachID(4);
+                    e1.ShowDialog();
+
+
+                }
+                if (textBox1.Text == "Emily Chen")
+                {
+                    Edzo e1 = new Edzo();
+                    e1.setcoachID(5);
+                    e1.ShowDialog();
+
+
+                }
+                if (textBox1.Text == "Isabella Wu")
+                {
+                    Edzo e1 = new Edzo();
+                    e1.setcoachID(9);
+                    e1.ShowDialog();
+
+
+                }
             }
             catch (Exception exception)
             {
