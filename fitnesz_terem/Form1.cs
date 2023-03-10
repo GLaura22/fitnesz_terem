@@ -1,4 +1,7 @@
+using fitnesz_terem.Database_Backend.Connection;
+using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
+using System.Data;
 
 namespace fitnesz_terem
 {
@@ -14,13 +17,23 @@ namespace fitnesz_terem
         private Rectangle textBoxRolunkRect;
         private Rectangle fogado_szovegRect;
         private Size FormSize;
+
+        Bitmap yoga = Properties.Resources.yoga;
+        Bitmap spinning = Properties.Resources.spinning;
+        Bitmap altalanos = Properties.Resources.gym_hatter;
+        Bitmap pilates = Properties.Resources.pilates;
+
+
         public indulo_felulet()
         {
             InitializeComponent();
             fitnessUser = new FitnessUser{ UserID = 0, DataId = 0, Role = 0 };
-            textBoxRolunk.Visible = false;
+            textBoxRolunk.Visible= false;
             fogado_szoveg.BorderStyle = BorderStyle.None;
             textBoxRolunk.BorderStyle = BorderStyle.None;
+            comboBox1.Visible = false;
+            szolgLabel.Visible = false;
+            fokep.Image = altalanos;
             
         }
 
@@ -28,12 +41,59 @@ namespace fitnesz_terem
         {
             textBoxRolunk.Visible = true;
             fogado_szoveg.Visible = false;
+            comboBox1.Visible = false;
         }
 
         private void foszmenu2_Click(object sender, EventArgs e)
         {
             textBoxRolunk.Visible = false;
             fogado_szoveg.Visible = false;
+            comboBox1.Visible = true;
+            szolgLabel.Visible = true;
+            /*
+            // Get the list of roles
+            UserController userC = new UserController();
+            ItemController itemC = new ItemController();
+            // Call the GetUsers() function to get the list of view model objects
+            List<UserViewModel> users = userC.GetUsers();
+            List<Item> items = itemC.GetItems();
+            Users_with_data.DataSource = users;
+            Items_with_data.DataSource = items; */
+
+            using (var context = new FitnessDbContext())
+            {
+                // Query the Roles data from the database using the DbSet property of your DbContext
+                var classes = context.TrainingClasses.ToList();
+
+                // Create a new DataTable and add columns
+                var dataTable = new DataTable();
+                dataTable.Columns.Add("ClassName", typeof(string));
+
+                // Populate the DataTable with data from the Roles list
+                foreach (var c in classes)
+                {
+                    var row = dataTable.NewRow();
+                    row["ClassName"] = c.ClassName;
+                    dataTable.Rows.Add(row);
+
+                /*
+                    var row = dataTable.NewRow();
+                    row["RoleID"] = role.RoleID;
+                    row["Label"] = role.Label;
+                    dataTable.Rows.Add(row);    */
+                }
+
+                // Bind the DataTable to your roleBox control
+                //roleBox.DataSource = dataTable;
+                //roleBox.DisplayMember = "Label";
+                //roleBox.ValueMember = "RoleID";
+
+                comboBox1.DataSource = dataTable;
+                comboBox1.DisplayMember= "Name";
+                comboBox1.ValueMember= "ClassName";
+
+                 
+            }
 
         }
 
@@ -85,6 +145,28 @@ namespace fitnesz_terem
         {
             AdminForm form = new AdminForm();
             form.ShowDialog();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string kivalasztott = comboBox1.Text;
+            //MessageBox.Show(kivalasztott);
+
+            switch (kivalasztott)
+            {
+                case "Yoga":
+                    fokep.Image = yoga;
+                    break;
+                case "Spinning":
+                    fokep.Image = spinning;
+                    break;
+                case "Pilates":
+                    fokep.Image = pilates;
+                    break;
+                default:
+                    fokep.Image = altalanos;
+                    break;
+            }
         }
     }
 }

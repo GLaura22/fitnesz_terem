@@ -122,6 +122,17 @@
     <value>..\Resources\gym_hatter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sulyzo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sulyzo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\sulyzo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spinning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spinning.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+	
+	<data name="pilates" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\pilates.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	
+  <data name="yoga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yoga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
