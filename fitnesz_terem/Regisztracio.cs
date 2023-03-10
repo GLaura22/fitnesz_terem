@@ -50,6 +50,7 @@ namespace fitnesz_terem
         public Regisztracio()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void Register_Button_Click(object sender, EventArgs e)

@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(indulo_felulet));
             this.cim = new System.Windows.Forms.Label();
             this.bejiregi = new System.Windows.Forms.Label();
             this.fokep = new System.Windows.Forms.PictureBox();
@@ -38,11 +37,11 @@
             this.foszmenu2 = new System.Windows.Forms.ToolStripMenuItem();
             this.foemenu3 = new System.Windows.Forms.ToolStripMenuItem();
             this.fowmenu4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxRolunk = new System.Windows.Forms.TextBox();
             this.adminLabel = new System.Windows.Forms.Label();
             this.fogado_szoveg = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.szolgLabel = new System.Windows.Forms.Label();
+            this.textBoxRolunk = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.fokep)).BeginInit();
             this.fomenu.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +52,7 @@
             this.cim.BackColor = System.Drawing.Color.Transparent;
             this.cim.Dock = System.Windows.Forms.DockStyle.Left;
             this.cim.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cim.ForeColor = System.Drawing.Color.Black;
+            this.cim.ForeColor = System.Drawing.Color.White;
             this.cim.Location = new System.Drawing.Point(0, 24);
             this.cim.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cim.Name = "cim";
@@ -64,9 +63,10 @@
             // 
             // bejiregi
             // 
+            this.bejiregi.BackColor = System.Drawing.Color.Transparent;
             this.bejiregi.Dock = System.Windows.Forms.DockStyle.Top;
             this.bejiregi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.bejiregi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bejiregi.ForeColor = System.Drawing.Color.White;
             this.bejiregi.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bejiregi.Location = new System.Drawing.Point(344, 24);
             this.bejiregi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -79,6 +79,7 @@
             // 
             // fokep
             // 
+            this.fokep.BackColor = System.Drawing.Color.Transparent;
             this.fokep.Image = global::fitnesz_terem.Properties.Resources.gym_hatter;
             this.fokep.Location = new System.Drawing.Point(184, 91);
             this.fokep.Margin = new System.Windows.Forms.Padding(2);
@@ -131,23 +132,10 @@
             this.fowmenu4.Size = new System.Drawing.Size(110, 22);
             this.fowmenu4.Text = " Webshop kínálat";
             // 
-            // textBoxRolunk
-            // 
-            this.textBoxRolunk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
-            this.textBoxRolunk.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRolunk.ForeColor = System.Drawing.Color.Black;
-            this.textBoxRolunk.Location = new System.Drawing.Point(63, 248);
-            this.textBoxRolunk.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxRolunk.Multiline = true;
-            this.textBoxRolunk.Name = "textBoxRolunk";
-            this.textBoxRolunk.Size = new System.Drawing.Size(515, 69);
-            this.textBoxRolunk.TabIndex = 4;
-            this.textBoxRolunk.Text = resources.GetString("textBoxRolunk.Text");
-            // 
             // adminLabel
             // 
             this.adminLabel.AutoSize = true;
-            this.adminLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
+            this.adminLabel.BackColor = System.Drawing.Color.Transparent;
             this.adminLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.adminLabel.Location = new System.Drawing.Point(572, 315);
             this.adminLabel.Name = "adminLabel";
@@ -159,7 +147,9 @@
             // fogado_szoveg
             // 
             this.fogado_szoveg.AutoSize = true;
+            this.fogado_szoveg.BackColor = System.Drawing.Color.Transparent;
             this.fogado_szoveg.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.fogado_szoveg.ForeColor = System.Drawing.Color.White;
             this.fogado_szoveg.Location = new System.Drawing.Point(43, 264);
             this.fogado_szoveg.Name = "fogado_szoveg";
             this.fogado_szoveg.Size = new System.Drawing.Size(535, 32);
@@ -168,6 +158,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.Black;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(245, 275);
             this.comboBox1.Name = "comboBox1";
@@ -179,28 +171,47 @@
             // szolgLabel
             // 
             this.szolgLabel.AutoSize = true;
+            this.szolgLabel.BackColor = System.Drawing.Color.Transparent;
             this.szolgLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.szolgLabel.ForeColor = System.Drawing.Color.White;
             this.szolgLabel.Location = new System.Drawing.Point(110, 248);
             this.szolgLabel.Name = "szolgLabel";
             this.szolgLabel.Size = new System.Drawing.Size(207, 21);
             this.szolgLabel.TabIndex = 9;
             this.szolgLabel.Text = "Elérhető szolgáltatásaink:";
             // 
+            // textBoxRolunk
+            // 
+            this.textBoxRolunk.BackColor = System.Drawing.Color.Black;
+            this.textBoxRolunk.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRolunk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxRolunk.ForeColor = System.Drawing.Color.White;
+            this.textBoxRolunk.Location = new System.Drawing.Point(123, 248);
+            this.textBoxRolunk.Multiline = true;
+            this.textBoxRolunk.Name = "textBoxRolunk";
+            this.textBoxRolunk.Size = new System.Drawing.Size(423, 68);
+            this.textBoxRolunk.TabIndex = 10;
+            this.textBoxRolunk.Text = "Egy modern, jól felszerelt edzőtermet üzemeltetünk a Balaton partján mindenkinek," +
+    " aki egyedül vagy csoportban szeretne sportolni.  Várunk szeretettel, ha neked i" +
+    "s fontos az egészséges életmód. ";
+            this.textBoxRolunk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // indulo_felulet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
+            this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(663, 348);
             this.Controls.Add(this.szolgLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fogado_szoveg);
             this.Controls.Add(this.adminLabel);
-            this.Controls.Add(this.textBoxRolunk);
             this.Controls.Add(this.fokep);
             this.Controls.Add(this.bejiregi);
             this.Controls.Add(this.cim);
             this.Controls.Add(this.fomenu);
+            this.Controls.Add(this.textBoxRolunk);
             this.MainMenuStrip = this.fomenu;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "indulo_felulet";
@@ -224,10 +235,10 @@
         private ToolStripMenuItem foszmenu2;
         private ToolStripMenuItem foemenu3;
         private ToolStripMenuItem fowmenu4;
-        private TextBox textBoxRolunk;
         private Label adminLabel;
         private Label fogado_szoveg;
         private ComboBox comboBox1;
         private Label szolgLabel;
+        private TextBox textBoxRolunk;
     }
 }

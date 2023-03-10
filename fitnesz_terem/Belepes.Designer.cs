@@ -132,7 +132,7 @@
             this.belepButton.Location = new System.Drawing.Point(193, 139);
             this.belepButton.Margin = new System.Windows.Forms.Padding(2);
             this.belepButton.Name = "belepButton";
-            this.belepButton.Size = new System.Drawing.Size(68, 23);
+            this.belepButton.Size = new System.Drawing.Size(72, 27);
             this.belepButton.TabIndex = 8;
             this.belepButton.Text = "Belépés";
             this.belepButton.UseVisualStyleBackColor = true;
@@ -154,6 +154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(582, 320);
             this.Controls.Add(this.groupBoxbelep);
             this.Controls.Add(this.cim);

@@ -54,6 +54,8 @@ namespace fitnesz_terem
         {
             InitializeComponent();
             felhasznalo = new FitnessUser { UserID = 0, DataId = 0, Role = 0 };
+            InitializeMyControl();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
         }
         private void Belepes_Resize(object sender, EventArgs e)
@@ -64,6 +66,7 @@ namespace fitnesz_terem
 
         private void belepButton_Click(object sender, EventArgs e)
         {
+            bool siker = false;
             try
             {
                 /* Initialize UserController. */
@@ -127,7 +130,10 @@ namespace fitnesz_terem
             catch (Exception exception)
             {
                 MessageBox.Show($"Bejelentkezés sikertelen. ('{exception.Message}')");
+                siker = false;
             }
+           // if(siker == true)
+               // this.Close();
         }
 
 
@@ -153,6 +159,16 @@ namespace fitnesz_terem
         {
             this.ShowDialog();
             return felhasznalo;
+        }
+
+        private void InitializeMyControl()
+        {
+            // Set to no text.
+            textBox2.Text = "";
+            // The password character is an asterisk.
+            textBox2.PasswordChar = '*';
+            // The control will allow no more than 14 characters.
+            textBox1.MaxLength = 14;
         }
     }
 }

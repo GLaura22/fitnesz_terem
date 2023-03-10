@@ -1,7 +1,10 @@
 using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
+using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace fitnesz_terem
 {
@@ -22,19 +25,19 @@ namespace fitnesz_terem
         Bitmap spinning = Properties.Resources.spinning;
         Bitmap altalanos = Properties.Resources.gym_hatter;
         Bitmap pilates = Properties.Resources.pilates;
-
-
-        public indulo_felulet()
+        
+        
+    public indulo_felulet()
         {
             InitializeComponent();
-            fitnessUser = new FitnessUser{ UserID = 0, DataId = 0, Role = 0 };
+            fitnessUser = new FitnessUser { UserID = 0, DataId = 0, Role = 0 };
             textBoxRolunk.Visible= false;
             fogado_szoveg.BorderStyle = BorderStyle.None;
             textBoxRolunk.BorderStyle = BorderStyle.None;
             comboBox1.Visible = false;
             szolgLabel.Visible = false;
             fokep.Image = altalanos;
-            
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void formenu1_Click(object sender, EventArgs e)
@@ -101,9 +104,11 @@ namespace fitnesz_terem
 
         private void bejiregi_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show(f2.UserId().UserID.ToString());
+            //MessageBox.Show(f2.UserId().UserID.ToString());
+            fitnessUser.UserID = f2.UserId().UserID;
+            MessageBox.Show(fitnessUser.UserID.ToString());    
         }
+
         private void resizeChildren()
         {
             resizeControl(cimRect, cim);
