@@ -118,21 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gym_hatter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gym_hatter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sulyzo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sulyzo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yoga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yoga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spinning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spinning.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-	
-	<data name="pilates" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\pilates.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-	
-  <data name="yoga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yoga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pilates" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pilates.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sotetbgr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sotetbgr.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sulyzo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sulyzo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gym_hatter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gym_hatter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lilaatmenet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lilaatmenet.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
