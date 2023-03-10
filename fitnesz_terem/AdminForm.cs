@@ -24,22 +24,42 @@ namespace fitnesz_terem
         {
 
             // Get the list of roles
-            UserController forLoad = new UserController();
-            List<Role> roles = forLoad.GetRoles();
+            UserController userC = new UserController();
+            ItemController itemC = new ItemController();
+            // Call the GetUsers() function to get the list of view model objects
+            List<UserViewModel> users = userC.GetUsers();
+            List<Item> items = itemC.GetItems();
+            Users_with_data.DataSource = users;
+            Items_with_data.DataSource = items;
 
-            // Clear any existing items in the ComboBox
-            comboBox1.Items.Clear();
-
-            // Add each role to the ComboBox
-            foreach (Role role in roles)
+            // Create an instance of your EF DbContext
+            using (var context = new FitnessDbContext())
             {
-                comboBox1.Items.Add(role.Label); // Replace "Name" with the property of the Role object that you want to display in the ComboBox
+                // Query the Roles data from the database using the DbSet property of your DbContext
+                var roles = context.Roles.ToList();
+
+                // Create a new DataTable and add columns
+                var dataTable = new DataTable();
+                dataTable.Columns.Add("RoleID", typeof(int));
+                dataTable.Columns.Add("Label", typeof(string));
+
+                // Populate the DataTable with data from the Roles list
+                foreach (var role in roles)
+                {
+                    var row = dataTable.NewRow();
+                    row["RoleID"] = role.RoleID;
+                    row["Label"] = role.Label;
+                    dataTable.Rows.Add(row);
+                }
+
+                // Bind the DataTable to your roleBox control
+                roleBox.DataSource = dataTable;
+                roleBox.DisplayMember = "Label";
+                roleBox.ValueMember = "RoleID";
             }
 
-            // Call the GetUsers() function to get the list of view model objects
-            List<UserViewModel> users = forLoad.GetUsers();
 
-            Users_with_data.DataSource = users;
+
         }
 
         private void Users_with_data_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -76,18 +96,13 @@ namespace fitnesz_terem
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private List<UserViewModel> resetData()
         {
             // Get the list of roles
             UserController forLoad = new UserController();
             List<Role> roles = forLoad.GetRoles();
 
-          
+
             // Call the GetUsers() function to get the list of view model objects
             List<UserViewModel> users = forLoad.GetUsers();
 
@@ -99,7 +114,7 @@ namespace fitnesz_terem
             string filterText = filter_Text_Box.Text;
             if (string.IsNullOrEmpty(filterText))
             {
-               Users_with_data.DataSource = resetData(); // Reset the DataGridView to show all rows
+                Users_with_data.DataSource = resetData(); // Reset the DataGridView to show all rows
             }
             else
             {
@@ -110,6 +125,76 @@ namespace fitnesz_terem
                 Users_with_data.DataSource = dv.ToTable();
             }
         }
+
+        private void roleBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (var context = new FitnessDbContext())
+            {
+                // Get the selected role index from the roleBox ComboBox
+                int selectedRoleIndex = roleBox.SelectedIndex;
+
+                if (selectedRoleIndex == 0)
+                {
+                    // If index 0 is selected, show only users with RoleID 1
+                    List<UserViewModel> users = context.Datas.Join(context.FitnessUsers, d => d.UserId, u => u.UserID, (d, u) => new UserViewModel
+                    {
+                        UserId = d.UserId,
+                        Name = d.Name,
+                        Password = d.Password,
+                        AccountNumber = d.AccountNumber,
+                        Money = d.Money,
+                        Role = u.Role
+                    })
+                    .Where(u => u.Role == 1)
+                    .ToList();
+                    Users_with_data.DataSource = ConvertToDataTable(users);
+                }
+                else if (selectedRoleIndex == 1)
+                {
+                    // If index 1 is selected, show only users with RoleID 2
+                    List<UserViewModel> users = context.Datas.Join(context.FitnessUsers, d => d.UserId, u => u.UserID, (d, u) => new UserViewModel
+                    {
+                        UserId = d.UserId,
+                        Name = d.Name,
+                        Password = d.Password,
+                        AccountNumber = d.AccountNumber,
+                        Money = d.Money,
+                        Role = u.Role
+                    })
+                    .Where(u => u.Role == 2)
+                    .ToList();
+                    Users_with_data.DataSource = ConvertToDataTable(users);
+                }
+                else if (selectedRoleIndex == 2)
+                {
+                    // If index 2 is selected, show only users with RoleID 3
+                    List<UserViewModel> users = context.Datas.Join(context.FitnessUsers, d => d.UserId, u => u.UserID, (d, u) => new UserViewModel
+                    {
+                        UserId = d.UserId,
+                        Name = d.Name,
+                        Password = d.Password,
+                        AccountNumber = d.AccountNumber,
+                        Money = d.Money,
+                        Role = u.Role
+                    })
+                    .Where(u => u.Role == 3)
+                    .ToList();
+                    Users_with_data.DataSource = ConvertToDataTable(users);
+                }
+                else
+                {
+                    // If no index is selected, show all users
+                    Users_with_data.DataSource = resetData();
+                }
+            }
+        }
+
+
+
+
+
+
+
 
         private DataTable ConvertToDataTable<T>(IList<T> data)
         {

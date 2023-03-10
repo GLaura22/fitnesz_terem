@@ -28,147 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.felhlabel = new System.Windows.Forms.Label();
-            this.jelszolabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cim = new System.Windows.Forms.Label();
-            this.regilabel = new System.Windows.Forms.Label();
-            this.groupBoxbelep = new System.Windows.Forms.GroupBox();
-            this.belepButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBoxbelep.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            felhlabel = new Label();
+            jelszolabel = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            cim = new Label();
+            regilabel = new Label();
+            groupBoxbelep = new GroupBox();
+            belepButton = new Button();
+            pictureBox1 = new PictureBox();
+            groupBoxbelep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // felhlabel
             // 
-            this.felhlabel.AutoSize = true;
-            this.felhlabel.Location = new System.Drawing.Point(20, 22);
-            this.felhlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.felhlabel.Name = "felhlabel";
-            this.felhlabel.Size = new System.Drawing.Size(104, 19);
-            this.felhlabel.TabIndex = 0;
-            this.felhlabel.Text = "Felhasználónév:";
+            felhlabel.AutoSize = true;
+            felhlabel.Location = new Point(20, 22);
+            felhlabel.Margin = new Padding(2, 0, 2, 0);
+            felhlabel.Name = "felhlabel";
+            felhlabel.Size = new Size(104, 19);
+            felhlabel.TabIndex = 0;
+            felhlabel.Text = "Felhasználónév:";
             // 
             // jelszolabel
             // 
-            this.jelszolabel.AutoSize = true;
-            this.jelszolabel.Location = new System.Drawing.Point(20, 77);
-            this.jelszolabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.jelszolabel.Name = "jelszolabel";
-            this.jelszolabel.Size = new System.Drawing.Size(47, 19);
-            this.jelszolabel.TabIndex = 1;
-            this.jelszolabel.Text = "Jelszó:";
+            jelszolabel.AutoSize = true;
+            jelszolabel.Location = new Point(20, 77);
+            jelszolabel.Margin = new Padding(2, 0, 2, 0);
+            jelszolabel.Name = "jelszolabel";
+            jelszolabel.Size = new Size(47, 19);
+            jelszolabel.TabIndex = 1;
+            jelszolabel.Text = "Jelszó:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 48);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 25);
-            this.textBox1.TabIndex = 2;
+            textBox1.Location = new Point(26, 48);
+            textBox1.Margin = new Padding(2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(229, 25);
+            textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(26, 103);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(229, 25);
-            this.textBox2.TabIndex = 3;
+            textBox2.Location = new Point(26, 103);
+            textBox2.Margin = new Padding(2);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(229, 25);
+            textBox2.TabIndex = 3;
             // 
             // cim
             // 
-            this.cim.AutoSize = true;
-            this.cim.BackColor = System.Drawing.Color.Transparent;
-            this.cim.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cim.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cim.ForeColor = System.Drawing.Color.White;
-            this.cim.Location = new System.Drawing.Point(0, 0);
-            this.cim.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.cim.Name = "cim";
-            this.cim.Size = new System.Drawing.Size(344, 45);
-            this.cim.TabIndex = 4;
-            this.cim.Text = "Balaton Fitnesz terem";
-            this.cim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            cim.AutoSize = true;
+            cim.BackColor = Color.Transparent;
+            cim.Dock = DockStyle.Left;
+            cim.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            cim.ForeColor = Color.White;
+            cim.Location = new Point(0, 0);
+            cim.Margin = new Padding(2, 0, 2, 0);
+            cim.Name = "cim";
+            cim.Size = new Size(344, 45);
+            cim.TabIndex = 4;
+            cim.Text = "Balaton Fitnesz terem";
+            cim.TextAlign = ContentAlignment.MiddleRight;
             // 
             // regilabel
             // 
-            this.regilabel.AutoSize = true;
-            this.regilabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.regilabel.Location = new System.Drawing.Point(96, 142);
-            this.regilabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.regilabel.Name = "regilabel";
-            this.regilabel.Size = new System.Drawing.Size(70, 15);
-            this.regilabel.TabIndex = 5;
-            this.regilabel.Text = "Regisztráció";
-            this.regilabel.Click += new System.EventHandler(this.regilabel_Click);
+            regilabel.AutoSize = true;
+            regilabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
+            regilabel.Location = new Point(96, 142);
+            regilabel.Margin = new Padding(2, 0, 2, 0);
+            regilabel.Name = "regilabel";
+            regilabel.Size = new Size(70, 15);
+            regilabel.TabIndex = 5;
+            regilabel.Text = "Regisztráció";
+            regilabel.Click += regilabel_Click;
             // 
             // groupBoxbelep
             // 
-            this.groupBoxbelep.BackColor = System.Drawing.Color.Black;
-            this.groupBoxbelep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBoxbelep.Controls.Add(this.belepButton);
-            this.groupBoxbelep.Controls.Add(this.pictureBox1);
-            this.groupBoxbelep.Controls.Add(this.regilabel);
-            this.groupBoxbelep.Controls.Add(this.textBox2);
-            this.groupBoxbelep.Controls.Add(this.textBox1);
-            this.groupBoxbelep.Controls.Add(this.jelszolabel);
-            this.groupBoxbelep.Controls.Add(this.felhlabel);
-            this.groupBoxbelep.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxbelep.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBoxbelep.Location = new System.Drawing.Point(134, 73);
-            this.groupBoxbelep.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBoxbelep.Name = "groupBoxbelep";
-            this.groupBoxbelep.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxbelep.Size = new System.Drawing.Size(281, 184);
-            this.groupBoxbelep.TabIndex = 6;
-            this.groupBoxbelep.TabStop = false;
-            this.groupBoxbelep.Text = "Belépés";
+            groupBoxbelep.BackColor = Color.Black;
+            groupBoxbelep.BackgroundImageLayout = ImageLayout.Center;
+            groupBoxbelep.Controls.Add(belepButton);
+            groupBoxbelep.Controls.Add(pictureBox1);
+            groupBoxbelep.Controls.Add(regilabel);
+            groupBoxbelep.Controls.Add(textBox2);
+            groupBoxbelep.Controls.Add(textBox1);
+            groupBoxbelep.Controls.Add(jelszolabel);
+            groupBoxbelep.Controls.Add(felhlabel);
+            groupBoxbelep.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBoxbelep.ForeColor = Color.Transparent;
+            groupBoxbelep.Location = new Point(134, 73);
+            groupBoxbelep.Margin = new Padding(2);
+            groupBoxbelep.Name = "groupBoxbelep";
+            groupBoxbelep.Padding = new Padding(2);
+            groupBoxbelep.Size = new Size(281, 184);
+            groupBoxbelep.TabIndex = 6;
+            groupBoxbelep.TabStop = false;
+            groupBoxbelep.Text = "Belépés";
             // 
             // belepButton
             // 
-            this.belepButton.ForeColor = System.Drawing.Color.Black;
-            this.belepButton.Location = new System.Drawing.Point(193, 139);
-            this.belepButton.Margin = new System.Windows.Forms.Padding(2);
-            this.belepButton.Name = "belepButton";
-            this.belepButton.Size = new System.Drawing.Size(68, 23);
-            this.belepButton.TabIndex = 8;
-            this.belepButton.Text = "Belépés";
-            this.belepButton.UseVisualStyleBackColor = true;
-            this.belepButton.Click += new System.EventHandler(this.belepButton_Click);
+            belepButton.ForeColor = Color.Black;
+            belepButton.Location = new Point(193, 139);
+            belepButton.Margin = new Padding(2);
+            belepButton.Name = "belepButton";
+            belepButton.Size = new Size(68, 23);
+            belepButton.TabIndex = 8;
+            belepButton.Text = "Belépés";
+            belepButton.UseVisualStyleBackColor = true;
+            belepButton.Click += belepButton_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::fitnesz_terem.Properties.Resources.sulyzo;
-            this.pictureBox1.Location = new System.Drawing.Point(4, -4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.sulyzo;
+            pictureBox1.Location = new Point(4, -4);
+            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 23);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // Belepes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(582, 320);
-            this.Controls.Add(this.groupBoxbelep);
-            this.Controls.Add(this.cim);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Belepes";
-            this.Text = "Bejelentkezés";
-            this.Load += new System.EventHandler(this.Belepes_Load);
-            this.Resize += new System.EventHandler(this.Belepes_Resize);
-            this.groupBoxbelep.ResumeLayout(false);
-            this.groupBoxbelep.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            ClientSize = new Size(582, 320);
+            Controls.Add(groupBoxbelep);
+            Controls.Add(cim);
+            ForeColor = Color.White;
+            Margin = new Padding(2);
+            Name = "Belepes";
+            Text = "Bejelentkezés";
+            Load += Belepes_Load;
+            Resize += Belepes_Resize;
+            groupBoxbelep.ResumeLayout(false);
+            groupBoxbelep.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

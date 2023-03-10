@@ -238,7 +238,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                             },
                             new Data
                             {
-                                 UserId = 4,
+                                UserId = 4,
                                 Name = "Bob Lee",
                                 Password = "password",
                                 AccountNumber = 369518,
@@ -322,7 +322,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                             new FitnessUser
                             {
                                 DataId = 4,
-                                Role = 2
+                                Role = 3
                             },
                             new FitnessUser
                             {
@@ -332,7 +332,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                             new FitnessUser
                             {
                                 DataId = 6,
-                                Role = 2
+                                Role = 3
                             },
                             new FitnessUser
                             {
