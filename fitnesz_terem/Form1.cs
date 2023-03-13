@@ -25,13 +25,13 @@ namespace fitnesz_terem
         Bitmap spinning = Properties.Resources.spinning;
         Bitmap altalanos = Properties.Resources.gym_hatter;
         Bitmap pilates = Properties.Resources.pilates;
-        
-        
-    public indulo_felulet()
+
+
+        public indulo_felulet()
         {
             InitializeComponent();
             fitnessUser = new FitnessUser { UserID = 0, DataId = 0, Role = 0 };
-            textBoxRolunk.Visible= false;
+            textBoxRolunk.Visible = false;
             fogado_szoveg.BorderStyle = BorderStyle.None;
             textBoxRolunk.BorderStyle = BorderStyle.None;
             comboBox1.Visible = false;
@@ -81,11 +81,11 @@ namespace fitnesz_terem
                     row["ClassName"] = c.ClassName;
                     dataTable.Rows.Add(row);
 
-                /*
-                    var row = dataTable.NewRow();
-                    row["RoleID"] = role.RoleID;
-                    row["Label"] = role.Label;
-                    dataTable.Rows.Add(row);    */
+                    /*
+                        var row = dataTable.NewRow();
+                        row["RoleID"] = role.RoleID;
+                        row["Label"] = role.Label;
+                        dataTable.Rows.Add(row);    */
                 }
 
                 // Bind the DataTable to your roleBox control
@@ -94,10 +94,10 @@ namespace fitnesz_terem
                 //roleBox.ValueMember = "RoleID";
 
                 comboBox1.DataSource = dataTable;
-                comboBox1.DisplayMember= "Name";
-                comboBox1.ValueMember= "ClassName";
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "ClassName";
 
-                 
+
             }
 
         }
@@ -106,7 +106,6 @@ namespace fitnesz_terem
         {
             //MessageBox.Show(f2.UserId().UserID.ToString());
             fitnessUser.UserID = f2.UserId().UserID;
-            MessageBox.Show(fitnessUser.UserID.ToString());    
         }
 
         private void resizeChildren()
