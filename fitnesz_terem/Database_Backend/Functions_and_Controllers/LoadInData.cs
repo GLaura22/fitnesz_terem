@@ -205,11 +205,11 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                 }
                 // users
                 using (var context = new FitnessDbContext())
-                {
-                    context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Datas', RESEED, 0)");
-                    context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('FitnessUsers', RESEED, 0)");
+                { 
                     if (!context.Datas.Any())
                     {
+                        context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Datas', RESEED, 0)");
+                        context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('FitnessUsers', RESEED, 0)");
                         var newData = new List<Data>
                         {
                             new Data
