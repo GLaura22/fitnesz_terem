@@ -175,5 +175,11 @@ namespace fitnesz_terem
                     break;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Tag form = new Tag();
+            form.ShowDialog();
+        }
     }
 }

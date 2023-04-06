@@ -42,6 +42,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.szolgLabel = new System.Windows.Forms.Label();
             this.textBoxRolunk = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fokep)).BeginInit();
             this.fomenu.SuspendLayout();
             this.SuspendLayout();
@@ -137,7 +138,7 @@
             this.adminLabel.AutoSize = true;
             this.adminLabel.BackColor = System.Drawing.Color.Transparent;
             this.adminLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.adminLabel.Location = new System.Drawing.Point(572, 315);
+            this.adminLabel.Location = new System.Drawing.Point(582, 324);
             this.adminLabel.Name = "adminLabel";
             this.adminLabel.Size = new System.Drawing.Size(69, 15);
             this.adminLabel.TabIndex = 6;
@@ -196,6 +197,16 @@
     "s fontos az egészséges életmód. ";
             this.textBoxRolunk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(582, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "TAG page";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // indulo_felulet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -203,6 +214,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(663, 348);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.szolgLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fogado_szoveg);
@@ -240,5 +252,6 @@
         private ComboBox comboBox1;
         private Label szolgLabel;
         private TextBox textBoxRolunk;
+        private Label label1;
     }
 }

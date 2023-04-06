@@ -27,6 +27,7 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                     // Check if the Roles DbSet is empty
                     if (!context.Roles.Any())
                     {
+                        context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Roles', RESEED, 0)");
                         string[] labels = { "Adminisztrátor", "Személyi Edző", "Tag"};
 
                         // Create a new Role object for each label and add it to the Roles table
