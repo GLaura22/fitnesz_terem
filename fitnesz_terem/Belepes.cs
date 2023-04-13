@@ -124,7 +124,20 @@ namespace fitnesz_terem
                     e1.setcoachID(9);
                     e1.ShowDialog();
 
+                }
 
+                //tag lep be
+                if (felhasznalo.Role == 3)
+                { 
+                    Tag tag= new Tag();
+                    tag.Show();
+                }
+
+                //admin lep be
+                if (felhasznalo.Role == 1)
+                { 
+                    AdminForm a = new AdminForm();
+                    a.Show();
                 }
             }
             catch (Exception exception)

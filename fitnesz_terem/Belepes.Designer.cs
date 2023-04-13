@@ -117,7 +117,7 @@
             this.groupBoxbelep.Controls.Add(this.felhlabel);
             this.groupBoxbelep.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBoxbelep.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBoxbelep.Location = new System.Drawing.Point(134, 73);
+            this.groupBoxbelep.Location = new System.Drawing.Point(253, 152);
             this.groupBoxbelep.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxbelep.Name = "groupBoxbelep";
             this.groupBoxbelep.Padding = new System.Windows.Forms.Padding(2);
@@ -155,10 +155,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
-            this.ClientSize = new System.Drawing.Size(582, 320);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.groupBoxbelep);
             this.Controls.Add(this.cim);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Belepes";
             this.Text = "Bejelentkezés";

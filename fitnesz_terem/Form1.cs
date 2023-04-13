@@ -38,6 +38,8 @@ namespace fitnesz_terem
             szolgLabel.Visible = false;
             fokep.Image = altalanos;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+            tajekoztatoLabel.Visible = false;
+            edzok_felsorolas.Visible = false;
         }
 
         private void formenu1_Click(object sender, EventArgs e)
@@ -47,6 +49,8 @@ namespace fitnesz_terem
             textBoxRolunk.Visible = true;
             fogado_szoveg.Visible = false;
             comboBox1.Visible = false;
+            tajekoztatoLabel.Visible = false;
+            edzok_felsorolas.Visible = false;
         }
 
         private void foszmenu2_Click(object sender, EventArgs e)
@@ -55,6 +59,8 @@ namespace fitnesz_terem
             fogado_szoveg.Visible = false;
             comboBox1.Visible = true;
             szolgLabel.Visible = true;
+            tajekoztatoLabel.Visible = false;
+            edzok_felsorolas.Visible = false;
             /*
             // Get the list of roles
             UserController userC = new UserController();
@@ -148,12 +154,6 @@ namespace fitnesz_terem
             resizeChildren();
         }
 
-        private void adminLabel_Click(object sender, EventArgs e)
-        {
-            AdminForm form = new AdminForm();
-            form.ShowDialog();
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string kivalasztott = comboBox1.Text;
@@ -176,10 +176,51 @@ namespace fitnesz_terem
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void foemenu3_Click(object sender, EventArgs e)
         {
-            Tag form = new Tag();
-            form.ShowDialog();
+            textBoxRolunk.Visible = false;
+            fogado_szoveg.Visible = false;
+            comboBox1.Visible = false;
+            szolgLabel.Visible = false;
+            fokep.Visible = false;
+            tajekoztatoLabel.Visible = true;
+            edzok_felsorolas.Visible = true;
+
+            UserController userC = new UserController();
+            List<UserViewModel> users = userC.GetUsers();
+            
+            foreach (UserViewModel user in users) {
+                if (user.Role == 2)
+                    edzok_felsorolas.DataSource = user;
+            } 
+            edzok_felsorolas.DataSource = users;
+            
+            /*
+            using (var context = new FitnessDbContext())
+            {
+                // Query the Roles data from the database using the DbSet property of your DbContext
+                var roles = context.Roles.ToList();
+
+                // Create a new DataTable and add columns
+                var dataTable = new DataTable();
+                dataTable.Columns.Add("Név", typeof(string));
+                dataTable.Columns.Add("Szolgáltatás", typeof(string));
+
+                // Populate the DataTable with data from the Roles list
+                foreach (var role in roles)
+                {
+                    var row = dataTable.NewRow();
+                    row["RoleID"] = role.RoleID;
+                    row["Label"] = role.Label;
+                    dataTable.Rows.Add(row);
+                }
+
+                // Bind the DataTable to your roleBox control
+                roleBox.DataSource = dataTable;
+                roleBox.DisplayMember = "Label";
+                roleBox.ValueMember = "RoleID";
+            }
+            */
         }
     }
 }
