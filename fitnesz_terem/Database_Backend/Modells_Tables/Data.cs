@@ -21,5 +21,9 @@ namespace fitnesz_terem.Database_Backend.Modells_Tables
         public int AccountNumber { get; set; }
         public int Money { get; set; }
 
+        //Ez maga a bérlet, ha -1 értéket kap akkor nincs neki bérlete, ha 0 akkor lejárt.
+
+        public int Lease { get; set; }
+
     }
 }
