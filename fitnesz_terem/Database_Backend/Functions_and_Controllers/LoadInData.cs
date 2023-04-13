@@ -173,8 +173,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 new TrainingClass
                                 {
                                     ClassName = "Yoga",
-                                    StartTime = new DateTime(2023, 3, 10, 9, 0, 0),
-                                    EndTime = new DateTime(2023, 3, 10, 10, 0, 0),
+                                    StartTime = new DateTime(2023, 4, 20, 9, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 20, 10, 0, 0),
                                     MaxPeople = 20,
                                     LocationID = 1,
                                     CoachID = 1
@@ -182,8 +182,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 new TrainingClass
                                 {
                                     ClassName = "Pilates",
-                                    StartTime = new DateTime(2023, 3, 11, 10, 0, 0),
-                                    EndTime = new DateTime(2023, 3, 11, 11, 0, 0),
+                                    StartTime = new DateTime(2023, 4, 27, 10, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 27, 11, 30, 0),
                                     MaxPeople = 15,
                                     LocationID = 7,
                                     CoachID = 2
@@ -191,12 +191,283 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 new TrainingClass
                                 {
                                     ClassName = "Spinning",
-                                    StartTime = new DateTime(2023, 3, 12, 12, 0, 0),
-                                    EndTime = new DateTime(2023, 3, 12, 13, 0, 0),
+                                    StartTime = new DateTime(2023, 4, 25, 12, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 25, 13, 0, 0),
                                     MaxPeople = 10,
                                     LocationID = 5,
                                     CoachID = 3
                                 },
+                                new TrainingClass
+                                {
+                                    ClassName = "Zumba",
+                                    StartTime = new DateTime(2023, 4, 22, 18, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 22, 19, 0, 0),
+                                    MaxPeople = 25,
+                                    LocationID = 2,
+                                    CoachID = 4
+                                },
+                                new TrainingClass
+                                {
+                                    ClassName = "Kickboxing",
+                                    StartTime = new DateTime(2023, 4, 23, 11, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 23, 12, 0, 0),
+                                    MaxPeople = 12,
+                                    LocationID = 3,
+                                    CoachID = 5
+                                },
+                                new TrainingClass
+                                {
+                                    ClassName = "CrossFit",
+                                    StartTime = new DateTime(2023, 4, 28, 8, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 28, 9, 0, 0),
+                                    MaxPeople = 18,
+                                    LocationID = 6,
+                                    CoachID = 6
+                                },
+                                new TrainingClass
+                                {
+                                    ClassName = "Barre",
+                                    StartTime = new DateTime(2023, 4, 26, 17, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 26, 18, 0, 0),
+                                    MaxPeople = 20,
+                                    LocationID = 4,
+                                    CoachID = 7
+                                },
+                                new TrainingClass
+                                {
+                                    ClassName = "HIIT",
+                                    StartTime = new DateTime(2023, 4, 24, 16, 0, 0),
+                                    EndTime = new DateTime(2023, 4, 24, 17, 0, 0),
+                                    MaxPeople = 15,
+                                    LocationID = 8,
+                                    CoachID = 8
+                                },
+                                new TrainingClass
+                                    {
+                                        ClassName = "Yoga",
+                                        StartTime = new DateTime(2023, 4, 14, 9, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 14, 10, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 1,
+                                        CoachID = 1
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Pilates",
+                                        StartTime = new DateTime(2023, 4, 15, 10, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 15, 11, 30, 0),
+                                        MaxPeople = 15,
+                                        LocationID = 7,
+                                        CoachID = 2
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Spinning",
+                                        StartTime = new DateTime(2023, 4, 16, 12, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 16, 13, 0, 0),
+                                        MaxPeople = 10,
+                                        LocationID = 5,
+                                        CoachID = 3
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Zumba",
+                                        StartTime = new DateTime(2023, 4, 17, 18, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 17, 19, 0, 0),
+                                        MaxPeople = 25,
+                                        LocationID = 2,
+                                        CoachID = 4
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Kickboxing",
+                                        StartTime = new DateTime(2023, 4, 18, 11, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 18, 12, 0, 0),
+                                        MaxPeople = 12,
+                                        LocationID = 3,
+                                        CoachID = 5
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "CrossFit",
+                                        StartTime = new DateTime(2023, 4, 19, 8, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 19, 9, 0, 0),
+                                        MaxPeople = 18,
+                                        LocationID = 6,
+                                        CoachID = 6
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Barre",
+                                        StartTime = new DateTime(2023, 4, 20, 17, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 20, 18, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 4,
+                                        CoachID = 7
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "HIIT",
+                                        StartTime = new DateTime(2023, 4, 21, 16, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 21, 17, 0, 0),
+                                        MaxPeople = 15,
+                                        LocationID = 8,
+                                        CoachID = 8
+                                    },new TrainingClass
+                                    {
+                                        ClassName = "Pilates",
+                                        StartTime = new DateTime(2023, 4, 23, 11, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 23, 12, 0, 0),
+                                        MaxPeople = 15,
+                                        LocationID = 1,
+                                        CoachID = 2
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Yoga",
+                                        StartTime = new DateTime(2023, 4, 24, 14, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 24, 15, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 3,
+                                        CoachID = 1
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Spinning",
+                                        StartTime = new DateTime(2023, 4, 25, 13, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 25, 14, 0, 0),
+                                        MaxPeople = 10,
+                                        LocationID = 2,
+                                        CoachID = 3
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "CrossFit",
+                                        StartTime = new DateTime(2023, 4, 26, 12, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 26, 13, 0, 0),
+                                        MaxPeople = 18,
+                                        LocationID = 4,
+                                        CoachID = 4
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Barre",
+                                        StartTime = new DateTime(2023, 4, 27, 17, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 27, 18, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 6,
+                                        CoachID = 5
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Yoga",
+                                        StartTime = new DateTime(2023, 4, 28, 10, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 28, 11, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 1,
+                                        CoachID = 1
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Pilates",
+                                        StartTime = new DateTime(2023, 4, 29, 9, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 29, 10, 0, 0),
+                                        MaxPeople = 15,
+                                        LocationID = 7,
+                                        CoachID = 2
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Spinning",
+                                        StartTime = new DateTime(2023, 4, 30, 11, 0, 0),
+                                        EndTime = new DateTime(2023, 4, 30, 12, 0, 0),
+                                        MaxPeople = 10,
+                                        LocationID = 5,
+                                        CoachID = 3
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Zumba",
+                                        StartTime = new DateTime(2023, 5, 1, 18, 30, 0),
+                                        EndTime = new DateTime(2023, 5, 1, 19, 30, 0),
+                                            MaxPeople = 25,
+                                        LocationID = 3,
+                                        CoachID = 6
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Boxing",
+                                        StartTime = new DateTime(2023, 5, 2, 15, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 2, 16, 0, 0),
+                                        MaxPeople = 12,
+                                        LocationID = 1,
+                                        CoachID = 7
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Yoga",
+                                        StartTime = new DateTime(2023, 5, 3, 8, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 3, 9, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 4,
+                                        CoachID = 1
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Pilates",
+                                        StartTime = new DateTime(2023, 5, 4, 16, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 4, 17, 0, 0),
+                                        MaxPeople = 15,
+                                        LocationID = 2,
+                                        CoachID = 2
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Spinning",
+                                        StartTime = new DateTime(2023, 5, 5, 19, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 5, 20, 0, 0),
+                                        MaxPeople = 10,
+                                        LocationID = 5,
+                                        CoachID = 3
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Bootcamp",
+                                        StartTime = new DateTime(2023, 5, 6, 7, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 6, 8, 0, 0),
+                                        MaxPeople = 25,
+                                        LocationID = 6,
+                                        CoachID = 4
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Yoga",
+                                        StartTime = new DateTime(2023, 5, 7, 13, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 7, 14, 0, 0),
+                                        MaxPeople = 20,
+                                        LocationID = 1,
+                                        CoachID = 1
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Pilates",
+                                        StartTime = new DateTime(2023, 5, 8, 10, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 8, 11, 0, 0),
+                                        MaxPeople = 15,
+                                        LocationID = 7,
+                                        CoachID = 2
+                                    },
+                                    new TrainingClass
+                                    {
+                                        ClassName = "Spinning",
+                                        StartTime = new DateTime(2023, 5, 9, 17, 0, 0),
+                                        EndTime = new DateTime(2023, 5, 9, 18, 0, 0),
+                                        MaxPeople = 10,
+                                        LocationID = 5,
+                                        CoachID = 3
+                                    }
+
+
                                 // add more training classes here
                             };
 
@@ -219,7 +490,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "John Smith",
                                 Password = "password",
                                 AccountNumber = 123459,
-                                Money = 100
+                                Money = 100,
+                                Lease = -1
                             },
                             new Data
                             {
@@ -227,7 +499,9 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Jane Doe",
                                 Password = "password",
                                 AccountNumber = 7654321,
-                                Money = 50
+                                Money = 50,
+                                Lease = -1
+
                             },
                             new Data
                             {
@@ -235,7 +509,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Alice Cooper",
                                 Password = "password",
                                 AccountNumber = 24681012,
-                                Money = 200
+                                Money = 200,
+                                Lease = -1
                             },
                             new Data
                             {
@@ -243,7 +518,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Bob Lee",
                                 Password = "password",
                                 AccountNumber = 369518,
-                                Money = 75
+                                Money = 75,
+                                Lease = -1
                             },
                             new Data
                             {
@@ -252,7 +528,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "David Kim",
                                 Password = "password",
                                 AccountNumber = 1123321,
-                                Money = 150
+                                Money = 150,
+                                Lease = -1
                             },
                             new Data
                             {   
@@ -260,7 +537,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Emily Chen",
                                 Password = "password",
                                 AccountNumber = 1416535,
-                                Money = 125
+                                Money = 125,
+                                Lease = -1
                             },
                             new Data
                             {
@@ -269,7 +547,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Frank Wang",
                                 Password = "password",
                                 AccountNumber = 1732050808,
-                                Money = 300
+                                Money = 300,
+                                Lease = -1
                             },
                             new Data
                             {
@@ -277,7 +556,8 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Grace Lee",
                                 Password = "password",
                                 AccountNumber = 11235813,
-                                Money = 25
+                                Money = 25,
+                                Lease = -1
                             },
                             new Data
                             {
@@ -285,15 +565,17 @@ namespace fitnesz_terem.Database_Backend.Functions_and_Controllers
                                 Name = "Henry Liu",
                                 Password = "password",
                                 AccountNumber = 31592653,
-                                Money = 175
+                                Money = 175,
+                                Lease = -1
                             },
                             new Data
                             {
-                                 UserId = 10,
+                                UserId = 10,
                                 Name = "Isabella Wu",
                                 Password = "password",
                                 AccountNumber = 2711828,
-                                Money = 250
+                                Money = 250,
+                                Lease = -1
                             }
                         };
 
