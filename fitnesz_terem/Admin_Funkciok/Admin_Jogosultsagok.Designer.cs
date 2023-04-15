@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.edzoNevTextBox = new System.Windows.Forms.TextBox();
+            this.edzoJelszoTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.torlendoFelhId = new System.Windows.Forms.TextBox();
             this.Edzo_Hozzaadas_Button = new System.Windows.Forms.Button();
             this.Torles_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -76,19 +76,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Fiók jelszó:";
             // 
-            // textBox1
+            // edzoNevTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(211, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 23);
-            this.textBox1.TabIndex = 3;
+            this.edzoNevTextBox.Location = new System.Drawing.Point(211, 123);
+            this.edzoNevTextBox.Name = "edzoNevTextBox";
+            this.edzoNevTextBox.Size = new System.Drawing.Size(249, 23);
+            this.edzoNevTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // edzoJelszoTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(211, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 23);
-            this.textBox2.TabIndex = 4;
+            this.edzoJelszoTextBox.Location = new System.Drawing.Point(211, 180);
+            this.edzoJelszoTextBox.Name = "edzoJelszoTextBox";
+            this.edzoJelszoTextBox.Size = new System.Drawing.Size(249, 23);
+            this.edzoJelszoTextBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -114,12 +114,12 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Felhasználó ID-ja:";
             // 
-            // textBox3
+            // torlendoFelhId
             // 
-            this.textBox3.Location = new System.Drawing.Point(261, 336);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 23);
-            this.textBox3.TabIndex = 7;
+            this.torlendoFelhId.Location = new System.Drawing.Point(261, 336);
+            this.torlendoFelhId.Name = "torlendoFelhId";
+            this.torlendoFelhId.Size = new System.Drawing.Size(76, 23);
+            this.torlendoFelhId.TabIndex = 7;
             // 
             // Edzo_Hozzaadas_Button
             // 
@@ -132,6 +132,7 @@
             this.Edzo_Hozzaadas_Button.TabIndex = 8;
             this.Edzo_Hozzaadas_Button.Text = "Hozzáadás";
             this.Edzo_Hozzaadas_Button.UseVisualStyleBackColor = false;
+            this.Edzo_Hozzaadas_Button.Click += new System.EventHandler(this.Edzo_Hozzaadas_Button_Click);
             // 
             // Torles_Button
             // 
@@ -153,11 +154,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Torles_Button);
             this.Controls.Add(this.Edzo_Hozzaadas_Button);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.torlendoFelhId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.edzoJelszoTextBox);
+            this.Controls.Add(this.edzoNevTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -175,11 +176,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox edzoNevTextBox;
+        private TextBox edzoJelszoTextBox;
         private Label label4;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox torlendoFelhId;
         private Button Edzo_Hozzaadas_Button;
         private Button Torles_Button;
     }
