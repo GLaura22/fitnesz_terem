@@ -44,9 +44,6 @@
             this.keresésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jogosultságokKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hozzáadásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edzésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.termékToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oktatóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisztikákToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visszajelzésekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).BeginInit();
@@ -100,6 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.RosyBrown;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(314, 9);
@@ -216,34 +214,14 @@
             this.jogosultságokKezeléseToolStripMenuItem.Name = "jogosultságokKezeléseToolStripMenuItem";
             this.jogosultságokKezeléseToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
             this.jogosultságokKezeléseToolStripMenuItem.Text = "jogosultságok kezelése";
+            this.jogosultságokKezeléseToolStripMenuItem.Click += new System.EventHandler(this.jogosultságokKezeléseToolStripMenuItem_Click);
             // 
             // hozzáadásToolStripMenuItem
             // 
-            this.hozzáadásToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.edzésToolStripMenuItem,
-            this.termékToolStripMenuItem,
-            this.oktatóToolStripMenuItem});
             this.hozzáadásToolStripMenuItem.Name = "hozzáadásToolStripMenuItem";
             this.hozzáadásToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.hozzáadásToolStripMenuItem.Text = "hozzáadás";
-            // 
-            // edzésToolStripMenuItem
-            // 
-            this.edzésToolStripMenuItem.Name = "edzésToolStripMenuItem";
-            this.edzésToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.edzésToolStripMenuItem.Text = "edzés";
-            // 
-            // termékToolStripMenuItem
-            // 
-            this.termékToolStripMenuItem.Name = "termékToolStripMenuItem";
-            this.termékToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.termékToolStripMenuItem.Text = "termék";
-            // 
-            // oktatóToolStripMenuItem
-            // 
-            this.oktatóToolStripMenuItem.Name = "oktatóToolStripMenuItem";
-            this.oktatóToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.oktatóToolStripMenuItem.Text = "oktató";
+            this.hozzáadásToolStripMenuItem.Click += new System.EventHandler(this.hozzáadásToolStripMenuItem_Click);
             // 
             // statisztikákToolStripMenuItem
             // 
@@ -270,7 +248,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminForm";
-            this.Text = "AdmiNForm";
+            this.Text = "Adminisztrátor";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Items_with_data)).EndInit();
@@ -300,9 +278,6 @@
         private ToolStripMenuItem keresésToolStripMenuItem;
         private ToolStripMenuItem jogosultságokKezeléseToolStripMenuItem;
         private ToolStripMenuItem hozzáadásToolStripMenuItem;
-        private ToolStripMenuItem edzésToolStripMenuItem;
-        private ToolStripMenuItem termékToolStripMenuItem;
-        private ToolStripMenuItem oktatóToolStripMenuItem;
         private ToolStripMenuItem statisztikákToolStripMenuItem;
         private ToolStripMenuItem visszajelzésekToolStripMenuItem;
     }

@@ -1,6 +1,7 @@
 ﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
+using fitnesz_terem.Admin_Funkciok;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -214,6 +215,21 @@ namespace fitnesz_terem
                 table.Rows.Add(row);
             }
             return table;
+        }
+
+        private void jogosultságokKezeléseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Regisztracio f3 = new Regisztracio();
+            //f3.ShowDialog();
+
+            Admin_Jogosultsagok a1 = new Admin_Jogosultsagok();
+            a1.ShowDialog();
+        }
+
+        private void hozzáadásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin_Feltoltes a2 = new Admin_Feltoltes();
+            a2.ShowDialog();
         }
     }
 }
