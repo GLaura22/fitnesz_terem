@@ -79,5 +79,40 @@ namespace fitnesz_terem.Admin_Funkciok
                 MessageBox.Show($"Regisztráció sikertelen. ('{exception.Message}')");
             }
         }
+
+        private void Torles_Button_Click(object sender, EventArgs e)
+        {
+            /*
+            var object = context.collection.Find(id);
+            context.collection.Remove(object);
+            context.SaveChanges();
+            */
+            try
+            {
+                UserController userController = new();
+                int userId = int.Parse(torlendoFelhId.Text);
+
+               // bool sikeres_torles = false;
+
+                if (!userController.RemoveFromFitnessUsers(userId))
+                {
+                    MessageBox.Show("Nincs felhasználó ilyen id-val az adatbázisban (FitnessUser tabla).");
+                    return;
+                }
+                else if (!userController.RemoveFromDatas(userId))
+                {
+                    MessageBox.Show("Nincs felhasználó ilyen id-val az adatbázisban (Datas tabla).");
+                    return;
+                }
+
+                
+                MessageBox.Show("Felhasználó sikeresen törölve!");
+                this.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Regisztráció sikertelen. ('{exception.Message}')");
+            }
+        }
     }
 }

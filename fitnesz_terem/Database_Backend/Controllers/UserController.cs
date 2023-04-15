@@ -46,6 +46,67 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 return false;
             }
         }
+
+        public bool RemoveFromFitnessUsers(int id)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                /* Insert data into Database. 
+                FitnessUser felh = new FitnessUser() { UserID = -1 };
+                felh = context.FitnessUsers.Find(UserId);
+                context.FitnessUsers.Remove(felh);
+                context.SaveChanges();  */
+
+                var user = context.FitnessUsers.First(c => c.UserID == id);
+
+                if (user != null)
+                {
+                    context.Remove(user);
+                }
+                else if (user == null)
+                {
+                    return false;
+                }
+
+                context.SaveChanges();
+
+
+                return true;
+            }
+            catch(Exception) 
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveFromDatas(int id)
+        {
+            try
+            {
+                var context = new FitnessDbContext();
+                var user = context.Datas.First(c => c.UserId == id);
+                if (user != null)
+                {
+                    context.Remove(user);
+                }
+                else if (user == null)
+                { 
+                    return false; 
+                }
+                
+                context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<Role> GetRoles()    
         {
             using (var context = new FitnessDbContext())

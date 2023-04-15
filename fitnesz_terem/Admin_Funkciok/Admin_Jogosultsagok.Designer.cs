@@ -145,6 +145,7 @@
             this.Torles_Button.TabIndex = 9;
             this.Torles_Button.Text = "Törlés";
             this.Torles_Button.UseVisualStyleBackColor = false;
+            this.Torles_Button.Click += new System.EventHandler(this.Torles_Button_Click);
             // 
             // Admin_Jogosultsagok
             // 
