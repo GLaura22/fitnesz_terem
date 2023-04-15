@@ -101,8 +101,8 @@ namespace fitnesz_terem
 
                 /* TODO: Adding more roles
                    The following variable (role) will probably change due more roles.
-                   For now I just hard coded 4 as "Guest". */
-                int role = 4;
+                   For now I just hard coded 3 as "Guest". */
+                int role = 3;
 
                 FitnessUser fitnessUser = new FitnessUser { Role = role };
 
@@ -126,6 +126,7 @@ namespace fitnesz_terem
 
                 /* Default value. */
                 int startingMoney = 0;
+                int startingLease = -1;
 
                 Data data = new Data
                 {
@@ -133,7 +134,8 @@ namespace fitnesz_terem
                     Name = felhnevbox.Text,
                     Password = jelszobox.Text.ToString(),
                     AccountNumber = int.Parse(bankszamlabox.Text),
-                    Money = startingMoney
+                    Money = startingMoney,
+                    Lease = startingLease
                 };
 
                 /* Insert user into `Datas` table. */

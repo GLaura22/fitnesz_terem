@@ -1,5 +1,6 @@
 ﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Controllers;
+using fitnesz_terem.Database_Backend.Modells_Tables;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,12 @@ namespace fitnesz_terem
 {
     public partial class Edzo : Form
     {
+        private FitnessUser fitnessUser;
+        private Belepes f2 = new Belepes();
         public Edzo()
         {
             InitializeComponent();
+            //label1.Text = f2.UserId().UserID.ToString() + " Edző";
         }
         private int coachid;
         public int setcoachID(int coachID)
@@ -171,8 +175,7 @@ namespace fitnesz_terem
             String name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
             con.Close();
 
-            label1.Text = name + " Edző";
-
+            //label1.Text = name + " Edző";
 
         }
 

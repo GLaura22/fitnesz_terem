@@ -21,6 +21,9 @@ namespace fitnesz_terem
         public Tag()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            keresesPanel.Visible = false;
+            szemelyi_edzo_keresesPanel.Visible = false;
         }
 
         private void Tag_Load(object sender, EventArgs e)
@@ -36,7 +39,35 @@ namespace fitnesz_terem
                 // Add the class names to the list box
                 Classes_Listbox.Items.AddRange(classNames.ToArray());
             }
-            
+
+            using (var context = new FitnessDbContext())
+            {
+
+
+                var coachNames = context.Datas.Join(
+                                        context.FitnessUsers,
+                                        data => data.UserId,
+                                        fitness => fitness.UserID,
+                                        (_data, _fitness) => new
+                                        {
+                                            UserId = _data.UserId,
+                                            CoachName = _data.Name,
+                                            Role = _fitness.Role
+                                        })                                        
+                                        .Where(c => c.Role == 2)
+                                        .ToList();
+
+                // Add the names to the list box
+
+                List<string> nevek = new List<string>();   
+                foreach(var c in coachNames ) 
+                {
+                    nevek.Add(c.CoachName);
+                }
+                Coaches_List.Items.AddRange(nevek.ToArray());
+            }
+
+
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
@@ -154,17 +185,17 @@ namespace fitnesz_terem
                 // Set the text of the Label controls in the Details_GroupBox to display the attributes of the selected training class
                 if (trainingClass != null)
                 {
-                    ClassID_Label.Text = $"Class ID: {trainingClass.ClassID}";
-                    ClassName_Label.Text = $"Class Name: {trainingClass.ClassName}";
-                    StartTime_Label.Text = $"Start Time: {trainingClass.StartTime.ToString("yyyy-MM-dd HH:mm:ss")}";
-                    EndTime_Label.Text = $"End Time: {trainingClass.EndTime.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    //ClassID_Label.Text = $"Class ID: {trainingClass.ClassID}";
+                    ClassName_Label.Text = $"Ora tipusa: {trainingClass.ClassName}";
+                    StartTime_Label.Text = $"Kezdes: {trainingClass.StartTime.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    EndTime_Label.Text = $"Befejezes: {trainingClass.EndTime.ToString("yyyy-MM-dd HH:mm:ss")}";
                    
                     //LocationID_Label.Text = $"Location ID: {trainingClass.LocationID}";
                     
 
                     if (coachName != null)
                     {
-                        CoachName_Label.Text = $"Coach Name: {coachName}";
+                        CoachName_Label.Text = $"Edzo neve: {coachName}";
                     }
                     else
                     {
@@ -174,11 +205,11 @@ namespace fitnesz_terem
                     // Count the number of users who joined the class
                     var numUsersJoined = context.usersToClasses.Count(utc => utc.ClassID == trainingClass.ClassID);
 
-                    JoinedAndMax_Label.Text = $"Jelenleg {numUsersJoined} van az ${trainingClass.MaxPeople}";
+                    JoinedAndMax_Label.Text = $"Jelenleg {numUsersJoined} fo van a(z) {trainingClass.MaxPeople}-bol";
                 }
                 else
                 {
-                    ClassID_Label.Text = "";
+                    //ClassID_Label.Text = "";
                     ClassName_Label.Text = "";
                     StartTime_Label.Text = "";
                     EndTime_Label.Text = "";
@@ -187,6 +218,18 @@ namespace fitnesz_terem
                     JoinedAndMax_Label.Text = "";
                 }
             }
+        }
+
+        private void csoportfoglalkozásraJelentkezésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            keresesPanel.Visible = true;
+            szemelyi_edzo_keresesPanel.Visible = false;
+        }
+
+        private void személyiEdzőhözJelentkezésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            szemelyi_edzo_keresesPanel.Visible = true;
+            keresesPanel.Visible = false;
         }
     }
 }
