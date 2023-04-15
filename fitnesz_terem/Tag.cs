@@ -24,6 +24,7 @@ namespace fitnesz_terem
             this.BackgroundImageLayout = ImageLayout.Stretch;
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
+            ertekelesPanel2.Visible = false;
         }
 
         private void Tag_Load(object sender, EventArgs e)
@@ -224,12 +225,21 @@ namespace fitnesz_terem
         {
             keresesPanel.Visible = true;
             szemelyi_edzo_keresesPanel.Visible = false;
+            ertekelesPanel2.Visible = false;
         }
 
         private void személyiEdzőhözJelentkezésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             szemelyi_edzo_keresesPanel.Visible = true;
             keresesPanel.Visible = false;
+            ertekelesPanel2.Visible = false;
+        }
+
+        private void értékelésKüldéseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ertekelesPanel2.Visible = true;
+            keresesPanel.Visible = false;
+            szemelyi_edzo_keresesPanel.Visible = false;
         }
     }
 }

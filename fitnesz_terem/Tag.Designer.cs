@@ -46,14 +46,21 @@
             this.órarendemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keresesLabel = new System.Windows.Forms.Label();
             this.keresesPanel = new System.Windows.Forms.Panel();
+            this.ertekelesPanel2 = new System.Windows.Forms.Panel();
+            this.ertekeles_Button = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Coaches_List = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.disclamerLabel = new System.Windows.Forms.Label();
             this.szemelyi_edzo_jelentkezesButton = new System.Windows.Forms.Button();
             this.szemelyi_edzo_keresesPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.edzesre_Jelentkezes_Button = new System.Windows.Forms.Button();
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
+            this.ertekelesPanel2.SuspendLayout();
             this.szemelyi_edzo_keresesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +75,8 @@
             // 
             this.SelectedDateLabel.AutoSize = true;
             this.SelectedDateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.SelectedDateLabel.Location = new System.Drawing.Point(12, 57);
+            this.SelectedDateLabel.ForeColor = System.Drawing.Color.White;
+            this.SelectedDateLabel.Location = new System.Drawing.Point(840, 37);
             this.SelectedDateLabel.Name = "SelectedDateLabel";
             this.SelectedDateLabel.Size = new System.Drawing.Size(72, 15);
             this.SelectedDateLabel.TabIndex = 1;
@@ -201,6 +209,7 @@
             this.értékelésKüldéseToolStripMenuItem.Name = "értékelésKüldéseToolStripMenuItem";
             this.értékelésKüldéseToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
             this.értékelésKüldéseToolStripMenuItem.Text = "értékelés küldése";
+            this.értékelésKüldéseToolStripMenuItem.Click += new System.EventHandler(this.értékelésKüldéseToolStripMenuItem_Click);
             // 
             // órarendemToolStripMenuItem
             // 
@@ -223,15 +232,60 @@
             // keresesPanel
             // 
             this.keresesPanel.BackColor = System.Drawing.Color.Transparent;
+            this.keresesPanel.Controls.Add(this.edzesre_Jelentkezes_Button);
             this.keresesPanel.Controls.Add(this.keresesLabel);
             this.keresesPanel.Controls.Add(this.Details_GroupBox);
             this.keresesPanel.Controls.Add(this.Times_Listbox);
             this.keresesPanel.Controls.Add(this.Classes_Listbox);
             this.keresesPanel.Controls.Add(this.monthCalendar1);
-            this.keresesPanel.Location = new System.Drawing.Point(60, 42);
+            this.keresesPanel.Location = new System.Drawing.Point(106, 55);
             this.keresesPanel.Name = "keresesPanel";
-            this.keresesPanel.Size = new System.Drawing.Size(736, 607);
+            this.keresesPanel.Size = new System.Drawing.Size(842, 614);
             this.keresesPanel.TabIndex = 7;
+            // 
+            // ertekelesPanel2
+            // 
+            this.ertekelesPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.ertekelesPanel2.Controls.Add(this.ertekeles_Button);
+            this.ertekelesPanel2.Controls.Add(this.textBox2);
+            this.ertekelesPanel2.Controls.Add(this.textBox1);
+            this.ertekelesPanel2.Location = new System.Drawing.Point(42, 159);
+            this.ertekelesPanel2.Name = "ertekelesPanel2";
+            this.ertekelesPanel2.Size = new System.Drawing.Size(715, 304);
+            this.ertekelesPanel2.TabIndex = 17;
+            // 
+            // ertekeles_Button
+            // 
+            this.ertekeles_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ertekeles_Button.Location = new System.Drawing.Point(518, 254);
+            this.ertekeles_Button.Name = "ertekeles_Button";
+            this.ertekeles_Button.Size = new System.Drawing.Size(121, 38);
+            this.ertekeles_Button.TabIndex = 16;
+            this.ertekeles_Button.Text = "Küldés";
+            this.ertekeles_Button.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(47, 132);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(456, 127);
+            this.textBox2.TabIndex = 15;
+            this.textBox2.Text = "Értékelés...";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(15, 28);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(649, 85);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "Folyamatosan dolgozunk azon, hogy minél jobb környezetet biztosítsunk a vendégein" +
+    "knek az edzéshez. Küldj visszajelzést az eddigi élményeiddel kapcsolatban, hogy " +
+    "fejlődhessünk!";
             // 
             // Coaches_List
             // 
@@ -289,8 +343,26 @@
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.Coaches_List);
             this.szemelyi_edzo_keresesPanel.Location = new System.Drawing.Point(57, 85);
             this.szemelyi_edzo_keresesPanel.Name = "szemelyi_edzo_keresesPanel";
-            this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(542, 393);
+            this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(645, 474);
             this.szemelyi_edzo_keresesPanel.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(81, 347);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 15);
+            this.label2.TabIndex = 13;
+            // 
+            // edzesre_Jelentkezes_Button
+            // 
+            this.edzesre_Jelentkezes_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.edzesre_Jelentkezes_Button.Location = new System.Drawing.Point(141, 540);
+            this.edzesre_Jelentkezes_Button.Name = "edzesre_Jelentkezes_Button";
+            this.edzesre_Jelentkezes_Button.Size = new System.Drawing.Size(162, 42);
+            this.edzesre_Jelentkezes_Button.TabIndex = 7;
+            this.edzesre_Jelentkezes_Button.Text = "Jelentkezés";
+            this.edzesre_Jelentkezes_Button.UseVisualStyleBackColor = true;
             // 
             // Tag
             // 
@@ -298,10 +370,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.szemelyi_edzo_keresesPanel);
+            this.Controls.Add(this.keresesPanel);
+            this.Controls.Add(this.ertekelesPanel2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.SelectedDateLabel);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.keresesPanel);
+            this.Controls.Add(this.szemelyi_edzo_keresesPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tag";
@@ -313,6 +387,8 @@
             this.menuStrip1.PerformLayout();
             this.keresesPanel.ResumeLayout(false);
             this.keresesPanel.PerformLayout();
+            this.ertekelesPanel2.ResumeLayout(false);
+            this.ertekelesPanel2.PerformLayout();
             this.szemelyi_edzo_keresesPanel.ResumeLayout(false);
             this.szemelyi_edzo_keresesPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -345,5 +421,11 @@
         private Label disclamerLabel;
         private Button szemelyi_edzo_jelentkezesButton;
         private Panel szemelyi_edzo_keresesPanel;
+        private Label label2;
+        private TextBox textBox1;
+        private Panel ertekelesPanel2;
+        private Button ertekeles_Button;
+        private TextBox textBox2;
+        private Button edzesre_Jelentkezes_Button;
     }
 }
