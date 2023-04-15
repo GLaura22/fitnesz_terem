@@ -44,9 +44,9 @@
             this.keresésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jogosultságokKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hozzáadásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oktatóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.termékToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edzésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.termékToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oktatóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisztikákToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visszajelzésekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).BeginInit();
@@ -126,7 +126,7 @@
             this.roleBox.FormattingEnabled = true;
             this.roleBox.Location = new System.Drawing.Point(170, 90);
             this.roleBox.Name = "roleBox";
-            this.roleBox.Size = new System.Drawing.Size(54, 23);
+            this.roleBox.Size = new System.Drawing.Size(172, 23);
             this.roleBox.TabIndex = 7;
             this.roleBox.SelectedIndexChanged += new System.EventHandler(this.roleBox_SelectedIndexChanged);
             // 
@@ -227,23 +227,23 @@
             this.hozzáadásToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.hozzáadásToolStripMenuItem.Text = "hozzáadás";
             // 
-            // oktatóToolStripMenuItem
+            // edzésToolStripMenuItem
             // 
-            this.oktatóToolStripMenuItem.Name = "oktatóToolStripMenuItem";
-            this.oktatóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.oktatóToolStripMenuItem.Text = "oktató";
+            this.edzésToolStripMenuItem.Name = "edzésToolStripMenuItem";
+            this.edzésToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.edzésToolStripMenuItem.Text = "edzés";
             // 
             // termékToolStripMenuItem
             // 
             this.termékToolStripMenuItem.Name = "termékToolStripMenuItem";
-            this.termékToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.termékToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.termékToolStripMenuItem.Text = "termék";
             // 
-            // edzésToolStripMenuItem
+            // oktatóToolStripMenuItem
             // 
-            this.edzésToolStripMenuItem.Name = "edzésToolStripMenuItem";
-            this.edzésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.edzésToolStripMenuItem.Text = "edzés";
+            this.oktatóToolStripMenuItem.Name = "oktatóToolStripMenuItem";
+            this.oktatóToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.oktatóToolStripMenuItem.Text = "oktató";
             // 
             // statisztikákToolStripMenuItem
             // 

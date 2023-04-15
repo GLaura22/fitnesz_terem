@@ -186,6 +186,7 @@ namespace fitnesz_terem
             tajekoztatoLabel.Visible = true;
             edzok_felsorolas.Visible = true;
 
+            /*
             UserController userC = new UserController();
             List<UserViewModel> users = userC.GetUsers();
             
@@ -194,7 +195,35 @@ namespace fitnesz_terem
                     edzok_felsorolas.DataSource = user;
             } 
             edzok_felsorolas.DataSource = users;
-            
+            */
+
+            using (var context = new FitnessDbContext())
+            {
+
+
+                var coachNames = context.Datas.Join(
+                                        context.FitnessUsers,
+                                        data => data.UserId,
+                                        fitness => fitness.UserID,
+                                        (_data, _fitness) => new
+                                        {
+                                            UserId = _data.UserId,
+                                            CoachName = _data.Name,
+                                            Role = _fitness.Role
+                                        })
+                                        .Where(c => c.Role == 2)
+                                        .ToList();
+
+                // Add the names to the list box
+
+                List<string> nevek = new List<string>();
+                foreach (var c in coachNames)
+                {
+                    nevek.Add(c.CoachName);
+                }
+                edzok_felsorolas.Items.AddRange(nevek.ToArray());
+            }
+
             /*
             using (var context = new FitnessDbContext())
             {

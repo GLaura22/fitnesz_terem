@@ -30,7 +30,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cim = new System.Windows.Forms.Label();
             this.bejiregi = new System.Windows.Forms.Label();
             this.fokep = new System.Windows.Forms.PictureBox();
@@ -43,15 +42,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.szolgLabel = new System.Windows.Forms.Label();
             this.textBoxRolunk = new System.Windows.Forms.TextBox();
-            this.edzok_felsorolas = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fitnessDbContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tajekoztatoLabel = new System.Windows.Forms.Label();
+            this.edzok_felsorolas = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.fokep)).BeginInit();
             this.fomenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edzok_felsorolas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessDbContextBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource)).BeginInit();
@@ -196,34 +193,6 @@
     "s fontos az egészséges életmód. ";
             this.textBoxRolunk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // edzok_felsorolas
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.NullValue = null;
-            this.edzok_felsorolas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.edzok_felsorolas.AutoGenerateColumns = false;
-            this.edzok_felsorolas.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.edzok_felsorolas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.edzok_felsorolas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn});
-            this.edzok_felsorolas.DataSource = this.dataBindingSource1;
-            this.edzok_felsorolas.GridColor = System.Drawing.Color.Black;
-            this.edzok_felsorolas.Location = new System.Drawing.Point(383, 301);
-            this.edzok_felsorolas.Name = "edzok_felsorolas";
-            this.edzok_felsorolas.RowTemplate.Height = 25;
-            this.edzok_felsorolas.Size = new System.Drawing.Size(467, 258);
-            this.edzok_felsorolas.TabIndex = 11;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // dataBindingSource1
             // 
             this.dataBindingSource1.DataSource = typeof(fitnesz_terem.Database_Backend.Modells_Tables.Data);
@@ -248,6 +217,18 @@
             this.tajekoztatoLabel.TabIndex = 12;
             this.tajekoztatoLabel.Text = "Minden edzőnk vállal személyes edzést is!";
             // 
+            // edzok_felsorolas
+            // 
+            this.edzok_felsorolas.BackColor = System.Drawing.SystemColors.MenuText;
+            this.edzok_felsorolas.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.edzok_felsorolas.ForeColor = System.Drawing.Color.White;
+            this.edzok_felsorolas.FormattingEnabled = true;
+            this.edzok_felsorolas.ItemHeight = 25;
+            this.edzok_felsorolas.Location = new System.Drawing.Point(473, 287);
+            this.edzok_felsorolas.Name = "edzok_felsorolas";
+            this.edzok_felsorolas.Size = new System.Drawing.Size(309, 179);
+            this.edzok_felsorolas.TabIndex = 13;
+            // 
             // indulo_felulet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -255,8 +236,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.tajekoztatoLabel);
             this.Controls.Add(this.edzok_felsorolas);
+            this.Controls.Add(this.tajekoztatoLabel);
             this.Controls.Add(this.szolgLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fogado_szoveg);
@@ -274,7 +255,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.fokep)).EndInit();
             this.fomenu.ResumeLayout(false);
             this.fomenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edzok_felsorolas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessDbContextBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource)).EndInit();
@@ -297,11 +277,10 @@
         private ComboBox comboBox1;
         private Label szolgLabel;
         private TextBox textBoxRolunk;
-        private DataGridView edzok_felsorolas;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private BindingSource dataBindingSource1;
         private BindingSource fitnessDbContextBindingSource;
         private BindingSource dataBindingSource;
         private Label tajekoztatoLabel;
+        private ListBox edzok_felsorolas;
     }
 }
