@@ -5,6 +5,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace fitnesz_terem
 {
@@ -196,6 +197,7 @@ namespace fitnesz_terem
             } 
             edzok_felsorolas.DataSource = users;
             */
+            edzok_felsorolas.Items.Clear();
 
             using (var context = new FitnessDbContext())
             {
@@ -250,6 +252,58 @@ namespace fitnesz_terem
                 roleBox.ValueMember = "RoleID";
             }
             */
+        }
+
+        private void edzok_felsorolas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCoachName = edzok_felsorolas.SelectedItem.ToString();
+
+            using (var context = new FitnessDbContext())
+            {
+                // Get the ID of the selected coach based on their name
+                int selectedCoachId = context.Datas
+                    .Where(d => d.Name == selectedCoachName)
+                    .Select(d => d.UserId)
+                    .FirstOrDefault();
+
+                DateTime today = DateTime.Today;
+
+                // Get all TrainingClasses entities with the same CoachID as the selected coach's UserId
+                List<TrainingClass> coachClasses = context.TrainingClasses
+                    .Where(c => c.CoachID == selectedCoachId && c.StartTime.Date >= today)
+                    .OrderBy(c => c.EndTime)
+                    .ToList();
+
+                // Sort the classes by start time
+                coachClasses = coachClasses.OrderBy(c => c.StartTime).ToList();
+
+                // Remove all labels with the prefix "classLabel_"
+                for (int i = this.Controls.Count - 1; i >= 0; i--)
+                {
+                    Control c = this.Controls[i];
+                    if (c is Label && c.Name.StartsWith("classLabel_"))
+                    {
+                        this.Controls.Remove(c);
+                    }
+                }
+
+                // Display the list of classes in labels
+                int x = 800;
+                int y = 250;
+                int labelHeight = 30;
+                foreach (var trainingClass in coachClasses)
+                {
+                    Label classLabel = new Label();
+                    classLabel.Name = "classLabel_" + trainingClass.ClassName;
+                    classLabel.Text = $"{trainingClass.ClassName} | {trainingClass.StartTime.ToString()} - {trainingClass.EndTime.ToShortTimeString()}";
+                    classLabel.AutoSize = true;
+                    classLabel.Location = new Point(x, y);
+                    classLabel.Height = labelHeight;
+                    this.Controls.Add(classLabel);
+
+                    y += labelHeight + 5;
+                }
+            }
         }
     }
 }

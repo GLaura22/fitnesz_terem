@@ -228,6 +228,7 @@
             this.edzok_felsorolas.Name = "edzok_felsorolas";
             this.edzok_felsorolas.Size = new System.Drawing.Size(309, 179);
             this.edzok_felsorolas.TabIndex = 13;
+            this.edzok_felsorolas.SelectedIndexChanged += new System.EventHandler(this.edzok_felsorolas_SelectedIndexChanged);
             // 
             // indulo_felulet
             // 
