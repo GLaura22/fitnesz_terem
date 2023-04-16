@@ -120,7 +120,7 @@ namespace fitnesz_terem
 
 
                 // Display the list of activities in labels
-                int x = 20;
+                int x = 600;
                 int y = 20;
                 int labelHeight = 30;
                 foreach (string activity in activitiesForUser)
@@ -245,7 +245,7 @@ namespace fitnesz_terem
 
         private void edzesre_Jelentkezes_Button_Click(object sender, EventArgs e)
         {
-            if (Classes_Listbox.SelectedIndex != null && Times_Listbox.SelectedIndex != null)
+            if (Classes_Listbox.SelectedIndex != -1 && Times_Listbox.SelectedIndex != -1)
             {
                 using (var context = new FitnessDbContext())
                 {
@@ -255,32 +255,96 @@ namespace fitnesz_terem
                     var user = 3; // retrieve the currently logged-in user ID (in this example, it's hardcoded as 3)
                     var selectedClass = context.TrainingClasses.FirstOrDefault(c => c.ClassName == Classes_Listbox.SelectedItem.ToString() && c.StartTime == DateTime.Parse(Times_Listbox.SelectedItem.ToString())); // retrieve the selected class
 
-                    // Check if the user and class ID already exist in the UsersToClass table
-                    var existingRecord = context.usersToClasses.FirstOrDefault(utc => utc.UserID == user && utc.ClassID == selectedClass.ClassID);
-
-                    if (existingRecord == null)
+                    // Check if the class is full
+                    var currentParticipants = context.usersToClasses.Count(utc => utc.ClassID == selectedClass.ClassID);
+                    if (currentParticipants >= selectedClass.MaxPeople)
                     {
-                        // If the record doesn't exist, create a new UsersToClass object and add it to the database
-                        var userToClass = new UsersToClass
-                        {
-                            UserID = user,
-                            ClassID = selectedClass.ClassID
-                        };
-
-                        context.usersToClasses.Add(userToClass);
-                        context.SaveChanges();
-
-                        // Display a success message
-                        MessageBox.Show("You have successfully signed up for the class!");
+                        // If the class is full, display an error message
+                        MessageBox.Show("This class is already full.");
                     }
                     else
                     {
-                        // If the record already exists, display an error message
-                        MessageBox.Show("You have already signed up for this class.");
+                        // Check if the user and class ID already exist in the UsersToClass table
+                        var existingRecord = context.usersToClasses.FirstOrDefault(utc => utc.UserID == user && utc.ClassID == selectedClass.ClassID);
+
+                        if (existingRecord == null)
+                        {
+                            // If the record doesn't exist, create a new UsersToClass object and add it to the database
+                            var userToClass = new UsersToClass
+                            {
+                                UserID = user,
+                                ClassID = selectedClass.ClassID
+                            };
+
+                            context.usersToClasses.Add(userToClass);
+                            context.SaveChanges();
+
+                            // Display a success message
+                            MessageBox.Show("You have successfully signed up for the class!");
+                        }
+                        else
+                        {
+                            // If the record already exists, display an error message
+                            MessageBox.Show("You have already signed up for this class.");
+                        }
                     }
                 }
             }
+
         }
 
+
+        private void szemelyi_edzo_jelentkezesButton_Click(object sender, EventArgs e)
+        {
+            if (Coaches_List.SelectedIndex != -1)
+            {
+                using (var context = new FitnessDbContext())
+                {
+                    var sportoloId = 3; // retrieve the currently logged-in user ID (in this example, it's hardcoded as 3)
+                    string coachName = Coaches_List.SelectedItem.ToString();
+
+                    int dataId = context.Datas.Where(d => d.Name == coachName).Select(d => d.Id).FirstOrDefault();
+
+                    int coachId = context.FitnessUsers.Where(fu => fu.DataId == dataId).Select(fu => fu.UserID).FirstOrDefault();
+
+                    // Check if the user already has a personal training session with the selected coach
+                    var existingTraining = context.Personaltraining.FirstOrDefault(pt => pt.SportoloId == sportoloId && pt.CoachID == coachId);
+
+                    if (existingTraining != null)
+                    {
+                        // The user already has a personal training session with the selected coach
+                        MessageBox.Show($"Már feljelentkeztél személyi edzésre a(z) {coachName} nevű edzőhöz.");
+                    }
+                    else
+                    {
+                        // Check the current number of personal trainings that the coach has
+                        var currentTrainings = context.Personaltraining.Count(pt => pt.CoachID == coachId);
+
+                        if (currentTrainings >= 10)
+                        {
+                            // The coach has already reached the maximum number of personal trainings
+                            MessageBox.Show("Ez az edző elérte a maximális tagok számát.");
+                        }
+                        else
+                        {
+                            // Create a new Personaltraining object and add it to the database
+                            var personalTraining = new Personaltraining
+                            {
+                                SportoloId = sportoloId,
+                                CoachID = coachId,
+                                CreatedAt = DateTime.Now
+                            };
+
+                            context.Personaltraining.Add(personalTraining);
+                            context.SaveChanges();
+
+                            // Display a success message
+                            MessageBox.Show($"Sikeresen feljelentkeztél {coachName} személyi edző külön órájára.");
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }

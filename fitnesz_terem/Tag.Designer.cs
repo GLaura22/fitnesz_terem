@@ -238,7 +238,7 @@
             this.keresesPanel.Controls.Add(this.Times_Listbox);
             this.keresesPanel.Controls.Add(this.Classes_Listbox);
             this.keresesPanel.Controls.Add(this.monthCalendar1);
-            this.keresesPanel.Location = new System.Drawing.Point(106, 55);
+            this.keresesPanel.Location = new System.Drawing.Point(101, 37);
             this.keresesPanel.Name = "keresesPanel";
             this.keresesPanel.Size = new System.Drawing.Size(842, 614);
             this.keresesPanel.TabIndex = 7;
@@ -260,7 +260,7 @@
             this.ertekelesPanel2.Controls.Add(this.ertekeles_Button);
             this.ertekelesPanel2.Controls.Add(this.textBox2);
             this.ertekelesPanel2.Controls.Add(this.textBox1);
-            this.ertekelesPanel2.Location = new System.Drawing.Point(42, 159);
+            this.ertekelesPanel2.Location = new System.Drawing.Point(147, 69);
             this.ertekelesPanel2.Name = "ertekelesPanel2";
             this.ertekelesPanel2.Size = new System.Drawing.Size(715, 304);
             this.ertekelesPanel2.TabIndex = 17;
@@ -344,6 +344,7 @@
             this.szemelyi_edzo_jelentkezesButton.TabIndex = 11;
             this.szemelyi_edzo_jelentkezesButton.Text = "Jelentkezés";
             this.szemelyi_edzo_jelentkezesButton.UseVisualStyleBackColor = false;
+            this.szemelyi_edzo_jelentkezesButton.Click += new System.EventHandler(this.szemelyi_edzo_jelentkezesButton_Click);
             // 
             // szemelyi_edzo_keresesPanel
             // 
@@ -352,7 +353,7 @@
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.disclamerLabel);
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.label1);
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.Coaches_List);
-            this.szemelyi_edzo_keresesPanel.Location = new System.Drawing.Point(57, 85);
+            this.szemelyi_edzo_keresesPanel.Location = new System.Drawing.Point(61, 83);
             this.szemelyi_edzo_keresesPanel.Name = "szemelyi_edzo_keresesPanel";
             this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(645, 474);
             this.szemelyi_edzo_keresesPanel.TabIndex = 12;
