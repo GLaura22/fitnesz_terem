@@ -75,7 +75,13 @@ namespace fitnesz_terem
             using (var context = new FitnessDbContext())
             {
                 // Query the Roles data from the database using the DbSet property of your DbContext
-                var classes = context.TrainingClasses.ToList();
+                // Get a list of all unique class names from the training classes
+                var classes = context.TrainingClasses
+                  .GroupBy(tc => tc.ClassName)
+                  .Select(g => g.First())
+                  .ToList();
+
+
 
                 // Create a new DataTable and add columns
                 var dataTable = new DataTable();
