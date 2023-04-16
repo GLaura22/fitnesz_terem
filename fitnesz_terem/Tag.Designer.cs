@@ -46,6 +46,7 @@
             this.órarendemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keresesLabel = new System.Windows.Forms.Label();
             this.keresesPanel = new System.Windows.Forms.Panel();
+            this.edzesre_Jelentkezes_Button = new System.Windows.Forms.Button();
             this.ertekelesPanel2 = new System.Windows.Forms.Panel();
             this.ertekeles_Button = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.szemelyi_edzo_jelentkezesButton = new System.Windows.Forms.Button();
             this.szemelyi_edzo_keresesPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.edzesre_Jelentkezes_Button = new System.Windows.Forms.Button();
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
@@ -243,6 +243,17 @@
             this.keresesPanel.Size = new System.Drawing.Size(842, 614);
             this.keresesPanel.TabIndex = 7;
             // 
+            // edzesre_Jelentkezes_Button
+            // 
+            this.edzesre_Jelentkezes_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.edzesre_Jelentkezes_Button.Location = new System.Drawing.Point(141, 540);
+            this.edzesre_Jelentkezes_Button.Name = "edzesre_Jelentkezes_Button";
+            this.edzesre_Jelentkezes_Button.Size = new System.Drawing.Size(162, 42);
+            this.edzesre_Jelentkezes_Button.TabIndex = 7;
+            this.edzesre_Jelentkezes_Button.Text = "Jelentkezés";
+            this.edzesre_Jelentkezes_Button.UseVisualStyleBackColor = true;
+            this.edzesre_Jelentkezes_Button.Click += new System.EventHandler(this.edzesre_Jelentkezes_Button_Click);
+            // 
             // ertekelesPanel2
             // 
             this.ertekelesPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -353,16 +364,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 13;
-            // 
-            // edzesre_Jelentkezes_Button
-            // 
-            this.edzesre_Jelentkezes_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.edzesre_Jelentkezes_Button.Location = new System.Drawing.Point(141, 540);
-            this.edzesre_Jelentkezes_Button.Name = "edzesre_Jelentkezes_Button";
-            this.edzesre_Jelentkezes_Button.Size = new System.Drawing.Size(162, 42);
-            this.edzesre_Jelentkezes_Button.TabIndex = 7;
-            this.edzesre_Jelentkezes_Button.Text = "Jelentkezés";
-            this.edzesre_Jelentkezes_Button.UseVisualStyleBackColor = true;
             // 
             // Tag
             // 

@@ -170,6 +170,7 @@ namespace fitnesz_terem
             {
                 // Retrieve the selected class name and start time
                 string selectedClassName = Classes_Listbox.SelectedItem.ToString();
+
                 DateTime selectedStartTime = DateTime.Parse(Times_Listbox.SelectedItem.ToString());
 
                 var trainingClass = context.TrainingClasses.SingleOrDefault(c => c.ClassName == selectedClassName && c.StartTime == selectedStartTime);
@@ -241,5 +242,45 @@ namespace fitnesz_terem
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
         }
+
+        private void edzesre_Jelentkezes_Button_Click(object sender, EventArgs e)
+        {
+            if (Classes_Listbox.SelectedIndex != null && Times_Listbox.SelectedIndex != null)
+            {
+                using (var context = new FitnessDbContext())
+                {
+                    string classname = Classes_Listbox.SelectedItem.ToString();
+                    var starttime = DateTime.Parse(Times_Listbox.SelectedItem.ToString());
+
+                    var user = 3; // retrieve the currently logged-in user ID (in this example, it's hardcoded as 3)
+                    var selectedClass = context.TrainingClasses.FirstOrDefault(c => c.ClassName == Classes_Listbox.SelectedItem.ToString() && c.StartTime == DateTime.Parse(Times_Listbox.SelectedItem.ToString())); // retrieve the selected class
+
+                    // Check if the user and class ID already exist in the UsersToClass table
+                    var existingRecord = context.usersToClasses.FirstOrDefault(utc => utc.UserID == user && utc.ClassID == selectedClass.ClassID);
+
+                    if (existingRecord == null)
+                    {
+                        // If the record doesn't exist, create a new UsersToClass object and add it to the database
+                        var userToClass = new UsersToClass
+                        {
+                            UserID = user,
+                            ClassID = selectedClass.ClassID
+                        };
+
+                        context.usersToClasses.Add(userToClass);
+                        context.SaveChanges();
+
+                        // Display a success message
+                        MessageBox.Show("You have successfully signed up for the class!");
+                    }
+                    else
+                    {
+                        // If the record already exists, display an error message
+                        MessageBox.Show("You have already signed up for this class.");
+                    }
+                }
+            }
+        }
+
     }
 }
