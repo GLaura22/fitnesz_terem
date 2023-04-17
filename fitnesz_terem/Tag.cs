@@ -1,4 +1,5 @@
 ﻿using fitnesz_terem.Database_Backend.Connection;
+using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -27,7 +28,7 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
             userID = ID;
-            MessageBox.Show($"Sikeresen feljelentkeztél {userID} ");
+            // MessageBox.Show($"Sikeresen feljelentkeztél {userID} ");
 
             using (var context = new FitnessDbContext())
             {
@@ -280,18 +281,42 @@ namespace fitnesz_terem
 
                         if (existingRecord == null)
                         {
-                            // If the record doesn't exist, create a new UsersToClass object and add it to the database
-                            var userToClass = new UsersToClass
+                            try
                             {
-                                UserID = user,
-                                ClassID = selectedClass.ClassID
-                            };
+                                /* Initialize UserController. */
+                                UserController userController = new();
 
-                            context.usersToClasses.Add(userToClass);
-                            context.SaveChanges();
+                                if (userController.hasLease(userID))
+                                {
+                                    userController.payWithLease(userID);
+                                }
+                                else if (userController.hasEnoughMoney(userID, 4))
+                                {
+                                    userController.payWithMoney(userID, 4);
+                                }
+                                else
+                                {
+                                    throw new Exception("Nem tud fizetni.");
+                                }
 
-                            // Display a success message
-                            MessageBox.Show("You have successfully signed up for the class!");
+                                // If the record doesn't exist, create a new UsersToClass object and add it to the database
+                                var userToClass = new UsersToClass
+                                {
+                                    UserID = user,
+                                    ClassID = selectedClass.ClassID
+                                };
+
+                                context.usersToClasses.Add(userToClass);
+                                context.SaveChanges();
+
+                                // Display a success message
+                                MessageBox.Show("You have successfully signed up for the class!");
+                            }
+                            catch (Exception exception)
+                            {
+                                // If the record already exists, display an error message
+                                MessageBox.Show(exception.Message);
+                            }
                         }
                         else
                         {
@@ -337,19 +362,43 @@ namespace fitnesz_terem
                         }
                         else
                         {
-                            // Create a new Personaltraining object and add it to the database
-                            var personalTraining = new Personaltraining
+                            try
                             {
-                                SportoloId = sportoloId,
-                                CoachID = coachId,
-                                CreatedAt = DateTime.Now
-                            };
+                                /* Initialize UserController. */
+                                UserController userController = new();
 
-                            context.Personaltraining.Add(personalTraining);
-                            context.SaveChanges();
+                                if (userController.hasLease(userID))
+                                {
+                                    userController.payWithLease(userID);
+                                }
+                                else if (userController.hasEnoughMoney(userID, 6))
+                                {
+                                    userController.payWithMoney(userID, 6);
+                                }
+                                else
+                                {
+                                    throw new Exception("Nem tud fizetni.");
+                                }
 
-                            // Display a success message
-                            MessageBox.Show($"Sikeresen feljelentkeztél {coachName} személyi edző külön órájára.");
+                                // Create a new Personaltraining object and add it to the database
+                                var personalTraining = new Personaltraining
+                                {
+                                    SportoloId = sportoloId,
+                                    CoachID = coachId,
+                                    CreatedAt = DateTime.Now
+                                };
+
+                                context.Personaltraining.Add(personalTraining);
+                                context.SaveChanges();
+
+                                // Display a success message
+                                MessageBox.Show($"Sikeresen feljelentkeztél {coachName} személyi edző külön órájára.");
+                            }
+                            catch (Exception exception)
+                            {
+                                // If the record already exists, display an error message
+                                MessageBox.Show(exception.Message);
+                            }
                         }
                     }
                 }

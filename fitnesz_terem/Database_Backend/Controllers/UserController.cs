@@ -1,5 +1,6 @@
 ﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Modells_Tables;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -229,6 +230,84 @@ namespace fitnesz_terem.Database_Backend.Controllers
             {
                 MessageBox.Show(exception.Message);
                 return new List<PersonalTrainingViewModel> { };
+            }
+        }
+        public void payWithMoney(int userID, int number = 4000)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                var money = context.Datas.First(a => a.UserId == userID);
+                money.Money -= number;
+
+                context.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        public void payWithLease(int userID, int number = 1)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                var lease = context.Datas.First(a => a.UserId == userID);
+                lease.Lease -= number;
+
+                context.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+        public bool hasLease(int userID)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                var data = context.Datas.First(a => a.UserId == userID);
+
+                if (data.Lease <= -1)
+                {
+                    throw new Exception("Nem rendelkezik bérlettel!");
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool hasEnoughMoney(int userID, int money)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                var data = context.Datas.First(a => a.UserId == userID);
+
+                if (data.Money < money)
+                {
+                    throw new Exception("Nem rendelkezik elegendő pénzzel!");
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }
