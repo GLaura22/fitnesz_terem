@@ -17,12 +17,15 @@ namespace fitnesz_terem
 {
     public partial class Edzo : Form
     {
+
         private FitnessUser fitnessUser;
         private Belepes f2 = new Belepes();
-        public Edzo()
+        private int id; 
+        
+        public Edzo(int id)
         {
             InitializeComponent();
-            //label1.Text = f2.UserId().UserID.ToString() + " Edző";
+            this.id = id;
         }
         private int coachid;
         public int setcoachID(int coachID)

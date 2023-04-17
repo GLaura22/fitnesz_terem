@@ -16,8 +16,10 @@ namespace fitnesz_terem
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private int id;
+        public AdminForm(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
 
@@ -189,11 +191,6 @@ namespace fitnesz_terem
                 }
             }
         }
-
-
-
-
-
 
 
 

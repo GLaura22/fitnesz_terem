@@ -94,49 +94,25 @@ namespace fitnesz_terem
                 }
 
                 MessageBox.Show("Felhasználó sikeresen bejelentkezve!");
-                if (textBox1.Text == "Bob Lee")
-                {
-                    Edzo e1 = new Edzo();
-                    e1.setcoachID(3);
-                    e1.ShowDialog();
-
-
-                }
-                if (textBox1.Text == "David Kim")
-                {
-                    Edzo e1 = new Edzo();
-                    e1.setcoachID(4);
-                    e1.ShowDialog();
-
-
-                }
-                if (textBox1.Text == "Emily Chen")
-                {
-                    Edzo e1 = new Edzo();
-                    e1.setcoachID(5);
-                    e1.ShowDialog();
-
-
-                }
-                if (textBox1.Text == "Isabella Wu")
-                {
-                    Edzo e1 = new Edzo();
-                    e1.setcoachID(9);
-                    e1.ShowDialog();
-
-                }
-
+                
                 //tag lep be
                 if (felhasznalo.Role == 3)
                 { 
-                    Tag tag= new Tag();
+                    Tag tag= new Tag(felhasznalo.UserID);
                     tag.Show();
+                }
+                //edző lép be
+                if(felhasznalo.Role == 2)
+                {
+                    Edzo edzo = new Edzo(felhasznalo.UserID);
+                    edzo.Show();
+
                 }
 
                 //admin lep be
                 if (felhasznalo.Role == 1)
                 { 
-                    AdminForm a = new AdminForm();
+                    AdminForm a = new AdminForm(felhasznalo.UserID);
                     a.Show();
                 }
             }

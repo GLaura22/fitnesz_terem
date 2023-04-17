@@ -18,13 +18,24 @@ namespace fitnesz_terem
 {
     public partial class Tag : Form
     {
-        public Tag()
+        private int userID;
+        public Tag(int ID)
         {
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            userID = ID;
+            MessageBox.Show($"Sikeresen feljelentkeztél {userID} ");
+
+            using (var context = new FitnessDbContext())
+            {
+                var correctUser = context.Datas.FirstOrDefault(c => c.UserId == userID);
+                userName.Text = $"{correctUser.Name}";
+            }
+            
+            
         }
 
         private void Tag_Load(object sender, EventArgs e)
@@ -252,7 +263,7 @@ namespace fitnesz_terem
                     string classname = Classes_Listbox.SelectedItem.ToString();
                     var starttime = DateTime.Parse(Times_Listbox.SelectedItem.ToString());
 
-                    var user = 3; // retrieve the currently logged-in user ID (in this example, it's hardcoded as 3)
+                    var user = userID; // retrieve the currently logged-in user ID (in this example, it's hardcoded as 3)
                     var selectedClass = context.TrainingClasses.FirstOrDefault(c => c.ClassName == Classes_Listbox.SelectedItem.ToString() && c.StartTime == DateTime.Parse(Times_Listbox.SelectedItem.ToString())); // retrieve the selected class
 
                     // Check if the class is full
@@ -293,14 +304,13 @@ namespace fitnesz_terem
 
         }
 
-
         private void szemelyi_edzo_jelentkezesButton_Click(object sender, EventArgs e)
         {
             if (Coaches_List.SelectedIndex != -1)
             {
                 using (var context = new FitnessDbContext())
                 {
-                    var sportoloId = 3; // retrieve the currently logged-in user ID (in this example, it's hardcoded as 3)
+                    var sportoloId = userID; // retrieve the currently logged-in user ID ()
                     string coachName = Coaches_List.SelectedItem.ToString();
 
                     int dataId = context.Datas.Where(d => d.Name == coachName).Select(d => d.Id).FirstOrDefault();

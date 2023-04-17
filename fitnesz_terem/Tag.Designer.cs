@@ -57,6 +57,7 @@
             this.szemelyi_edzo_jelentkezesButton = new System.Windows.Forms.Button();
             this.szemelyi_edzo_keresesPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.userName = new System.Windows.Forms.Label();
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
@@ -223,7 +224,7 @@
             this.keresesLabel.BackColor = System.Drawing.Color.Transparent;
             this.keresesLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.keresesLabel.ForeColor = System.Drawing.Color.White;
-            this.keresesLabel.Location = new System.Drawing.Point(11, 12);
+            this.keresesLabel.Location = new System.Drawing.Point(3, 11);
             this.keresesLabel.Name = "keresesLabel";
             this.keresesLabel.Size = new System.Drawing.Size(205, 32);
             this.keresesLabel.TabIndex = 6;
@@ -238,7 +239,7 @@
             this.keresesPanel.Controls.Add(this.Times_Listbox);
             this.keresesPanel.Controls.Add(this.Classes_Listbox);
             this.keresesPanel.Controls.Add(this.monthCalendar1);
-            this.keresesPanel.Location = new System.Drawing.Point(101, 37);
+            this.keresesPanel.Location = new System.Drawing.Point(12, 37);
             this.keresesPanel.Name = "keresesPanel";
             this.keresesPanel.Size = new System.Drawing.Size(842, 614);
             this.keresesPanel.TabIndex = 7;
@@ -366,12 +367,25 @@
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 13;
             // 
+            // userName
+            // 
+            this.userName.AutoSize = true;
+            this.userName.BackColor = System.Drawing.Color.Transparent;
+            this.userName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userName.Location = new System.Drawing.Point(862, 29);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(50, 25);
+            this.userName.TabIndex = 18;
+            this.userName.Text = "User";
+            // 
             // Tag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.keresesPanel);
             this.Controls.Add(this.ertekelesPanel2);
             this.Controls.Add(this.label2);
@@ -429,5 +443,6 @@
         private Button ertekeles_Button;
         private TextBox textBox2;
         private Button edzesre_Jelentkezes_Button;
+        private Label userName;
     }
 }
