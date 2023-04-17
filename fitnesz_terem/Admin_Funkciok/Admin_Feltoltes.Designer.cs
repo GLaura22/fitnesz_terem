@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,12 +37,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.kezdesTextBox = new System.Windows.Forms.TextBox();
-            this.befejezesTextBox = new System.Windows.Forms.TextBox();
             this.maxLetszamTextBox = new System.Windows.Forms.TextBox();
-            this.teremIdTextBox = new System.Windows.Forms.TextBox();
-            this.edzoIdTextBox = new System.Windows.Forms.TextBox();
-            this.tipusTextBox = new System.Windows.Forms.TextBox();
             this.edzesButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,7 +45,14 @@
             this.termeknevTextBox = new System.Windows.Forms.TextBox();
             this.arTextBox = new System.Windows.Forms.TextBox();
             this.raktaronTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ujTermekButton = new System.Windows.Forms.Button();
+            this.EdzesStartDate = new System.Windows.Forms.DateTimePicker();
+            this.EdzesBefejezesDate = new System.Windows.Forms.DateTimePicker();
+            this.fitnessDbContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.termekComboBox = new System.Windows.Forms.ComboBox();
+            this.EdzoComboBox = new System.Windows.Forms.ComboBox();
+            this.EdzesComboBox = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessDbContextBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,9 +123,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(41, 224);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 21);
+            this.label6.Size = new System.Drawing.Size(55, 21);
             this.label6.TabIndex = 5;
-            this.label6.Text = "TeremID:";
+            this.label6.Text = "Terem:";
             // 
             // label7
             // 
@@ -132,9 +135,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(41, 263);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 21);
+            this.label7.Size = new System.Drawing.Size(46, 21);
             this.label7.TabIndex = 6;
-            this.label7.Text = "EdzőID:";
+            this.label7.Text = "Edző:";
             // 
             // label8
             // 
@@ -148,47 +151,12 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Edzés típusa:";
             // 
-            // kezdesTextBox
-            // 
-            this.kezdesTextBox.Location = new System.Drawing.Point(165, 97);
-            this.kezdesTextBox.Name = "kezdesTextBox";
-            this.kezdesTextBox.Size = new System.Drawing.Size(182, 23);
-            this.kezdesTextBox.TabIndex = 8;
-            // 
-            // befejezesTextBox
-            // 
-            this.befejezesTextBox.Location = new System.Drawing.Point(165, 138);
-            this.befejezesTextBox.Name = "befejezesTextBox";
-            this.befejezesTextBox.Size = new System.Drawing.Size(182, 23);
-            this.befejezesTextBox.TabIndex = 9;
-            // 
             // maxLetszamTextBox
             // 
             this.maxLetszamTextBox.Location = new System.Drawing.Point(165, 181);
             this.maxLetszamTextBox.Name = "maxLetszamTextBox";
             this.maxLetszamTextBox.Size = new System.Drawing.Size(182, 23);
             this.maxLetszamTextBox.TabIndex = 10;
-            // 
-            // teremIdTextBox
-            // 
-            this.teremIdTextBox.Location = new System.Drawing.Point(165, 222);
-            this.teremIdTextBox.Name = "teremIdTextBox";
-            this.teremIdTextBox.Size = new System.Drawing.Size(182, 23);
-            this.teremIdTextBox.TabIndex = 11;
-            // 
-            // edzoIdTextBox
-            // 
-            this.edzoIdTextBox.Location = new System.Drawing.Point(165, 263);
-            this.edzoIdTextBox.Name = "edzoIdTextBox";
-            this.edzoIdTextBox.Size = new System.Drawing.Size(182, 23);
-            this.edzoIdTextBox.TabIndex = 12;
-            // 
-            // tipusTextBox
-            // 
-            this.tipusTextBox.Location = new System.Drawing.Point(165, 302);
-            this.tipusTextBox.Name = "tipusTextBox";
-            this.tipusTextBox.Size = new System.Drawing.Size(182, 23);
-            this.tipusTextBox.TabIndex = 13;
             // 
             // edzesButton
             // 
@@ -260,17 +228,60 @@
             this.raktaronTextBox.Size = new System.Drawing.Size(182, 23);
             this.raktaronTextBox.TabIndex = 20;
             // 
-            // button1
+            // ujTermekButton
             // 
-            this.button1.BackColor = System.Drawing.Color.RosyBrown;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(648, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 35);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ujTermekButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.ujTermekButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ujTermekButton.ForeColor = System.Drawing.Color.Black;
+            this.ujTermekButton.Location = new System.Drawing.Point(648, 249);
+            this.ujTermekButton.Name = "ujTermekButton";
+            this.ujTermekButton.Size = new System.Drawing.Size(105, 35);
+            this.ujTermekButton.TabIndex = 21;
+            this.ujTermekButton.Text = "OK";
+            this.ujTermekButton.UseVisualStyleBackColor = false;
+            this.ujTermekButton.Click += new System.EventHandler(this.ujTermekButton_Click);
+            // 
+            // EdzesStartDate
+            // 
+            this.EdzesStartDate.Location = new System.Drawing.Point(165, 99);
+            this.EdzesStartDate.Name = "EdzesStartDate";
+            this.EdzesStartDate.Size = new System.Drawing.Size(184, 23);
+            this.EdzesStartDate.TabIndex = 22;
+            // 
+            // EdzesBefejezesDate
+            // 
+            this.EdzesBefejezesDate.Location = new System.Drawing.Point(165, 140);
+            this.EdzesBefejezesDate.Name = "EdzesBefejezesDate";
+            this.EdzesBefejezesDate.Size = new System.Drawing.Size(184, 23);
+            this.EdzesBefejezesDate.TabIndex = 23;
+            // 
+            // fitnessDbContextBindingSource
+            // 
+            this.fitnessDbContextBindingSource.DataSource = typeof(fitnesz_terem.Database_Backend.Connection.FitnessDbContext);
+            // 
+            // termekComboBox
+            // 
+            this.termekComboBox.FormattingEnabled = true;
+            this.termekComboBox.Location = new System.Drawing.Point(165, 224);
+            this.termekComboBox.Name = "termekComboBox";
+            this.termekComboBox.Size = new System.Drawing.Size(182, 23);
+            this.termekComboBox.TabIndex = 27;
+            // 
+            // EdzoComboBox
+            // 
+            this.EdzoComboBox.FormattingEnabled = true;
+            this.EdzoComboBox.Location = new System.Drawing.Point(165, 263);
+            this.EdzoComboBox.Name = "EdzoComboBox";
+            this.EdzoComboBox.Size = new System.Drawing.Size(182, 23);
+            this.EdzoComboBox.TabIndex = 28;
+            // 
+            // EdzesComboBox
+            // 
+            this.EdzesComboBox.FormattingEnabled = true;
+            this.EdzesComboBox.Location = new System.Drawing.Point(165, 304);
+            this.EdzesComboBox.Name = "EdzesComboBox";
+            this.EdzesComboBox.Size = new System.Drawing.Size(184, 23);
+            this.EdzesComboBox.TabIndex = 29;
             // 
             // Admin_Feltoltes
             // 
@@ -278,7 +289,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.EdzesComboBox);
+            this.Controls.Add(this.EdzoComboBox);
+            this.Controls.Add(this.termekComboBox);
+            this.Controls.Add(this.EdzesBefejezesDate);
+            this.Controls.Add(this.EdzesStartDate);
+            this.Controls.Add(this.ujTermekButton);
             this.Controls.Add(this.raktaronTextBox);
             this.Controls.Add(this.arTextBox);
             this.Controls.Add(this.termeknevTextBox);
@@ -286,12 +302,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.edzesButton);
-            this.Controls.Add(this.tipusTextBox);
-            this.Controls.Add(this.edzoIdTextBox);
-            this.Controls.Add(this.teremIdTextBox);
             this.Controls.Add(this.maxLetszamTextBox);
-            this.Controls.Add(this.befejezesTextBox);
-            this.Controls.Add(this.kezdesTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -303,6 +314,8 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Admin_Feltoltes";
             this.Text = "Adatmódosítás";
+            this.Load += new System.EventHandler(this.Admin_Feltoltes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessDbContextBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,12 +331,7 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox kezdesTextBox;
-        private TextBox befejezesTextBox;
         private TextBox maxLetszamTextBox;
-        private TextBox teremIdTextBox;
-        private TextBox edzoIdTextBox;
-        private TextBox tipusTextBox;
         private Button edzesButton;
         private Label label9;
         private Label label10;
@@ -331,6 +339,12 @@
         private TextBox termeknevTextBox;
         private TextBox arTextBox;
         private TextBox raktaronTextBox;
-        private Button button1;
+        private Button ujTermekButton;
+        private DateTimePicker EdzesStartDate;
+        private DateTimePicker EdzesBefejezesDate;
+        private BindingSource fitnessDbContextBindingSource;
+        private ComboBox termekComboBox;
+        private ComboBox EdzoComboBox;
+        private ComboBox EdzesComboBox;
     }
 }

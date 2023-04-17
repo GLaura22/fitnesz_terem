@@ -183,7 +183,7 @@
             this.keresoPanel.Controls.Add(this.filter_Text_Box);
             this.keresoPanel.Controls.Add(this.label1);
             this.keresoPanel.Controls.Add(this.Users_with_data);
-            this.keresoPanel.Location = new System.Drawing.Point(9, 99);
+            this.keresoPanel.Location = new System.Drawing.Point(12, 130);
             this.keresoPanel.Name = "keresoPanel";
             this.keresoPanel.Size = new System.Drawing.Size(969, 375);
             this.keresoPanel.TabIndex = 12;
