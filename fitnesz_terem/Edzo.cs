@@ -33,7 +33,7 @@ namespace fitnesz_terem
             this.id = id; // TODO: Törölhető a jövőben, hisz a következő sorban tárolva lesz a UserID.
             data = userController.getDataFromID(id);
 
-            label1.Text = $"Üdvözlünk '{data.Name}'!";
+            label1.Text = $"Üdvözlünk {data.Name}!";
         }
         private int coachid;
         public int setcoachID(int coachID)
