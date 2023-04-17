@@ -66,7 +66,6 @@ namespace fitnesz_terem
 
         private void belepButton_Click(object sender, EventArgs e)
         {
-            bool siker = false;
             try
             {
                 /* Initialize UserController. */
@@ -94,35 +93,33 @@ namespace fitnesz_terem
                 }
 
                 MessageBox.Show("Felhasználó sikeresen bejelentkezve!");
-                
-                //tag lep be
-                if (felhasznalo.Role == 3)
-                { 
-                    Tag tag= new Tag(felhasznalo.UserID);
-                    tag.Show();
-                }
-                //edző lép be
-                if(felhasznalo.Role == 2)
+
+                switch (felhasznalo.Role)
                 {
-                    Edzo edzo = new Edzo(felhasznalo.UserID);
-                    edzo.Show();
+                    case 1: // Admin
+                        AdminForm a = new AdminForm(felhasznalo.UserID);
+                        a.Show();
+                        break;
 
-                }
+                    case 2: // Edző
+                        Edzo edzo = new Edzo(felhasznalo.UserID);
+                        edzo.Show();
+                        break;
 
-                //admin lep be
-                if (felhasznalo.Role == 1)
-                { 
-                    AdminForm a = new AdminForm(felhasznalo.UserID);
-                    a.Show();
+                    case 3: // Tag
+                        Tag tag = new Tag(felhasznalo.UserID);
+                        tag.Show();
+                        break;
+
+                    default:
+                        throw new Exception("Ismeretlen jogosultság!");
+
                 }
             }
             catch (Exception exception)
             {
                 MessageBox.Show($"Bejelentkezés sikertelen. ('{exception.Message}')");
-                siker = false;
             }
-           // if(siker == true)
-               // this.Close();
         }
 
 

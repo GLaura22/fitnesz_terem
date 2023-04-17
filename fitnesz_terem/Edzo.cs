@@ -20,12 +20,20 @@ namespace fitnesz_terem
 
         private FitnessUser fitnessUser;
         private Belepes f2 = new Belepes();
-        private int id; 
-        
+        private int id;
+        private Data data;
+
         public Edzo(int id)
         {
             InitializeComponent();
-            this.id = id;
+
+            /* Initialize UserController. */
+            UserController userController = new();
+
+            this.id = id; // TODO: Törölhető a jövőben, hisz a következő sorban tárolva lesz a UserID.
+            data = userController.getDataFromID(id);
+
+            label1.Text = $"Üdvözlünk '{data.Name}'!";
         }
         private int coachid;
         public int setcoachID(int coachID)
@@ -167,6 +175,7 @@ namespace fitnesz_terem
 
         private void Edzo_Load(object sender, EventArgs e)
         {
+            /*
             comboBox1.SelectedIndex = 0;
             SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=aspnet-53bc9b9d-9d6a-45d4-8429-2a2761773502;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
             con.Open();
@@ -179,6 +188,7 @@ namespace fitnesz_terem
             con.Close();
 
             //label1.Text = name + " Edző";
+            */
 
         }
 

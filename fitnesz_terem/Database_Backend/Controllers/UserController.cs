@@ -1,6 +1,7 @@
 ﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using System;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace fitnesz_terem.Database_Backend.Controllers
 {
@@ -154,6 +155,34 @@ namespace fitnesz_terem.Database_Backend.Controllers
 
 
                 return users;
+            }
+        }
+
+        public Data getDataFromID(int userID)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                /* Get fitness user ID by the given username & password. */
+                var data = context.Datas
+                    .Single(row => row.UserId == userID);
+
+                return data;
+            }
+            catch (Exception)
+            {
+                return new Data
+                {
+                    Id = 0,
+                    UserId = 0,
+                    Name = "",
+                    Password = "",
+                    AccountNumber = 0,
+                    Money = 0,
+                    Lease = 0
+                };
             }
         }
     }

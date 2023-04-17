@@ -28,364 +28,361 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            button1 = new Button();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            button2 = new Button();
+            comboBox1 = new ComboBox();
+            monthCalendar1 = new MonthCalendar();
+            dataGridView1 = new DataGridView();
+            button3 = new Button();
+            textBox2 = new TextBox();
+            label1 = new Label();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            textBox7 = new TextBox();
+            label7 = new Label();
+            button4 = new Button();
+            button5 = new Button();
+            label8 = new Label();
+            groupBox1 = new GroupBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(189, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Óra hozzáadása";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = SystemColors.ActiveCaption;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(189, 1);
+            button1.Name = "button1";
+            button1.Size = new Size(143, 33);
+            button1.TabIndex = 0;
+            button1.Text = "Óra hozzáadása";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(77, 304);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 32);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Keresés:";
-            this.label2.Visible = false;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(77, 304);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 32);
+            label2.TabIndex = 2;
+            label2.Text = "Keresés:";
+            label2.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(259, 360);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 23);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Visible = false;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            textBox1.Location = new Point(259, 360);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(107, 23);
+            textBox1.TabIndex = 3;
+            textBox1.Visible = false;
+            textBox1.Click += textBox1_TextChanged;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(6, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "keresés";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.BackColor = SystemColors.ActiveCaption;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.Location = new Point(6, 1);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 32);
+            button2.TabIndex = 4;
+            button2.Text = "keresés";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Kliensek név szerint",
-            "Órák"});
-            this.comboBox1.Location = new System.Drawing.Point(77, 360);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Visible = false;
-            this.comboBox1.Click += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Kliensek név szerint", "Órák" });
+            comboBox1.Location = new Point(77, 360);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 5;
+            comboBox1.Visible = false;
+            comboBox1.Click += comboBox1_SelectedIndexChanged;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.monthCalendar1.ForeColor = System.Drawing.Color.Black;
-            this.monthCalendar1.Location = new System.Drawing.Point(767, 465);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 6;
-            this.monthCalendar1.TitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.monthCalendar1.TrailingForeColor = System.Drawing.SystemColors.Highlight;
+            monthCalendar1.BackColor = SystemColors.ActiveCaptionText;
+            monthCalendar1.ForeColor = Color.Black;
+            monthCalendar1.Location = new Point(767, 465);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 6;
+            monthCalendar1.TitleBackColor = SystemColors.ControlDarkDark;
+            monthCalendar1.TitleForeColor = SystemColors.AppWorkspace;
+            monthCalendar1.TrailingForeColor = SystemColors.Highlight;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(77, 413);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(289, 201);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.GridColor = SystemColors.ButtonFace;
+            dataGridView1.Location = new Point(77, 413);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(289, 201);
+            dataGridView1.TabIndex = 7;
+            dataGridView1.Visible = false;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(414, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 33);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Kurzus törlés";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = SystemColors.ActiveCaption;
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ActiveCaptionText;
+            button3.Location = new Point(414, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(143, 33);
+            button3.TabIndex = 8;
+            button3.Text = "Kurzus törlés";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(422, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 23);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Visible = false;
+            textBox2.Location = new Point(422, 118);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(133, 23);
+            textBox2.TabIndex = 9;
+            textBox2.Visible = false;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(25, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 51);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Hello";
+            label1.Anchor = AnchorStyles.None;
+            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(26, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(919, 51);
+            label1.TabIndex = 10;
+            label1.Text = "Hello";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(247, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 23);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.Visible = false;
+            textBox3.Location = new Point(247, 56);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(121, 23);
+            textBox3.TabIndex = 11;
+            textBox3.Visible = false;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(246, 88);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 23);
-            this.textBox4.TabIndex = 12;
-            this.textBox4.Visible = false;
+            textBox4.Location = new Point(246, 88);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(121, 23);
+            textBox4.TabIndex = 12;
+            textBox4.Visible = false;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(246, 120);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(122, 23);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.Visible = false;
+            textBox5.Location = new Point(246, 120);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(122, 23);
+            textBox5.TabIndex = 13;
+            textBox5.Visible = false;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(246, 154);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 23);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.Visible = false;
+            textBox6.Location = new Point(246, 154);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(122, 23);
+            textBox6.TabIndex = 14;
+            textBox6.Visible = false;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(162, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 21);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Kezdés:";
-            this.label3.Visible = false;
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.ActiveCaption;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(162, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(61, 21);
+            label3.TabIndex = 15;
+            label3.Text = "Kezdés:";
+            label3.Visible = false;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(146, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 21);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Befejezés:";
-            this.label4.Visible = false;
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.ActiveCaption;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(146, 86);
+            label4.Name = "label4";
+            label4.Size = new Size(77, 21);
+            label4.TabIndex = 16;
+            label4.Text = "Befejezés:";
+            label4.Visible = false;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(124, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 21);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Max létszám:";
-            this.label5.Visible = false;
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.ActiveCaption;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(124, 122);
+            label5.Name = "label5";
+            label5.Size = new Size(99, 21);
+            label5.TabIndex = 17;
+            label5.Text = "Max létszám:";
+            label5.Visible = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(151, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 21);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Location:";
-            this.label6.Visible = false;
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.ActiveCaption;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ActiveCaptionText;
+            label6.Location = new Point(151, 152);
+            label6.Name = "label6";
+            label6.Size = new Size(72, 21);
+            label6.TabIndex = 18;
+            label6.Text = "Location:";
+            label6.Visible = false;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(245, 186);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(122, 23);
-            this.textBox7.TabIndex = 19;
-            this.textBox7.Visible = false;
+            textBox7.Location = new Point(245, 186);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(122, 23);
+            textBox7.TabIndex = 19;
+            textBox7.Visible = false;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(134, 188);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 21);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Kurzus név:";
-            this.label7.Visible = false;
+            label7.AutoSize = true;
+            label7.BackColor = SystemColors.ActiveCaption;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ActiveCaptionText;
+            label7.Location = new Point(134, 188);
+            label7.Name = "label7";
+            label7.Size = new Size(89, 21);
+            label7.TabIndex = 20;
+            label7.Text = "Kurzus név:";
+            label7.Visible = false;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(222, 258);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(83, 37);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Felvisz";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.BackColor = SystemColors.ActiveCaption;
+            button4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = SystemColors.ActiveCaptionText;
+            button4.Location = new Point(222, 258);
+            button4.Name = "button4";
+            button4.Size = new Size(83, 37);
+            button4.TabIndex = 21;
+            button4.Text = "Felvisz";
+            button4.UseVisualStyleBackColor = false;
+            button4.Visible = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(468, 200);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 32);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Törlés";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.BackColor = SystemColors.ActiveCaption;
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.ForeColor = SystemColors.ActiveCaptionText;
+            button5.Location = new Point(468, 200);
+            button5.Name = "button5";
+            button5.Size = new Size(87, 32);
+            button5.TabIndex = 22;
+            button5.Text = "Törlés";
+            button5.UseVisualStyleBackColor = false;
+            button5.Visible = false;
+            button5.Click += button5_Click;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(466, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 21);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Kurzus név:";
-            this.label8.Visible = false;
+            label8.AutoSize = true;
+            label8.BackColor = SystemColors.ActiveCaption;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(466, 83);
+            label8.Name = "label8";
+            label8.Size = new Size(89, 21);
+            label8.TabIndex = 23;
+            label8.Text = "Kurzus név:";
+            label8.Visible = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(371, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(574, 312);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(button5);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(textBox6);
+            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Location = new Point(371, 141);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(574, 312);
+            groupBox1.TabIndex = 24;
+            groupBox1.TabStop = false;
             // 
             // Edzo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Edzo";
-            this.Text = " ";
-            this.Load += new System.EventHandler(this.Edzo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(984, 661);
+            Controls.Add(groupBox1);
+            Controls.Add(label1);
+            Controls.Add(dataGridView1);
+            Controls.Add(monthCalendar1);
+            Controls.Add(comboBox1);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            ForeColor = SystemColors.ControlLight;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "Edzo";
+            Text = " ";
+            Load += Edzo_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
