@@ -32,7 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             button1 = new Button();
             label2 = new Label();
-            textBox1 = new TextBox();
             button2 = new Button();
             comboBox1 = new ComboBox();
             monthCalendar1 = new MonthCalendar();
@@ -75,22 +74,12 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(77, 304);
+            label2.Location = new Point(63, 395);
             label2.Name = "label2";
             label2.Size = new Size(100, 32);
             label2.TabIndex = 2;
             label2.Text = "Keresés:";
             label2.Visible = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(259, 360);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(107, 23);
-            textBox1.TabIndex = 3;
-            textBox1.Visible = false;
-            textBox1.Click += textBox1_TextChanged;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button2
             // 
@@ -109,13 +98,13 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Kliensek név szerint", "Órák" });
-            comboBox1.Location = new Point(77, 360);
+            comboBox1.Items.AddRange(new object[] { "Kurzusok", "Személyi edzések" });
+            comboBox1.Location = new Point(63, 430);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(302, 23);
             comboBox1.TabIndex = 5;
             comboBox1.Visible = false;
-            comboBox1.Click += comboBox1_SelectedIndexChanged;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // monthCalendar1
             // 
@@ -130,6 +119,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AccessibleRole = AccessibleRole.Window;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -150,11 +140,11 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.GridColor = SystemColors.ButtonFace;
-            dataGridView1.Location = new Point(77, 413);
+            dataGridView1.Location = new Point(63, 465);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(289, 201);
+            dataGridView1.Size = new Size(675, 162);
             dataGridView1.TabIndex = 7;
             dataGridView1.Visible = false;
             // 
@@ -371,7 +361,6 @@
             Controls.Add(dataGridView1);
             Controls.Add(monthCalendar1);
             Controls.Add(comboBox1);
-            Controls.Add(textBox1);
             Controls.Add(label2);
             ForeColor = SystemColors.ControlLight;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -389,7 +378,6 @@
 
         private Button button1;
         private Label label2;
-        private TextBox textBox1;
         private Button button2;
         private ComboBox comboBox1;
         private MonthCalendar monthCalendar1;

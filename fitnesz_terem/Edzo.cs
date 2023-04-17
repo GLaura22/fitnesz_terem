@@ -2,6 +2,7 @@
 using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,8 @@ namespace fitnesz_terem
         private int id;
         private Data data;
 
+        private int coachid;
+
         public Edzo(int id)
         {
             InitializeComponent();
@@ -33,9 +36,11 @@ namespace fitnesz_terem
             this.id = id; // TODO: Törölhető a jövőben, hisz a következő sorban tárolva lesz a UserID.
             data = userController.getDataFromID(id);
 
+            /* Aktuális felhasználó nevének kiiratása. */
             label1.Text = $"Üdvözlünk {data.Name}!";
+
+            comboBox1.SelectedIndex = 0;
         }
-        private int coachid;
         public int setcoachID(int coachID)
         {
             return coachid = coachID;
@@ -78,6 +83,9 @@ namespace fitnesz_terem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            getGridValue();
+
+            /*
             SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=aspnet-53bc9b9d-9d6a-45d4-8429-2a2761773502;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
 
@@ -109,33 +117,83 @@ namespace fitnesz_terem
                     dataGridView1.DataSource = ds.Tables[0];
                 }
             }
+            */
         }
 
+        private DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            DataTable table = new DataTable();
+            PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
+            foreach (PropertyDescriptor prop in props)
+            {
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in props)
+                {
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                }
+                table.Rows.Add(row);
+            }
+            return table;
+        }
 
+        private void getGridValue()
+        {
+            /* Initialize UserController. */
+            UserController userController = new();
+
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+
+                    List<TrainingClass> trainingClass = userController.GetTrainingClassesesByID(data.Id);
+                    dataGridView1.DataSource = ConvertToDataTable(trainingClass);
+                    break;
+
+                case 1:
+
+                    List<PersonalTrainingViewModel> personalTrainings = userController.GetPersonalTrainingsByID(data.Id);
+                    dataGridView1.DataSource = ConvertToDataTable(personalTrainings);
+                    break;
+            }
+
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            adatbazis();
-            if (button2WasClicked == false)
+            try
             {
-                keresesvisibility(true);
-                button2WasClicked = true;
+                getGridValue();
+
+                if (button2WasClicked == false)
+                {
+                    keresesvisibility(true);
+                    button2WasClicked = true;
+                }
+                else
+                {
+                    keresesvisibility(false);
+                    button2WasClicked = false;
+
+                }
             }
-            else
+            catch (Exception exception)
             {
-                keresesvisibility(false);
-                button2WasClicked = false;
-
+                MessageBox.Show(exception.Message);
             }
-
         }
         private void keresesvisibility(Boolean a)
         {
             dataGridView1.Visible = a;
-            textBox1.Visible = a;
+            // textBox1.Visible = a;
             label2.Visible = a;
             comboBox1.Visible = a;
         }
+
+        /*
         private void adatbazis()
         {
 
@@ -172,6 +230,7 @@ namespace fitnesz_terem
             }
 
         }
+        */
 
         private void Edzo_Load(object sender, EventArgs e)
         {
@@ -192,10 +251,43 @@ namespace fitnesz_terem
 
         }
 
+        /*
+        private List<UserViewModel> resetData()
+        {
+            // Get the list of roles
+            UserController forLoad = new UserController();
+            List<Role> roles = forLoad.GetRoles();
+
+
+            // Call the GetUsers() function to get the list of view model objects
+            List<UserViewModel> users = forLoad.GetUsers();
+
+            return users;
+        }
+        */
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            /*
             string filterText = textBox1.Text;
-            if (string.IsNullOrEmpty(filterText)) adatbazis();
+            if (string.IsNullOrEmpty(filterText))
+            {
+                dataGridView1.DataSource = resetData(); // Reset the DataGridView to show all rows
+            }
+            else
+            {
+                List<UserViewModel> users = resetData();
+                DataTable dt = ConvertToDataTable(users);
+                DataView dv = new DataView(dt);
+                dv.RowFilter = string.Format("Name LIKE '%{0}%'", filterText);
+                dataGridView1.DataSource = dv.ToTable();
+            }
+            */
+
+            /*
+            string filterText = textBox1.Text;
+            if (string.IsNullOrEmpty(filterText))
+                getGridValue();
             else
             {
                 dataGridView1.ClearSelection();
@@ -229,10 +321,7 @@ namespace fitnesz_terem
                 }
 
             }
-
-
-
-
+            */
         }
         private void torolvisibility(Boolean a)
         {

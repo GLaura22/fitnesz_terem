@@ -1,6 +1,8 @@
 ﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace fitnesz_terem.Database_Backend.Controllers
@@ -185,6 +187,50 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 };
             }
         }
+
+        public List<TrainingClass> GetTrainingClassesesByID(int userID) {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                var trainingClasses = context.TrainingClasses
+                    .Where(row => row.CoachID == userID)
+                    .ToList();
+
+                return trainingClasses;
+            }
+            catch (Exception)
+            {
+                return new List<TrainingClass> {};
+            }
+        }
+        public List<PersonalTrainingViewModel> GetPersonalTrainingsByID(int userID)
+        {
+            try
+            {
+                /* SQL Connection. */
+                var context = new FitnessDbContext();
+
+                List<PersonalTrainingViewModel> personalTraining = context.Personaltraining
+                    .Join(context.Datas, d => d.SportoloId, u => u.UserId, (d, u) => new PersonalTrainingViewModel
+                    {
+                        TrainingID = d.TrainingID,
+                        UserId = u.UserId,
+                        Name = u.Name,
+                        CoachID = d.CoachID
+                    })
+                    .Where(d => d.CoachID == userID)
+                    .ToList();
+
+                return personalTraining;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                return new List<PersonalTrainingViewModel> { };
+            }
+        }
     }
 
     public class UserViewModel
@@ -195,6 +241,23 @@ namespace fitnesz_terem.Database_Backend.Controllers
         public int AccountNumber { get; set; }
         public int Money { get; set; }
         public int Role { get; set; }
+    }
+    public class PersonalTrainingViewModel
+    {
+        public int TrainingID { get; set; }
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public int CoachID { get; set; }
+    }
+    public class TrainingClassesViewModel
+    {
+        public int ClassID { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public int MaxPeople { get; set; }
+        public int LocationID { get; set; }
+        public string ClassName { get; set; }
+        public int CoachID { get; set; }
     }
 
 

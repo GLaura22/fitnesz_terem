@@ -192,16 +192,6 @@ namespace fitnesz_terem
             tajekoztatoLabel.Visible = true;
             edzok_felsorolas.Visible = true;
 
-            /*
-            UserController userC = new UserController();
-            List<UserViewModel> users = userC.GetUsers();
-            
-            foreach (UserViewModel user in users) {
-                if (user.Role == 2)
-                    edzok_felsorolas.DataSource = user;
-            } 
-            edzok_felsorolas.DataSource = users;
-            */
             edzok_felsorolas.Items.Clear();
 
             using (var context = new FitnessDbContext())
@@ -230,33 +220,6 @@ namespace fitnesz_terem
                 }
                 edzok_felsorolas.Items.AddRange(nevek.ToArray());
             }
-
-            /*
-            using (var context = new FitnessDbContext())
-            {
-                // Query the Roles data from the database using the DbSet property of your DbContext
-                var roles = context.Roles.ToList();
-
-                // Create a new DataTable and add columns
-                var dataTable = new DataTable();
-                dataTable.Columns.Add("Név", typeof(string));
-                dataTable.Columns.Add("Szolgáltatás", typeof(string));
-
-                // Populate the DataTable with data from the Roles list
-                foreach (var role in roles)
-                {
-                    var row = dataTable.NewRow();
-                    row["RoleID"] = role.RoleID;
-                    row["Label"] = role.Label;
-                    dataTable.Rows.Add(row);
-                }
-
-                // Bind the DataTable to your roleBox control
-                roleBox.DataSource = dataTable;
-                roleBox.DisplayMember = "Label";
-                roleBox.ValueMember = "RoleID";
-            }
-            */
         }
 
         private void edzok_felsorolas_SelectedIndexChanged(object sender, EventArgs e)
