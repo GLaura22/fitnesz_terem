@@ -26,6 +26,13 @@ namespace fitnesz_terem
         Bitmap spinning = Properties.Resources.spinning;
         Bitmap altalanos = Properties.Resources.gym_hatter;
         Bitmap pilates = Properties.Resources.pilates;
+        Bitmap zumba = Properties.Resources.zumba;
+        Bitmap barre = Properties.Resources.barre;
+        Bitmap bootcamp = Properties.Resources.bootcamp;
+        Bitmap boxing = Properties.Resources.boxing;
+        Bitmap crossfit = Properties.Resources.crossfit;
+        Bitmap hiit = Properties.Resources.hiit;
+        Bitmap kickboxing = Properties.Resources.kickboxing;
 
 
         public indulo_felulet()
@@ -181,6 +188,27 @@ namespace fitnesz_terem
                     break;
                 case "Pilates":
                     fokep.Image = pilates;
+                    break;
+                case "Barre":
+                    fokep.Image = barre;
+                    break;
+                case "Bootcamp":
+                    fokep.Image = bootcamp;
+                    break;
+                case "Boxing":
+                    fokep.Image = boxing;
+                    break;
+                case "CrossFit":
+                    fokep.Image = crossfit;
+                    break;
+                case "HIIT":
+                    fokep.Image = hiit;
+                    break;
+                case "Kickboxing":
+                    fokep.Image = kickboxing;
+                    break;
+                case "Zumba":
+                    fokep.Image = zumba;
                     break;
                 default:
                     fokep.Image = altalanos;

@@ -90,7 +90,7 @@
             // fokep
             // 
             this.fokep.BackColor = System.Drawing.Color.Transparent;
-            this.fokep.Image = global::fitnesz_terem.Properties.Resources.gym_hatter;
+            this.fokep.Image = global::fitnesz_terem.Properties.Resources.kickboxing;
             this.fokep.Location = new System.Drawing.Point(344, 137);
             this.fokep.Margin = new System.Windows.Forms.Padding(2);
             this.fokep.Name = "fokep";
@@ -263,6 +263,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.fokep);
             this.Controls.Add(this.csoportosEdzesArLabel);
             this.Controls.Add(this.szemelyiEdzoaArLabel);
             this.Controls.Add(this.edzok_felsorolas);
@@ -270,7 +271,6 @@
             this.Controls.Add(this.szolgLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.fogado_szoveg);
-            this.Controls.Add(this.fokep);
             this.Controls.Add(this.bejiregi);
             this.Controls.Add(this.cim);
             this.Controls.Add(this.fomenu);
