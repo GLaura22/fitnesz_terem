@@ -253,6 +253,20 @@ namespace fitnesz_terem
             ertekelesPanel2.Visible = true;
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
+
+            using (var context = new FitnessDbContext())
+            { 
+                var edzok = context.Datas.Join(
+                context.FitnessUsers.Where(u => u.Role == 2),
+                d => d.UserId,
+                u => u.UserID,
+                (d, u) => new { Data = d, FitnessUser = u });
+
+                foreach (var edzo in edzok.Select(c => c.Data.Name).Distinct())
+                {
+                    edzokComboBox.Items.Add(edzo);
+                }
+            }
         }
 
         private void edzesre_Jelentkezes_Button_Click(object sender, EventArgs e)

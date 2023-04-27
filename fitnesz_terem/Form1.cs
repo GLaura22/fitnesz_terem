@@ -41,6 +41,8 @@ namespace fitnesz_terem
             this.BackgroundImageLayout = ImageLayout.Stretch;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible= false;
+            csoportosEdzesArLabel.Visible= false;
         }
 
         private void formenu1_Click(object sender, EventArgs e)
@@ -52,6 +54,8 @@ namespace fitnesz_terem
             comboBox1.Visible = false;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible = false;
+            csoportosEdzesArLabel.Visible = false;
         }
 
         private void foszmenu2_Click(object sender, EventArgs e)
@@ -62,6 +66,8 @@ namespace fitnesz_terem
             szolgLabel.Visible = true;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible = false;
+            csoportosEdzesArLabel.Visible = true;
             /*
             // Get the list of roles
             UserController userC = new UserController();
@@ -191,6 +197,8 @@ namespace fitnesz_terem
             fokep.Visible = false;
             tajekoztatoLabel.Visible = true;
             edzok_felsorolas.Visible = true;
+            szemelyiEdzoaArLabel.Visible = true;
+            csoportosEdzesArLabel.Visible = false;
 
             edzok_felsorolas.Items.Clear();
 

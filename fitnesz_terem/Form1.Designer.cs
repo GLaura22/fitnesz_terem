@@ -47,6 +47,8 @@
             this.dataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tajekoztatoLabel = new System.Windows.Forms.Label();
             this.edzok_felsorolas = new System.Windows.Forms.ListBox();
+            this.szemelyiEdzoaArLabel = new System.Windows.Forms.Label();
+            this.csoportosEdzesArLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fokep)).BeginInit();
             this.fomenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource1)).BeginInit();
@@ -230,6 +232,30 @@
             this.edzok_felsorolas.TabIndex = 13;
             this.edzok_felsorolas.SelectedIndexChanged += new System.EventHandler(this.edzok_felsorolas_SelectedIndexChanged);
             // 
+            // szemelyiEdzoaArLabel
+            // 
+            this.szemelyiEdzoaArLabel.AutoSize = true;
+            this.szemelyiEdzoaArLabel.BackColor = System.Drawing.Color.Transparent;
+            this.szemelyiEdzoaArLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.szemelyiEdzoaArLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.szemelyiEdzoaArLabel.Location = new System.Drawing.Point(651, 476);
+            this.szemelyiEdzoaArLabel.Name = "szemelyiEdzoaArLabel";
+            this.szemelyiEdzoaArLabel.Size = new System.Drawing.Size(270, 25);
+            this.szemelyiEdzoaArLabel.TabIndex = 14;
+            this.szemelyiEdzoaArLabel.Text = "Személyi edzés ára 6000 Ft/óra";
+            // 
+            // csoportosEdzesArLabel
+            // 
+            this.csoportosEdzesArLabel.AutoSize = true;
+            this.csoportosEdzesArLabel.BackColor = System.Drawing.Color.Transparent;
+            this.csoportosEdzesArLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.csoportosEdzesArLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.csoportosEdzesArLabel.Location = new System.Drawing.Point(823, 595);
+            this.csoportosEdzesArLabel.Name = "csoportosEdzesArLabel";
+            this.csoportosEdzesArLabel.Size = new System.Drawing.Size(349, 25);
+            this.csoportosEdzesArLabel.TabIndex = 15;
+            this.csoportosEdzesArLabel.Text = "Minden csoportos edzés ára 4000 Ft/óra";
+            // 
             // indulo_felulet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -237,6 +263,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.csoportosEdzesArLabel);
+            this.Controls.Add(this.szemelyiEdzoaArLabel);
             this.Controls.Add(this.edzok_felsorolas);
             this.Controls.Add(this.tajekoztatoLabel);
             this.Controls.Add(this.szolgLabel);
@@ -283,5 +311,7 @@
         private BindingSource dataBindingSource;
         private Label tajekoztatoLabel;
         private ListBox edzok_felsorolas;
+        private Label szemelyiEdzoaArLabel;
+        private Label csoportosEdzesArLabel;
     }
 }
