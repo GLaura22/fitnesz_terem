@@ -69,6 +69,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
+            this.webshopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
@@ -188,7 +189,8 @@
             this.edzésekToolStripMenuItem,
             this.értékelésKüldéseToolStripMenuItem,
             this.órarendemToolStripMenuItem,
-            this.jegybérletVásárlásToolStripMenuItem});
+            this.jegybérletVásárlásToolStripMenuItem,
+            this.webshopToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -516,6 +518,12 @@
             this.userName.TabIndex = 18;
             this.userName.Text = "User";
             // 
+            // webshopToolStripMenuItem
+            // 
+            this.webshopToolStripMenuItem.Name = "webshopToolStripMenuItem";
+            this.webshopToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.webshopToolStripMenuItem.Text = "webshop";
+            // 
             // Tag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -595,5 +603,6 @@
         private Label label9;
         private Button berletVasarlasButton;
         private Panel berletPanel;
+        private ToolStripMenuItem webshopToolStripMenuItem;
     }
 }

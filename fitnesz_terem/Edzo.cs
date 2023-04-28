@@ -354,9 +354,6 @@ namespace fitnesz_terem
             delete.Parameters.AddWithValue("@classname", textBox2.Text);
             delete.ExecuteNonQuery();
 
-
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
