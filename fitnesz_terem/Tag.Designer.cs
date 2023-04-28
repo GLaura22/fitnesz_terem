@@ -49,6 +49,11 @@
             this.keresesPanel = new System.Windows.Forms.Panel();
             this.csoportosEdzesArLabel = new System.Windows.Forms.Label();
             this.edzesre_Jelentkezes_Button = new System.Windows.Forms.Button();
+            this.berletPanel = new System.Windows.Forms.Panel();
+            this.berletVasarlasButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.berletCheckBox = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.ertekelesPanel2 = new System.Windows.Forms.Panel();
             this.edzokComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,6 +72,7 @@
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
+            this.berletPanel.SuspendLayout();
             this.ertekelesPanel2.SuspendLayout();
             this.szemelyi_edzo_keresesPanel.SuspendLayout();
             this.SuspendLayout();
@@ -228,8 +234,9 @@
             // jegybérletVásárlásToolStripMenuItem
             // 
             this.jegybérletVásárlásToolStripMenuItem.Name = "jegybérletVásárlásToolStripMenuItem";
-            this.jegybérletVásárlásToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.jegybérletVásárlásToolStripMenuItem.Text = "jegy/bérlet vásárlás";
+            this.jegybérletVásárlásToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.jegybérletVásárlásToolStripMenuItem.Text = "bérlet vásárlás";
+            this.jegybérletVásárlásToolStripMenuItem.Click += new System.EventHandler(this.jegybérletVásárlásToolStripMenuItem_Click);
             // 
             // keresesLabel
             // 
@@ -255,7 +262,7 @@
             this.keresesPanel.Controls.Add(this.monthCalendar1);
             this.keresesPanel.Location = new System.Drawing.Point(12, 37);
             this.keresesPanel.Name = "keresesPanel";
-            this.keresesPanel.Size = new System.Drawing.Size(881, 614);
+            this.keresesPanel.Size = new System.Drawing.Size(940, 612);
             this.keresesPanel.TabIndex = 7;
             // 
             // csoportosEdzesArLabel
@@ -280,6 +287,66 @@
             this.edzesre_Jelentkezes_Button.UseVisualStyleBackColor = true;
             this.edzesre_Jelentkezes_Button.Click += new System.EventHandler(this.edzesre_Jelentkezes_Button_Click);
             // 
+            // berletPanel
+            // 
+            this.berletPanel.BackColor = System.Drawing.Color.Transparent;
+            this.berletPanel.Controls.Add(this.berletVasarlasButton);
+            this.berletPanel.Controls.Add(this.label9);
+            this.berletPanel.Controls.Add(this.berletCheckBox);
+            this.berletPanel.Controls.Add(this.label7);
+            this.berletPanel.Location = new System.Drawing.Point(195, 83);
+            this.berletPanel.Name = "berletPanel";
+            this.berletPanel.Size = new System.Drawing.Size(556, 273);
+            this.berletPanel.TabIndex = 26;
+            // 
+            // berletVasarlasButton
+            // 
+            this.berletVasarlasButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.berletVasarlasButton.Location = new System.Drawing.Point(345, 155);
+            this.berletVasarlasButton.Name = "berletVasarlasButton";
+            this.berletVasarlasButton.Size = new System.Drawing.Size(121, 28);
+            this.berletVasarlasButton.TabIndex = 25;
+            this.berletVasarlasButton.Text = "Vásárlás";
+            this.berletVasarlasButton.UseVisualStyleBackColor = true;
+            this.berletVasarlasButton.Click += new System.EventHandler(this.berletVasarlasButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(28, 228);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(492, 25);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "A bérlet ára 28 000 Ft, amivel a nyolcadik edzés ingyenes!";
+            // 
+            // berletCheckBox
+            // 
+            this.berletCheckBox.AutoSize = true;
+            this.berletCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.berletCheckBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.berletCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.berletCheckBox.Location = new System.Drawing.Point(78, 82);
+            this.berletCheckBox.Name = "berletCheckBox";
+            this.berletCheckBox.Size = new System.Drawing.Size(233, 29);
+            this.berletCheckBox.TabIndex = 21;
+            this.berletCheckBox.Text = "1 havi bérlet (8 alkalom)";
+            this.berletCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(70, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(179, 32);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Bérlet vásárlás";
+            // 
             // ertekelesPanel2
             // 
             this.ertekelesPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -291,7 +358,7 @@
             this.ertekelesPanel2.Controls.Add(this.textBox1);
             this.ertekelesPanel2.Location = new System.Drawing.Point(147, 69);
             this.ertekelesPanel2.Name = "ertekelesPanel2";
-            this.ertekelesPanel2.Size = new System.Drawing.Size(805, 449);
+            this.ertekelesPanel2.Size = new System.Drawing.Size(805, 488);
             this.ertekelesPanel2.TabIndex = 17;
             // 
             // edzokComboBox
@@ -413,9 +480,9 @@
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.disclamerLabel);
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.label1);
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.Coaches_List);
-            this.szemelyi_edzo_keresesPanel.Location = new System.Drawing.Point(61, 83);
+            this.szemelyi_edzo_keresesPanel.Location = new System.Drawing.Point(63, 83);
             this.szemelyi_edzo_keresesPanel.Name = "szemelyi_edzo_keresesPanel";
-            this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(806, 474);
+            this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(804, 417);
             this.szemelyi_edzo_keresesPanel.TabIndex = 12;
             // 
             // label5
@@ -455,13 +522,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.keresesPanel);
+            this.Controls.Add(this.berletPanel);
             this.Controls.Add(this.szemelyi_edzo_keresesPanel);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SelectedDateLabel);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.ertekelesPanel2);
+            this.Controls.Add(this.keresesPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tag";
@@ -473,6 +541,8 @@
             this.menuStrip1.PerformLayout();
             this.keresesPanel.ResumeLayout(false);
             this.keresesPanel.PerformLayout();
+            this.berletPanel.ResumeLayout(false);
+            this.berletPanel.PerformLayout();
             this.ertekelesPanel2.ResumeLayout(false);
             this.ertekelesPanel2.PerformLayout();
             this.szemelyi_edzo_keresesPanel.ResumeLayout(false);
@@ -520,5 +590,10 @@
         private Label label3;
         private Label label5;
         private ToolStripMenuItem jegybérletVásárlásToolStripMenuItem;
+        private Label label7;
+        private CheckBox berletCheckBox;
+        private Label label9;
+        private Button berletVasarlasButton;
+        private Panel berletPanel;
     }
 }
