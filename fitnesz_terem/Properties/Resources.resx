@@ -133,10 +133,31 @@
   <data name="sulyzo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sulyzo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gym_hatter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gym_hatter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="zumba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zumba.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lilaatmenet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lilaatmenet.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gym_hatter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gym_hatter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bootcamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bootcamp.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boxing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boxing.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crossfit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crossfit.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hiit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hiit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kickboxing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kickboxing.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

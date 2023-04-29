@@ -14,6 +14,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace fitnesz_terem
 {
@@ -27,6 +28,9 @@ namespace fitnesz_terem
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
+
             userID = ID;
             // MessageBox.Show($"Sikeresen feljelentkeztél {userID} ");
 
@@ -239,6 +243,8 @@ namespace fitnesz_terem
             keresesPanel.Visible = true;
             szemelyi_edzo_keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
         }
 
         private void személyiEdzőhözJelentkezésToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,6 +252,8 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = true;
             keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
         }
 
         private void értékelésKüldéseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -253,6 +261,22 @@ namespace fitnesz_terem
             ertekelesPanel2.Visible = true;
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
+            berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
+
+            using (var context = new FitnessDbContext())
+            { 
+                var edzok = context.Datas.Join(
+                context.FitnessUsers.Where(u => u.Role == 2),
+                d => d.UserId,
+                u => u.UserID,
+                (d, u) => new { Data = d, FitnessUser = u });
+
+                foreach (var edzo in edzok.Select(c => c.Data.Name).Distinct())
+                {
+                    edzokComboBox.Items.Add(edzo);
+                }
+            }
         }
 
         private void edzesre_Jelentkezes_Button_Click(object sender, EventArgs e)
@@ -404,6 +428,90 @@ namespace fitnesz_terem
                 }
             }
 
+        }
+
+        private void jegybérletVásárlásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            berletPanel.Visible = true;
+            szemelyi_edzo_keresesPanel.Visible = false;
+            keresesPanel.Visible = false;
+            ertekelesPanel2.Visible = false;
+            WebshopPanel.Visible = false;
+        }
+
+        private void berletVasarlasButton_Click(object sender, EventArgs e)
+        {
+            if (berletCheckBox.Checked)
+            {
+                try
+                {
+                    using (var context = new FitnessDbContext())
+                    {
+                        var sportoloId = userID; // retrieve the currently logged-in user ID ()
+
+                        var result = context.Datas.SingleOrDefault(r => r.UserId == sportoloId);
+                        
+                        if (result != null)
+                        {
+                            // csecking if the client has a lease already
+                            if (result.Lease == -1)
+                            {
+                                // checking if the client has enough money
+                                if (result.Money < 28000)
+                                {
+                                    throw new Exception("Nincs elég pénz a számláján!");
+                                }
+                                result.Lease = 8;
+                                result.Money -= 28000;
+                                MessageBox.Show("Sikeres bérlet vásárlás!");
+                            }
+                            else
+                                throw new Exception("Már van bérlete.");
+                            context.SaveChanges();
+                        }
+
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+        private void webshopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            berletPanel.Visible = false;
+            szemelyi_edzo_keresesPanel.Visible = false;
+            keresesPanel.Visible = false;
+            ertekelesPanel2.Visible = false;
+            WebshopPanel.Visible = true;
+
+            ItemController itemController = new();
+            List<ItemViewModel> products = itemController.GetItemViewModel();
+
+            // hogy ne adja tobbszor hozza az elemeket
+            webshopListBox.Items.Clear();
+            //webshopListBox.ColumnWidth = 85;
+
+            foreach (var p in products)
+            {
+                // webshop lista feltoltese az Items tabla ertekeivel
+                if (p.NumberInStock != 0)
+                {
+                    webshopListBox.Items.AddRange(new object[] {
+                           // 2. oszlop igazitasa
+                           p.ItemName.PadRight(40 - p.ItemName.Length) + "\t\t" + p.Price.ToString() + " Ft \t\t" + "Raktáron"
+                           });
+                }
+                else 
+                {
+                    webshopListBox.Items.AddRange(new object[] {
+                           // 2. oszlop igazitasa
+                           p.ItemName.PadRight(40 - p.ItemName.Length) + "\t\t" + p.Price.ToString() + " Ft \t\t" + "Nincs raktáron"
+                           });
+                }
+            }
         }
 
         private void ertekeles_Button_Click(object sender, EventArgs e)

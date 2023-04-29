@@ -26,6 +26,13 @@ namespace fitnesz_terem
         Bitmap spinning = Properties.Resources.spinning;
         Bitmap altalanos = Properties.Resources.gym_hatter;
         Bitmap pilates = Properties.Resources.pilates;
+        Bitmap zumba = Properties.Resources.zumba;
+        Bitmap barre = Properties.Resources.barre;
+        Bitmap bootcamp = Properties.Resources.bootcamp;
+        Bitmap boxing = Properties.Resources.boxing;
+        Bitmap crossfit = Properties.Resources.crossfit;
+        Bitmap hiit = Properties.Resources.hiit;
+        Bitmap kickboxing = Properties.Resources.kickboxing;
 
 
         public indulo_felulet()
@@ -41,6 +48,10 @@ namespace fitnesz_terem
             this.BackgroundImageLayout = ImageLayout.Stretch;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible= false;
+            csoportosEdzesArLabel.Visible= false;
+            label1.Visible = false;
+            WebshopListView.Visible = false;
         }
 
         private void formenu1_Click(object sender, EventArgs e)
@@ -52,6 +63,10 @@ namespace fitnesz_terem
             comboBox1.Visible = false;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible = false;
+            csoportosEdzesArLabel.Visible = false;
+            label1.Visible = false;
+            WebshopListView.Visible = false;
         }
 
         private void foszmenu2_Click(object sender, EventArgs e)
@@ -62,6 +77,10 @@ namespace fitnesz_terem
             szolgLabel.Visible = true;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible = false;
+            csoportosEdzesArLabel.Visible = true;
+            label1.Visible = false;
+            WebshopListView.Visible = false;
             /*
             // Get the list of roles
             UserController userC = new UserController();
@@ -176,6 +195,27 @@ namespace fitnesz_terem
                 case "Pilates":
                     fokep.Image = pilates;
                     break;
+                case "Barre":
+                    fokep.Image = barre;
+                    break;
+                case "Bootcamp":
+                    fokep.Image = bootcamp;
+                    break;
+                case "Boxing":
+                    fokep.Image = boxing;
+                    break;
+                case "CrossFit":
+                    fokep.Image = crossfit;
+                    break;
+                case "HIIT":
+                    fokep.Image = hiit;
+                    break;
+                case "Kickboxing":
+                    fokep.Image = kickboxing;
+                    break;
+                case "Zumba":
+                    fokep.Image = zumba;
+                    break;
                 default:
                     fokep.Image = altalanos;
                     break;
@@ -191,6 +231,10 @@ namespace fitnesz_terem
             fokep.Visible = false;
             tajekoztatoLabel.Visible = true;
             edzok_felsorolas.Visible = true;
+            szemelyiEdzoaArLabel.Visible = true;
+            csoportosEdzesArLabel.Visible = false;
+            label1.Visible = false;
+            WebshopListView.Visible = false;
 
             edzok_felsorolas.Items.Clear();
 
@@ -271,6 +315,62 @@ namespace fitnesz_terem
 
                     y += labelHeight + 5;
                 }
+            }
+        }
+
+        private void fowmenu4_Click(object sender, EventArgs e)
+        {
+            /*
+            projektListazasPanel.Visible = true;
+
+            ProjektController projektController = new();
+            List<ProjektViewModel> projektLista = projektController.ProjektListaLekerese();
+
+            projektekListView.Items.Clear();
+
+            foreach (var projekt in projektLista)
+            {
+                ListViewItem item = new ListViewItem();
+
+                item.Text = projekt.ProjektID.ToString();
+                item.SubItems.Add(projekt.Leiras);
+                item.SubItems.Add(projekt.Helyszin);
+                item.SubItems.Add(projekt.MegrendeloNev);
+                item.SubItems.Add(projekt.MegrendeloCim);
+                item.SubItems.Add(projekt.Statusz);
+
+                projektekListView.Items.Add(item);
+            }*/
+
+            textBoxRolunk.Visible = false;
+            fogado_szoveg.Visible = false;
+            comboBox1.Visible = false;
+            szolgLabel.Visible = false;
+            fokep.Visible = false;
+            tajekoztatoLabel.Visible = false;
+            edzok_felsorolas.Visible = false;
+            szemelyiEdzoaArLabel.Visible = false;
+            csoportosEdzesArLabel.Visible = false;
+            label1.Visible = true;
+            WebshopListView.Visible = true;
+
+            ItemController itemController = new();
+            List<ItemViewModel> products = itemController.GetItemViewModel();
+
+            // hogy ne adja tobbszor hozza az elemeket
+            WebshopListView.Items.Clear();
+
+            foreach (var p in products)
+            {
+               // listaelem letrehozasa
+                ListViewItem item = new ListViewItem();
+
+                // elso oszlopba nevek feltoltese
+                item.Text = p.ItemName;
+                item.SubItems.Add(p.Price.ToString() + " Ft");
+
+                // listahoz adas
+                WebshopListView.Items.Add(item);
             }
         }
     }
