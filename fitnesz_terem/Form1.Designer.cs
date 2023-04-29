@@ -49,6 +49,10 @@
             this.edzok_felsorolas = new System.Windows.Forms.ListBox();
             this.szemelyiEdzoaArLabel = new System.Windows.Forms.Label();
             this.csoportosEdzesArLabel = new System.Windows.Forms.Label();
+            this.WebshopListView = new System.Windows.Forms.ListView();
+            this.ProductName = new System.Windows.Forms.ColumnHeader();
+            this.ProductPrice = new System.Windows.Forms.ColumnHeader();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fokep)).BeginInit();
             this.fomenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource1)).BeginInit();
@@ -142,6 +146,7 @@
             this.fowmenu4.Name = "fowmenu4";
             this.fowmenu4.Size = new System.Drawing.Size(110, 22);
             this.fowmenu4.Text = " Webshop kínálat";
+            this.fowmenu4.Click += new System.EventHandler(this.fowmenu4_Click);
             // 
             // fogado_szoveg
             // 
@@ -256,6 +261,43 @@
             this.csoportosEdzesArLabel.TabIndex = 15;
             this.csoportosEdzesArLabel.Text = "Minden csoportos edzés ára 4000 Ft/óra";
             // 
+            // WebshopListView
+            // 
+            this.WebshopListView.BackColor = System.Drawing.SystemColors.MenuText;
+            this.WebshopListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ProductName,
+            this.ProductPrice});
+            this.WebshopListView.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WebshopListView.ForeColor = System.Drawing.SystemColors.Window;
+            this.WebshopListView.Location = new System.Drawing.Point(473, 209);
+            this.WebshopListView.Name = "WebshopListView";
+            this.WebshopListView.Size = new System.Drawing.Size(338, 397);
+            this.WebshopListView.TabIndex = 16;
+            this.WebshopListView.UseCompatibleStateImageBehavior = false;
+            this.WebshopListView.View = System.Windows.Forms.View.Details;
+            // 
+            // ProductName
+            // 
+            this.ProductName.Text = "Termék neve";
+            this.ProductName.Width = 200;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.Text = "Ár";
+            this.ProductPrice.Width = 110;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(328, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(575, 37);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Jelenleg elérhető termékek a webshopunkból:";
+            // 
             // indulo_felulet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -263,6 +305,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(198)))), ((int)(((byte)(249)))));
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.WebshopListView);
             this.Controls.Add(this.fokep);
             this.Controls.Add(this.csoportosEdzesArLabel);
             this.Controls.Add(this.szemelyiEdzoaArLabel);
@@ -313,5 +357,9 @@
         private ListBox edzok_felsorolas;
         private Label szemelyiEdzoaArLabel;
         private Label csoportosEdzesArLabel;
+        private ListView WebshopListView;
+        private ColumnHeader ProductName;
+        private ColumnHeader ProductPrice;
+        private Label label1;
     }
 }
