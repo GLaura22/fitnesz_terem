@@ -161,6 +161,32 @@ namespace fitnesz_terem.Migrations
                     b.ToTable("Personaltraining");
                 });
 
+            modelBuilder.Entity("fitnesz_terem.Database_Backend.Modells_Tables.Review", b =>
+                {
+                    b.Property<int>("ReviewID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewID"));
+
+                    b.Property<int>("CoachID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReviewStars")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReviewText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SportoloId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ReviewID");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("fitnesz_terem.Database_Backend.Modells_Tables.Role", b =>
                 {
                     b.Property<int>("RoleID")

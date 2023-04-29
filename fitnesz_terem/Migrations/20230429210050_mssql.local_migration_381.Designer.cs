@@ -12,8 +12,8 @@ using fitnesz_terem.Database_Backend.Connection;
 namespace fitnesz_terem.Migrations
 {
     [DbContext(typeof(FitnessDbContext))]
-    [Migration("20230307100527_mssql.local_migration_725")]
-    partial class mssqllocal_migration_725
+    [Migration("20230429210050_mssql.local_migration_381")]
+    partial class mssqllocal_migration_381
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace fitnesz_terem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AccountNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Lease")
                         .HasColumnType("int");
 
                     b.Property<int>("Money")
@@ -159,6 +162,32 @@ namespace fitnesz_terem.Migrations
                     b.HasKey("TrainingID");
 
                     b.ToTable("Personaltraining");
+                });
+
+            modelBuilder.Entity("fitnesz_terem.Database_Backend.Modells_Tables.Review", b =>
+                {
+                    b.Property<int>("ReviewID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewID"));
+
+                    b.Property<int>("CoachID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReviewStars")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReviewText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SportoloId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ReviewID");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("fitnesz_terem.Database_Backend.Modells_Tables.Role", b =>

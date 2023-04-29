@@ -39,16 +39,16 @@ namespace fitnesz_terem
                 var correctUser = context.Datas.FirstOrDefault(c => c.UserId == userID);
                 userName.Text = $"{correctUser.Name}";
             }
-            
-            
+
+
         }
 
         private void Tag_Load(object sender, EventArgs e)
         {
             SelectedDateLabel.Text = $"{monthCalendar1.TodayDate}";
 
-            using ( var context = new FitnessDbContext())
-            { 
+            using (var context = new FitnessDbContext())
+            {
                 var classNames = context.TrainingClasses
                                   .Select(c => c.ClassName)
                                   .Distinct()
@@ -70,14 +70,14 @@ namespace fitnesz_terem
                                             UserId = _data.UserId,
                                             CoachName = _data.Name,
                                             Role = _fitness.Role
-                                        })                                        
+                                        })
                                         .Where(c => c.Role == 2)
                                         .ToList();
 
                 // Add the names to the list box
 
-                List<string> nevek = new List<string>();   
-                foreach(var c in coachNames ) 
+                List<string> nevek = new List<string>();
+                foreach (var c in coachNames)
                 {
                     nevek.Add(c.CoachName);
                 }
@@ -207,9 +207,9 @@ namespace fitnesz_terem
                     ClassName_Label.Text = $"Ora tipusa: {trainingClass.ClassName}";
                     StartTime_Label.Text = $"Kezdes: {trainingClass.StartTime.ToString("yyyy-MM-dd HH:mm:ss")}";
                     EndTime_Label.Text = $"Befejezes: {trainingClass.EndTime.ToString("yyyy-MM-dd HH:mm:ss")}";
-                   
+
                     //LocationID_Label.Text = $"Location ID: {trainingClass.LocationID}";
-                    
+
 
                     if (coachName != null)
                     {
@@ -265,7 +265,7 @@ namespace fitnesz_terem
             WebshopPanel.Visible = false;
 
             using (var context = new FitnessDbContext())
-            { 
+            {
                 var edzok = context.Datas.Join(
                 context.FitnessUsers.Where(u => u.Role == 2),
                 d => d.UserId,
@@ -362,9 +362,9 @@ namespace fitnesz_terem
                     var sportoloId = userID; // retrieve the currently logged-in user ID ()
                     string coachName = Coaches_List.SelectedItem.ToString();
 
-                    int dataId = context.Datas.Where(d => d.Name == coachName).Select(d => d.Id).FirstOrDefault();
+                    int coachId = context.Datas.Where(d => d.Name == coachName).Select(d => d.UserId).FirstOrDefault();
 
-                    int coachId = context.FitnessUsers.Where(fu => fu.DataId == dataId).Select(fu => fu.UserID).FirstOrDefault();
+                    // int coachId = context.FitnessUsers.Where(fu => fu.DataId == dataId).Select(fu => fu.UserID).FirstOrDefault();
 
                     // Check if the user already has a personal training session with the selected coach
                     var existingTraining = context.Personaltraining.FirstOrDefault(pt => pt.SportoloId == sportoloId && pt.CoachID == coachId);
@@ -450,7 +450,7 @@ namespace fitnesz_terem
                         var sportoloId = userID; // retrieve the currently logged-in user ID ()
 
                         var result = context.Datas.SingleOrDefault(r => r.UserId == sportoloId);
-                        
+
                         if (result != null)
                         {
                             // csecking if the client has a lease already
@@ -504,7 +504,7 @@ namespace fitnesz_terem
                            p.ItemName.PadRight(40 - p.ItemName.Length) + "\t\t" + p.Price.ToString() + " Ft \t\t" + "Raktáron"
                            });
                 }
-                else 
+                else
                 {
                     webshopListBox.Items.AddRange(new object[] {
                            // 2. oszlop igazitasa
@@ -516,14 +516,14 @@ namespace fitnesz_terem
 
         private void ertekeles_Button_Click(object sender, EventArgs e)
         {
-            if(ErtekelesText.Text.Length > 0)
+            if (ErtekelesText.Text.Length > 0)
             {
                 string ertekeles = ErtekelesText.Text;
                 int csillagok = ReviewStarsBar.Value;
 
                 try
                 {
-                    using(var context = new FitnessDbContext())
+                    using (var context = new FitnessDbContext())
                     {
                         // Ellenőrzi hogy ez a személy vett e fel személyi edzőt.
                         var aktualisSzemely = context.Personaltraining.FirstOrDefault(c => c.SportoloId == userID);
@@ -532,10 +532,10 @@ namespace fitnesz_terem
                         var ertekelte = context.Reviews.FirstOrDefault(c => c.SportoloId == userID);
 
 
-                        if(aktualisSzemely == null)
+                        if (aktualisSzemely == null)
                         {
                             MessageBox.Show("Nincs felvéve személyi edző.");
-                            return; 
+                            return;
                         }
                         else if (ertekelte != null)
                         {
@@ -559,7 +559,7 @@ namespace fitnesz_terem
                             MessageBox.Show("Értékelés sikeresen elküldve!");
 
                         }
-                    
+
                     }
 
 

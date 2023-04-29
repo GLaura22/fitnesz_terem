@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace fitnesz_terem.Migrations
 {
     /// <inheritdoc />
-    public partial class mssqllocal_migration_725 : Migration
+    public partial class mssqllocal_migration_381 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,7 +21,8 @@ namespace fitnesz_terem.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AccountNumber = table.Column<int>(type: "int", nullable: false),
-                    Money = table.Column<int>(type: "int", nullable: false)
+                    Money = table.Column<int>(type: "int", nullable: false),
+                    Lease = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,6 +103,22 @@ namespace fitnesz_terem.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    ReviewID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SportoloId = table.Column<int>(type: "int", nullable: false),
+                    CoachID = table.Column<int>(type: "int", nullable: false),
+                    ReviewStars = table.Column<int>(type: "int", nullable: false),
+                    ReviewText = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.ReviewID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -167,6 +184,9 @@ namespace fitnesz_terem.Migrations
 
             migrationBuilder.DropTable(
                 name: "Personaltraining");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "Roles");
