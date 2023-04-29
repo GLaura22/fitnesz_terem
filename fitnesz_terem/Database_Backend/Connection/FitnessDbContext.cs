@@ -24,6 +24,7 @@ namespace fitnesz_terem.Database_Backend.Connection
         public DbSet<TrainingClass> TrainingClasses { get; set; }
         public DbSet<FitnessUser> FitnessUsers { get; set; }
         public DbSet<UsersToClass> usersToClasses { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

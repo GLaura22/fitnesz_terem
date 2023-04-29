@@ -405,5 +405,67 @@ namespace fitnesz_terem
             }
 
         }
+
+        private void ertekeles_Button_Click(object sender, EventArgs e)
+        {
+            if(ErtekelesText.Text.Length > 0)
+            {
+                string ertekeles = ErtekelesText.Text;
+                int csillagok = ReviewStarsBar.Value;
+
+                try
+                {
+                    using(var context = new FitnessDbContext())
+                    {
+                        // Ellenőrzi hogy ez a személy vett e fel személyi edzőt.
+                        var aktualisSzemely = context.Personaltraining.FirstOrDefault(c => c.SportoloId == userID);
+
+                        //Ellenőrzi, hogy ez a személy írt-e már értékelést
+                        var ertekelte = context.Reviews.FirstOrDefault(c => c.SportoloId == userID);
+
+
+                        if(aktualisSzemely == null)
+                        {
+                            MessageBox.Show("Nincs felvéve személyi edző.");
+                            return; 
+                        }
+                        else if (ertekelte != null)
+                        {
+                            MessageBox.Show("Már küldött értékelést!");
+                            return;
+                        }
+                        else
+                        {
+                            Review review = new Review
+                            {
+                                SportoloId = userID,
+                                CoachID = aktualisSzemely.CoachID,
+                                ReviewText = ertekeles,
+                                ReviewStars = csillagok
+                            };
+
+
+                            context.Reviews.Add(review);
+                            context.SaveChanges();
+
+                            MessageBox.Show("Értékelés sikeresen elküldve!");
+
+                        }
+                    
+                    }
+
+
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.ToString());
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Írjon be értékelést!");
+            }
+        }
     }
 }

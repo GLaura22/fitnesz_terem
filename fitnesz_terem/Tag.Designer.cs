@@ -49,7 +49,7 @@
             this.edzesre_Jelentkezes_Button = new System.Windows.Forms.Button();
             this.ertekelesPanel2 = new System.Windows.Forms.Panel();
             this.ertekeles_Button = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ErtekelesText = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Coaches_List = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,11 +58,13 @@
             this.szemelyi_edzo_keresesPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
+            this.ReviewStarsBar = new System.Windows.Forms.TrackBar();
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
             this.ertekelesPanel2.SuspendLayout();
             this.szemelyi_edzo_keresesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReviewStarsBar)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -258,8 +260,9 @@
             // ertekelesPanel2
             // 
             this.ertekelesPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.ertekelesPanel2.Controls.Add(this.ReviewStarsBar);
             this.ertekelesPanel2.Controls.Add(this.ertekeles_Button);
-            this.ertekelesPanel2.Controls.Add(this.textBox2);
+            this.ertekelesPanel2.Controls.Add(this.ErtekelesText);
             this.ertekelesPanel2.Controls.Add(this.textBox1);
             this.ertekelesPanel2.Location = new System.Drawing.Point(147, 69);
             this.ertekelesPanel2.Name = "ertekelesPanel2";
@@ -275,15 +278,16 @@
             this.ertekeles_Button.TabIndex = 16;
             this.ertekeles_Button.Text = "Küldés";
             this.ertekeles_Button.UseVisualStyleBackColor = true;
+            this.ertekeles_Button.Click += new System.EventHandler(this.ertekeles_Button_Click);
             // 
-            // textBox2
+            // ErtekelesText
             // 
-            this.textBox2.Location = new System.Drawing.Point(47, 132);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(456, 127);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Text = "Értékelés...";
+            this.ErtekelesText.Location = new System.Drawing.Point(47, 132);
+            this.ErtekelesText.Multiline = true;
+            this.ErtekelesText.Name = "ErtekelesText";
+            this.ErtekelesText.Size = new System.Drawing.Size(456, 127);
+            this.ErtekelesText.TabIndex = 15;
+            this.ErtekelesText.Text = "Értékelés...";
             // 
             // textBox1
             // 
@@ -379,6 +383,14 @@
             this.userName.TabIndex = 18;
             this.userName.Text = "User";
             // 
+            // ReviewStarsBar
+            // 
+            this.ReviewStarsBar.Location = new System.Drawing.Point(514, 203);
+            this.ReviewStarsBar.Name = "ReviewStarsBar";
+            this.ReviewStarsBar.Size = new System.Drawing.Size(193, 45);
+            this.ReviewStarsBar.TabIndex = 17;
+            this.ReviewStarsBar.Value = 10;
+            // 
             // Tag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -386,12 +398,12 @@
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.userName);
-            this.Controls.Add(this.keresesPanel);
             this.Controls.Add(this.ertekelesPanel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SelectedDateLabel);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.szemelyi_edzo_keresesPanel);
+            this.Controls.Add(this.keresesPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tag";
@@ -407,6 +419,7 @@
             this.ertekelesPanel2.PerformLayout();
             this.szemelyi_edzo_keresesPanel.ResumeLayout(false);
             this.szemelyi_edzo_keresesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReviewStarsBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,8 +454,9 @@
         private TextBox textBox1;
         private Panel ertekelesPanel2;
         private Button ertekeles_Button;
-        private TextBox textBox2;
+        private TextBox ErtekelesText;
         private Button edzesre_Jelentkezes_Button;
         private Label userName;
+        private TrackBar ReviewStarsBar;
     }
 }
