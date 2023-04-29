@@ -45,6 +45,7 @@
             this.értékelésKüldéseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.órarendemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jegybérletVásárlásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webshopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keresesLabel = new System.Windows.Forms.Label();
             this.keresesPanel = new System.Windows.Forms.Panel();
             this.csoportosEdzesArLabel = new System.Windows.Forms.Label();
@@ -69,13 +70,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
-            this.webshopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
+            this.webshopListBox = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.WebshopPanel = new System.Windows.Forms.Panel();
             this.Details_GroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.keresesPanel.SuspendLayout();
             this.berletPanel.SuspendLayout();
             this.ertekelesPanel2.SuspendLayout();
             this.szemelyi_edzo_keresesPanel.SuspendLayout();
+            this.WebshopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -240,6 +245,13 @@
             this.jegybérletVásárlásToolStripMenuItem.Text = "bérlet vásárlás";
             this.jegybérletVásárlásToolStripMenuItem.Click += new System.EventHandler(this.jegybérletVásárlásToolStripMenuItem_Click);
             // 
+            // webshopToolStripMenuItem
+            // 
+            this.webshopToolStripMenuItem.Name = "webshopToolStripMenuItem";
+            this.webshopToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.webshopToolStripMenuItem.Text = "webshop";
+            this.webshopToolStripMenuItem.Click += new System.EventHandler(this.webshopToolStripMenuItem_Click);
+            // 
             // keresesLabel
             // 
             this.keresesLabel.AutoSize = true;
@@ -264,7 +276,7 @@
             this.keresesPanel.Controls.Add(this.monthCalendar1);
             this.keresesPanel.Location = new System.Drawing.Point(12, 37);
             this.keresesPanel.Name = "keresesPanel";
-            this.keresesPanel.Size = new System.Drawing.Size(940, 612);
+            this.keresesPanel.Size = new System.Drawing.Size(940, 629);
             this.keresesPanel.TabIndex = 7;
             // 
             // csoportosEdzesArLabel
@@ -298,7 +310,7 @@
             this.berletPanel.Controls.Add(this.label7);
             this.berletPanel.Location = new System.Drawing.Point(195, 83);
             this.berletPanel.Name = "berletPanel";
-            this.berletPanel.Size = new System.Drawing.Size(556, 273);
+            this.berletPanel.Size = new System.Drawing.Size(698, 464);
             this.berletPanel.TabIndex = 26;
             // 
             // berletVasarlasButton
@@ -360,7 +372,7 @@
             this.ertekelesPanel2.Controls.Add(this.textBox1);
             this.ertekelesPanel2.Location = new System.Drawing.Point(147, 69);
             this.ertekelesPanel2.Name = "ertekelesPanel2";
-            this.ertekelesPanel2.Size = new System.Drawing.Size(805, 488);
+            this.ertekelesPanel2.Size = new System.Drawing.Size(805, 431);
             this.ertekelesPanel2.TabIndex = 17;
             // 
             // edzokComboBox
@@ -484,7 +496,7 @@
             this.szemelyi_edzo_keresesPanel.Controls.Add(this.Coaches_List);
             this.szemelyi_edzo_keresesPanel.Location = new System.Drawing.Point(63, 83);
             this.szemelyi_edzo_keresesPanel.Name = "szemelyi_edzo_keresesPanel";
-            this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(804, 417);
+            this.szemelyi_edzo_keresesPanel.Size = new System.Drawing.Size(804, 420);
             this.szemelyi_edzo_keresesPanel.TabIndex = 12;
             // 
             // label5
@@ -518,11 +530,51 @@
             this.userName.TabIndex = 18;
             this.userName.Text = "User";
             // 
-            // webshopToolStripMenuItem
+            // label6
             // 
-            this.webshopToolStripMenuItem.Name = "webshopToolStripMenuItem";
-            this.webshopToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.webshopToolStripMenuItem.Text = "webshop";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(56, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(267, 32);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Webshopunk kínálata:";
+            // 
+            // webshopListBox
+            // 
+            this.webshopListBox.BackColor = System.Drawing.SystemColors.MenuText;
+            this.webshopListBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.webshopListBox.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.webshopListBox.FormattingEnabled = true;
+            this.webshopListBox.ItemHeight = 20;
+            this.webshopListBox.Location = new System.Drawing.Point(143, 183);
+            this.webshopListBox.MultiColumn = true;
+            this.webshopListBox.Name = "webshopListBox";
+            this.webshopListBox.Size = new System.Drawing.Size(527, 204);
+            this.webshopListBox.TabIndex = 28;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(548, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 35);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Vásárlás";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // WebshopPanel
+            // 
+            this.WebshopPanel.BackColor = System.Drawing.Color.Transparent;
+            this.WebshopPanel.Controls.Add(this.button1);
+            this.WebshopPanel.Controls.Add(this.webshopListBox);
+            this.WebshopPanel.Controls.Add(this.label6);
+            this.WebshopPanel.Location = new System.Drawing.Point(45, 86);
+            this.WebshopPanel.Name = "WebshopPanel";
+            this.WebshopPanel.Size = new System.Drawing.Size(927, 461);
+            this.WebshopPanel.TabIndex = 30;
             // 
             // Tag
             // 
@@ -530,14 +582,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::fitnesz_terem.Properties.Resources.sotetbgr;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.WebshopPanel);
             this.Controls.Add(this.berletPanel);
             this.Controls.Add(this.szemelyi_edzo_keresesPanel);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SelectedDateLabel);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.ertekelesPanel2);
             this.Controls.Add(this.keresesPanel);
+            this.Controls.Add(this.ertekelesPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tag";
@@ -555,6 +608,8 @@
             this.ertekelesPanel2.PerformLayout();
             this.szemelyi_edzo_keresesPanel.ResumeLayout(false);
             this.szemelyi_edzo_keresesPanel.PerformLayout();
+            this.WebshopPanel.ResumeLayout(false);
+            this.WebshopPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,5 +659,9 @@
         private Button berletVasarlasButton;
         private Panel berletPanel;
         private ToolStripMenuItem webshopToolStripMenuItem;
+        private Label label6;
+        private ListBox webshopListBox;
+        private Button button1;
+        private Panel WebshopPanel;
     }
 }

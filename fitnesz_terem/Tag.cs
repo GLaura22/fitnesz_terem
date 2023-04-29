@@ -14,6 +14,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace fitnesz_terem
 {
@@ -28,6 +29,7 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
             berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
 
             userID = ID;
             // MessageBox.Show($"Sikeresen feljelentkeztél {userID} ");
@@ -242,6 +244,7 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
             berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
         }
 
         private void személyiEdzőhözJelentkezésToolStripMenuItem_Click(object sender, EventArgs e)
@@ -250,6 +253,7 @@ namespace fitnesz_terem
             keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
             berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
         }
 
         private void értékelésKüldéseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -258,6 +262,7 @@ namespace fitnesz_terem
             keresesPanel.Visible = false;
             szemelyi_edzo_keresesPanel.Visible = false;
             berletPanel.Visible = false;
+            WebshopPanel.Visible = false;
 
             using (var context = new FitnessDbContext())
             { 
@@ -431,6 +436,7 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = false;
             keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            WebshopPanel.Visible = false;
         }
 
         private void berletVasarlasButton_Click(object sender, EventArgs e)
@@ -469,6 +475,41 @@ namespace fitnesz_terem
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message);
+                }
+            }
+        }
+
+        private void webshopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            berletPanel.Visible = false;
+            szemelyi_edzo_keresesPanel.Visible = false;
+            keresesPanel.Visible = false;
+            ertekelesPanel2.Visible = false;
+            WebshopPanel.Visible = true;
+
+            ItemController itemController = new();
+            List<ItemViewModel> products = itemController.GetItemViewModel();
+
+            // hogy ne adja tobbszor hozza az elemeket
+            webshopListBox.Items.Clear();
+            //webshopListBox.ColumnWidth = 85;
+
+            foreach (var p in products)
+            {
+                // webshop lista feltoltese az Items tabla ertekeivel
+                if (p.NumberInStock != 0)
+                {
+                    webshopListBox.Items.AddRange(new object[] {
+                           // 2. oszlop igazitasa
+                           p.ItemName.PadRight(40 - p.ItemName.Length) + "\t\t" + p.Price.ToString() + " Ft \t\t" + "Raktáron"
+                           });
+                }
+                else 
+                {
+                    webshopListBox.Items.AddRange(new object[] {
+                           // 2. oszlop igazitasa
+                           p.ItemName.PadRight(40 - p.ItemName.Length) + "\t\t" + p.Price.ToString() + " Ft \t\t" + "Nincs raktáron"
+                           });
                 }
             }
         }
