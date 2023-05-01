@@ -56,6 +56,7 @@
             berletCheckBox = new CheckBox();
             label7 = new Label();
             ertekelesPanel2 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ReviewStarsBar = new TrackBar();
             edzokComboBox = new ComboBox();
             label4 = new Label();
@@ -75,12 +76,11 @@
             webshopListBox = new ListBox();
             button1 = new Button();
             WebshopPanel = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            selectedItemPanel = new Panel();
             label8 = new Label();
-            selectedItemName = new Label();
-            selectedItemPrice = new Label();
+            selectedItemPanel = new Panel();
             selectedItemStock = new Label();
+            selectedItemPrice = new Label();
+            selectedItemName = new Label();
             Details_GroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
             keresesPanel.SuspendLayout();
@@ -379,6 +379,13 @@
             ertekelesPanel2.Size = new Size(805, 431);
             ertekelesPanel2.TabIndex = 17;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(200, 100);
+            flowLayoutPanel1.TabIndex = 21;
+            // 
             // ReviewStarsBar
             // 
             ReviewStarsBar.Location = new Point(405, 279);
@@ -589,12 +596,14 @@
             WebshopPanel.Size = new Size(927, 461);
             WebshopPanel.TabIndex = 30;
             // 
-            // flowLayoutPanel1
+            // label8
             // 
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(200, 100);
-            flowLayoutPanel1.TabIndex = 21;
+            label8.AutoSize = true;
+            label8.Location = new Point(0, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(38, 15);
+            label8.TabIndex = 31;
+            label8.Text = "label8";
             // 
             // selectedItemPanel
             // 
@@ -607,41 +616,38 @@
             selectedItemPanel.Size = new Size(365, 204);
             selectedItemPanel.TabIndex = 30;
             // 
-            // label8
+            // selectedItemStock
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(0, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 15);
-            label8.TabIndex = 31;
-            label8.Text = "label8";
-            // 
-            // selectedItemName
-            // 
-            selectedItemName.AutoSize = true;
-            selectedItemName.Location = new Point(6, 16);
-            selectedItemName.Name = "selectedItemName";
-            selectedItemName.Size = new Size(44, 15);
-            selectedItemName.TabIndex = 30;
-            selectedItemName.Text = "label10";
+            selectedItemStock.AutoSize = true;
+            selectedItemStock.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            selectedItemStock.ForeColor = SystemColors.Control;
+            selectedItemStock.Location = new Point(6, 67);
+            selectedItemStock.Name = "selectedItemStock";
+            selectedItemStock.Size = new Size(61, 21);
+            selectedItemStock.TabIndex = 32;
+            selectedItemStock.Text = "label12";
             // 
             // selectedItemPrice
             // 
             selectedItemPrice.AutoSize = true;
+            selectedItemPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            selectedItemPrice.ForeColor = SystemColors.Control;
             selectedItemPrice.Location = new Point(6, 42);
             selectedItemPrice.Name = "selectedItemPrice";
-            selectedItemPrice.Size = new Size(44, 15);
+            selectedItemPrice.Size = new Size(61, 21);
             selectedItemPrice.TabIndex = 31;
             selectedItemPrice.Text = "label11";
             // 
-            // selectedItemStock
+            // selectedItemName
             // 
-            selectedItemStock.AutoSize = true;
-            selectedItemStock.Location = new Point(6, 67);
-            selectedItemStock.Name = "selectedItemStock";
-            selectedItemStock.Size = new Size(44, 15);
-            selectedItemStock.TabIndex = 32;
-            selectedItemStock.Text = "label12";
+            selectedItemName.AutoSize = true;
+            selectedItemName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            selectedItemName.ForeColor = SystemColors.Control;
+            selectedItemName.Location = new Point(6, 16);
+            selectedItemName.Name = "selectedItemName";
+            selectedItemName.Size = new Size(61, 21);
+            selectedItemName.TabIndex = 30;
+            selectedItemName.Text = "label10";
             // 
             // Tag
             // 

@@ -485,6 +485,7 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = false;
             keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            selectedItemPanel.Visible = false;
             WebshopPanel.Visible = true;
 
             ItemController itemController = new();
