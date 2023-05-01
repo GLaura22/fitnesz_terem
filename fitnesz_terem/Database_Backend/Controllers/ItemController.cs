@@ -46,10 +46,14 @@ namespace fitnesz_terem.Database_Backend.Controllers
             }
         }
 
-        public void vasarlas(int userID, int itemID)
+        public void vasarlas(int userID, string itemName)
         {
             try
             {
+                //==============================
+                // Adatbázis
+                //==============================
+
                 var context = new FitnessDbContext();
 
                 //==============================
@@ -62,7 +66,7 @@ namespace fitnesz_terem.Database_Backend.Controllers
 
                 /* A megfelelő termék megkeresése. */
                 var item = context.Items
-                    .First(row => row.itemID == itemID);
+                    .First(row => row.Name == itemName);
 
                 //==============================
                 // Validáció
@@ -99,13 +103,17 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 /* Felvenni a rendelést. */
                 context.Orders.Add(new Order
                 {
-                    ItemID = user.UserId,
-                    userID = item.itemID,
+                    userID = user.UserId,
+                    ItemID = item.itemID,
                     OrderDate = orderDate
                 });
 
                 /* Vásárlás végrehajtása. */
                 context.SaveChanges();
+
+                //==============================
+                // Visszajelzés a felhasználónak
+                //==============================
 
                 MessageBox.Show("A vásárlás sikeresen megtörtént!");
                 
@@ -114,6 +122,31 @@ namespace fitnesz_terem.Database_Backend.Controllers
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+
+        public Modells_Tables.Item termekAdatokLekerese(string itemName)
+        {
+            try
+            {
+                /* Adatbázis. */
+                var context = new FitnessDbContext();
+
+                /* A megfelelő termék megkeresése. */
+                Modells_Tables.Item item = context.Items
+                    .First(row => row.Name == itemName);
+
+                return item;
+            }
+            catch (Exception)
+            {
+                return new Modells_Tables.Item
+                {
+                    itemID = 0,
+                    Name = "",
+                    Price = 0,
+                    NumberInStock = 0
+                };
             }
         }
     }

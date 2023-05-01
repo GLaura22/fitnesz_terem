@@ -48,8 +48,8 @@ namespace fitnesz_terem
             this.BackgroundImageLayout = ImageLayout.Stretch;
             tajekoztatoLabel.Visible = false;
             edzok_felsorolas.Visible = false;
-            szemelyiEdzoaArLabel.Visible= false;
-            csoportosEdzesArLabel.Visible= false;
+            szemelyiEdzoaArLabel.Visible = false;
+            csoportosEdzesArLabel.Visible = false;
             label1.Visible = false;
             WebshopListView.Visible = false;
         }
@@ -362,7 +362,7 @@ namespace fitnesz_terem
 
             foreach (var p in products)
             {
-               // listaelem letrehozasa
+                // listaelem letrehozasa
                 ListViewItem item = new ListViewItem();
 
                 // elso oszlopba nevek feltoltese
