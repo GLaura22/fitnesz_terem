@@ -90,16 +90,6 @@ namespace fitnesz_terem
             label3.TabIndex = 3;
             label3.Text = "10:00";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(304, 130);
-            label4.Name = "label4";
-            label4.Size = new Size(34, 15);
-            label4.TabIndex = 13;
-            label4.Text = "11:00";
-
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -172,6 +162,15 @@ namespace fitnesz_terem
             label12.TabIndex = 12;
             label12.Text = "19:00";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(304, 130);
+            label4.Name = "label4";
+            label4.Size = new Size(34, 15);
+            label4.TabIndex = 13;
+            label4.Text = "11:00";
+            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -185,7 +184,8 @@ namespace fitnesz_terem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(669, 283);
+            BackgroundImage = Properties.Resources.sotetbgr;
+            ClientSize = new Size(700, 661);
             Controls.Add(label13);
             Controls.Add(label4);
             Controls.Add(label12);
@@ -201,7 +201,7 @@ namespace fitnesz_terem
             Controls.Add(label1);
             Controls.Add(monthCalendar1);
             Name = "Form2";
-            Text = "Form2";
+            Text = "Orarend";
             ResumeLayout(false);
             PerformLayout();
         }

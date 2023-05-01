@@ -418,5 +418,13 @@ namespace fitnesz_terem
 
 
         }
+
+        private void naptarButton_Click(object sender, EventArgs e)
+        {
+            Form2 valami = new Form2();
+            //valami.setcoachID(coachid);
+            //MessageBox.Show(coachid.ToString());
+            valami.Show();
+        }
     }
 }
