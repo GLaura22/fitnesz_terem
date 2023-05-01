@@ -16,14 +16,14 @@ namespace fitnesz_terem
         public Form2()
         {
             InitializeComponent();
-            rajz();
+            rajz(ID);
         }
-        public void rajz()
+        public void rajz(int userID)
         {
             string connectionString = "Server=(localdb)\\mssqllocaldb;Database=aspnet-53bc9b9d-9d6a-45d4-8429-2a2761773502;Trusted_Connection=True;MultipleActiveResultSets=true";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT ClassID FROM usersToClasses where UserID=3", connection);
+            SqlCommand command = new SqlCommand($"SELECT ClassID FROM usersToClasses where UserID={userID}", connection);
             SqlCommand command2 = new SqlCommand("SELECT * FROM TrainingClasses", connection);
 
             DateTime selectedDate = monthCalendar1.SelectionRange.Start;
@@ -93,7 +93,7 @@ namespace fitnesz_terem
                 Controls.Remove(control);
                 control.Dispose();
             }
-            rajz();
+            rajz(ID);
         }
     }
 }
