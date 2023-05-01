@@ -232,6 +232,8 @@
             órarendemToolStripMenuItem.Name = "órarendemToolStripMenuItem";
             órarendemToolStripMenuItem.Size = new Size(77, 20);
             órarendemToolStripMenuItem.Text = "órarendem";
+            órarendemToolStripMenuItem.Click += ÓrarendemToolStripMenuItem_Click;
+
             // 
             // jegybérletVásárlásToolStripMenuItem
             // 
@@ -615,6 +617,13 @@
             WebshopPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void ÓrarendemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 valami = new Form2();
+            valami.setID(userID);
+            valami.Show();
         }
 
         #endregion
