@@ -56,6 +56,7 @@
             berletCheckBox = new CheckBox();
             label7 = new Label();
             ertekelesPanel2 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ReviewStarsBar = new TrackBar();
             edzokComboBox = new ComboBox();
             label4 = new Label();
@@ -75,6 +76,11 @@
             webshopListBox = new ListBox();
             button1 = new Button();
             WebshopPanel = new Panel();
+            label8 = new Label();
+            selectedItemPanel = new Panel();
+            selectedItemStock = new Label();
+            selectedItemPrice = new Label();
+            selectedItemName = new Label();
             Details_GroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
             keresesPanel.SuspendLayout();
@@ -83,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)ReviewStarsBar).BeginInit();
             szemelyi_edzo_keresesPanel.SuspendLayout();
             WebshopPanel.SuspendLayout();
+            selectedItemPanel.SuspendLayout();
             SuspendLayout();
             // 
             // monthCalendar1
@@ -361,6 +368,7 @@
             // ertekelesPanel2
             // 
             ertekelesPanel2.BackColor = Color.Transparent;
+            ertekelesPanel2.Controls.Add(flowLayoutPanel1);
             ertekelesPanel2.Controls.Add(ReviewStarsBar);
             ertekelesPanel2.Controls.Add(edzokComboBox);
             ertekelesPanel2.Controls.Add(label4);
@@ -372,6 +380,13 @@
             ertekelesPanel2.Name = "ertekelesPanel2";
             ertekelesPanel2.Size = new Size(805, 431);
             ertekelesPanel2.TabIndex = 17;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(200, 100);
+            flowLayoutPanel1.TabIndex = 21;
             // 
             // ReviewStarsBar
             // 
@@ -556,29 +571,85 @@
             webshopListBox.Location = new Point(143, 183);
             webshopListBox.MultiColumn = true;
             webshopListBox.Name = "webshopListBox";
-            webshopListBox.Size = new Size(527, 204);
+            webshopListBox.Size = new Size(394, 204);
             webshopListBox.TabIndex = 28;
+            webshopListBox.SelectedIndexChanged += webshopListBox_SelectedIndexChanged;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(548, 412);
+            button1.Location = new Point(115, 164);
             button1.Name = "button1";
             button1.Size = new Size(139, 35);
             button1.TabIndex = 29;
             button1.Text = "Vásárlás";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // WebshopPanel
             // 
             WebshopPanel.BackColor = Color.Transparent;
-            WebshopPanel.Controls.Add(button1);
+            WebshopPanel.Controls.Add(label8);
+            WebshopPanel.Controls.Add(selectedItemPanel);
             WebshopPanel.Controls.Add(webshopListBox);
             WebshopPanel.Controls.Add(label6);
             WebshopPanel.Location = new Point(45, 86);
             WebshopPanel.Name = "WebshopPanel";
             WebshopPanel.Size = new Size(927, 461);
             WebshopPanel.TabIndex = 30;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(0, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(38, 15);
+            label8.TabIndex = 31;
+            label8.Text = "label8";
+            // 
+            // selectedItemPanel
+            // 
+            selectedItemPanel.Controls.Add(selectedItemStock);
+            selectedItemPanel.Controls.Add(selectedItemPrice);
+            selectedItemPanel.Controls.Add(selectedItemName);
+            selectedItemPanel.Controls.Add(button1);
+            selectedItemPanel.Location = new Point(542, 183);
+            selectedItemPanel.Name = "selectedItemPanel";
+            selectedItemPanel.Size = new Size(365, 204);
+            selectedItemPanel.TabIndex = 30;
+            // 
+            // selectedItemStock
+            // 
+            selectedItemStock.AutoSize = true;
+            selectedItemStock.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            selectedItemStock.ForeColor = SystemColors.Control;
+            selectedItemStock.Location = new Point(6, 67);
+            selectedItemStock.Name = "selectedItemStock";
+            selectedItemStock.Size = new Size(61, 21);
+            selectedItemStock.TabIndex = 32;
+            selectedItemStock.Text = "label12";
+            // 
+            // selectedItemPrice
+            // 
+            selectedItemPrice.AutoSize = true;
+            selectedItemPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            selectedItemPrice.ForeColor = SystemColors.Control;
+            selectedItemPrice.Location = new Point(6, 42);
+            selectedItemPrice.Name = "selectedItemPrice";
+            selectedItemPrice.Size = new Size(61, 21);
+            selectedItemPrice.TabIndex = 31;
+            selectedItemPrice.Text = "label11";
+            // 
+            // selectedItemName
+            // 
+            selectedItemName.AutoSize = true;
+            selectedItemName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            selectedItemName.ForeColor = SystemColors.Control;
+            selectedItemName.Location = new Point(6, 16);
+            selectedItemName.Name = "selectedItemName";
+            selectedItemName.Size = new Size(61, 21);
+            selectedItemName.TabIndex = 30;
+            selectedItemName.Text = "label10";
             // 
             // Tag
             // 
@@ -590,11 +661,11 @@
             Controls.Add(label2);
             Controls.Add(SelectedDateLabel);
             Controls.Add(menuStrip1);
-            Controls.Add(ertekelesPanel2);
             Controls.Add(WebshopPanel);
             Controls.Add(berletPanel);
             Controls.Add(keresesPanel);
             Controls.Add(szemelyi_edzo_keresesPanel);
+            Controls.Add(ertekelesPanel2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "Tag";
@@ -615,6 +686,8 @@
             szemelyi_edzo_keresesPanel.PerformLayout();
             WebshopPanel.ResumeLayout(false);
             WebshopPanel.PerformLayout();
+            selectedItemPanel.ResumeLayout(false);
+            selectedItemPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -675,5 +748,11 @@
         private Button button1;
         private Panel WebshopPanel;
         private TrackBar ReviewStarsBar;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label8;
+        private Panel selectedItemPanel;
+        private Label selectedItemStock;
+        private Label selectedItemPrice;
+        private Label selectedItemName;
     }
 }

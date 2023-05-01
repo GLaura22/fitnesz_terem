@@ -485,6 +485,7 @@ namespace fitnesz_terem
             szemelyi_edzo_keresesPanel.Visible = false;
             keresesPanel.Visible = false;
             ertekelesPanel2.Visible = false;
+            selectedItemPanel.Visible = false;
             WebshopPanel.Visible = true;
 
             ItemController itemController = new();
@@ -493,6 +494,8 @@ namespace fitnesz_terem
             // hogy ne adja tobbszor hozza az elemeket
             webshopListBox.Items.Clear();
             //webshopListBox.ColumnWidth = 85;
+
+            /*
 
             foreach (var p in products)
             {
@@ -512,6 +515,14 @@ namespace fitnesz_terem
                            });
                 }
             }
+
+            */
+
+            foreach (var p in products)
+            {
+                webshopListBox.Items.Add(p.ItemName);
+            }
+
         }
 
         private void ertekeles_Button_Click(object sender, EventArgs e)
@@ -573,6 +584,53 @@ namespace fitnesz_terem
             else
             {
                 MessageBox.Show("Írjon be értékelést!");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ItemController itemController = new();
+
+                string itemName = webshopListBox.SelectedItem.ToString();
+
+                if (itemName == null)
+                    throw new Exception("Válasszon ki egy terméket!");
+
+                itemController.vasarlas(userID, itemName);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void webshopListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ItemController itemController = new();
+
+                string itemName = webshopListBox.SelectedItem.ToString();
+
+                if (itemName == null)
+                    throw new Exception("Válasszon ki egy terméket!");
+
+                Item item = itemController.termekAdatokLekerese(itemName);
+
+                if (item.itemID == 0)
+                    throw new Exception("Termék adatok lekérése sikertelen!");
+
+                selectedItemName.Text = $"Név: {item.Name}";
+                selectedItemPrice.Text = $"Ár: {item.Price}";
+                selectedItemStock.Text = $"Raktáron: " + (item.NumberInStock > 0 ? $"{item.NumberInStock} db" : "Nincs raktáron!");
+
+                selectedItemPanel.Visible = true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
     }
