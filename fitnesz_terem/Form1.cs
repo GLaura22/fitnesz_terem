@@ -1,4 +1,4 @@
-using fitnesz_terem.Database_Backend.Connection;
+﻿using fitnesz_terem.Database_Backend.Connection;
 using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using Microsoft.Data.SqlClient;
@@ -21,6 +21,7 @@ namespace fitnesz_terem
         private Rectangle textBoxRolunkRect;
         private Rectangle fogado_szovegRect;
         private Size FormSize;
+        int labelHeight = 30;
 
         Bitmap yoga = Properties.Resources.yoga;
         Bitmap spinning = Properties.Resources.spinning;
@@ -293,16 +294,55 @@ namespace fitnesz_terem
                 for (int i = this.Controls.Count - 1; i >= 0; i--)
                 {
                     Control c = this.Controls[i];
-                    if (c is Label && c.Name.StartsWith("classLabel_"))
+                    if (c is Label && c.Name.StartsWith("classLabel_") || c.Name.StartsWith("myLabel"))
                     {
                         this.Controls.Remove(c);
                     }
                 }
 
+                // Create a new Label AVG
+
+                
+                var tempUC = new UserController();
+
+                var ertekeles = tempUC.AverageReview(selectedCoachId);
+
+                
+                    Label myLabel = new Label();
+
+                    myLabel.Name = "myLabel";
+                    myLabel.Font = new Font("Ariel", 30);
+                    myLabel.BackColor = Color.Transparent;
+
+                if (ertekeles > 0)
+                {
+                    for (int i = 0; i < ertekeles; i++)
+                    {
+                        myLabel.Text += "⭐";
+                    }
+                }
+                else
+                {
+                    myLabel.Font = new Font("Ariel", 20);
+                    myLabel.Text = "Nincs értékelése";
+
+                }
+
+                    //myLabel.Text = "értékelése: " + ertekeles;
+                    myLabel.Location = new Point(500, 230);
+                   
+                    //myLabel.Height = labelHeight;
+                    myLabel.AutoSize = true;
+
+                    // Add the label to the form's controls collection
+
+                    this.Controls.Add(myLabel);
+                
+                
                 // Display the list of classes in labels
                 int x = 800;
                 int y = 250;
-                int labelHeight = 30;
+                
                 foreach (var trainingClass in coachClasses)
                 {
                     Label classLabel = new Label();

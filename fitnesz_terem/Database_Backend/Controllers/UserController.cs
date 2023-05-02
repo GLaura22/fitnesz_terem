@@ -310,6 +310,41 @@ namespace fitnesz_terem.Database_Backend.Controllers
                 return false;
             }
         }
+
+
+        public double AverageReview(int coachID)
+        {
+            using (var context = new FitnessDbContext())
+            {
+                var reviews = context.Reviews.Where(r => r.CoachID == coachID).ToList();
+
+                if (reviews.Any())
+                {
+                    double avg;
+                    int sum = 0;
+                    //int count = 0;
+
+                    foreach (var review in reviews)
+                    {
+                        sum += review.ReviewStars;
+                        //count++;
+                    }
+
+                    avg = sum / reviews.Count;
+
+                    return avg;
+                }
+
+                else
+                {
+                    return -1;
+                }
+
+            }
+
+        }
+
+
     }
 
     public class UserViewModel
