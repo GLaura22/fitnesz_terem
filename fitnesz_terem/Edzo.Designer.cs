@@ -366,6 +366,7 @@
             this.statisztikakButton.TabIndex = 24;
             this.statisztikakButton.Text = "Statisztikáim";
             this.statisztikakButton.UseVisualStyleBackColor = false;
+            this.statisztikakButton.Click += new System.EventHandler(this.statisztikakButton_Click);
             // 
             // naptarButton
             // 

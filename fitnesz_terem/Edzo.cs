@@ -2,6 +2,7 @@
 using fitnesz_terem.Database_Backend.Controllers;
 using fitnesz_terem.Database_Backend.Modells_Tables;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -425,6 +426,50 @@ namespace fitnesz_terem
             //valami.setcoachID(coachid);
             //MessageBox.Show(coachid.ToString());
             valami.Show();
+        }
+
+        private void statisztikakButton_Click(object sender, EventArgs e)
+        {
+
+            using (var db = new FitnessDbContext())
+            {
+                // Összesen hány órányi órát tartott az edző
+                var totalHours = db.TrainingClasses
+              .Where(c => c.CoachID == id)
+              .Sum(c => EF.Functions.DateDiffHour(c.StartTime, c.EndTime));
+
+
+                // Aktuális hónapban hány órája lesz az edzőnek
+                var currentMonth = DateTime.Now.Month;
+                var currentMonthHours = db.TrainingClasses.Where(c => c.CoachID == id && c.StartTime.Month == currentMonth).AsEnumerable().Sum(c => (c.EndTime - c.StartTime).TotalHours);
+
+
+
+                // Milyen órát tart a leggyakrabban az edző
+                var mostFrequentClass = db.TrainingClasses.Where(c => c.CoachID == id)
+                                                              .GroupBy(c => c.ClassName)
+                                                              .OrderByDescending(g => g.Count())
+                                                              .Select(g => g.Key)
+                                                              .FirstOrDefault();
+
+                // Hány csillagos az edző értékelése
+                var avgRating = db.Reviews.Where(r => r.CoachID == id)
+                                          .Average(r => r.ReviewStars);
+
+                // Hány embernek tart személyi edzést
+                var personalTrainings = db.Personaltraining.Where(t => t.CoachID == id);
+                var personalTrainingCount = personalTrainings.Count();
+                var totalClients = personalTrainings.Select(t => t.SportoloId).Distinct().Count();
+
+                var message = $"Eddig tartott órák összesen: {totalHours}\n" +
+                              $"Havi óraszám: {currentMonthHours}\n" +
+                              $"legtöbbet tartott óra: {mostFrequentClass}\n" +
+                              $"Értékelések átlaga: {avgRating}\n" +
+                              $"Személyi edzője {personalTrainingCount} diáknak\n" +
+                              $"Összes diákja: {totalClients}";
+
+                MessageBox.Show(message, "Statisztika");
+            }
         }
     }
 }
