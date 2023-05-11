@@ -28,237 +28,224 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Users_with_data = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.filter_Text_Box = new System.Windows.Forms.TextBox();
-            this.Items_with_data = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.roleBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Filter_text_Box_Items = new System.Windows.Forms.TextBox();
-            this.keresoPanel = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.keresésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jogosultságokKezeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hozzáadásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statisztikákToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visszajelzésekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Items_with_data)).BeginInit();
-            this.keresoPanel.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            Users_with_data = new DataGridView();
+            label1 = new Label();
+            filter_Text_Box = new TextBox();
+            Items_with_data = new DataGridView();
+            label2 = new Label();
+            label3 = new Label();
+            roleBox = new ComboBox();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            Filter_text_Box_Items = new TextBox();
+            keresoPanel = new Panel();
+            menuStrip1 = new MenuStrip();
+            keresésToolStripMenuItem = new ToolStripMenuItem();
+            jogosultságokKezeléseToolStripMenuItem = new ToolStripMenuItem();
+            hozzáadásToolStripMenuItem = new ToolStripMenuItem();
+            visszajelzésekToolStripMenuItem = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)Users_with_data).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Items_with_data).BeginInit();
+            keresoPanel.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // Users_with_data
             // 
-            this.Users_with_data.BackgroundColor = System.Drawing.Color.RosyBrown;
-            this.Users_with_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Users_with_data.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Users_with_data.Location = new System.Drawing.Point(3, 128);
-            this.Users_with_data.Name = "Users_with_data";
-            this.Users_with_data.RowTemplate.Height = 25;
-            this.Users_with_data.Size = new System.Drawing.Size(474, 232);
-            this.Users_with_data.TabIndex = 1;
+            Users_with_data.BackgroundColor = Color.RosyBrown;
+            Users_with_data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Users_with_data.GridColor = SystemColors.ActiveCaptionText;
+            Users_with_data.Location = new Point(3, 128);
+            Users_with_data.Name = "Users_with_data";
+            Users_with_data.RowTemplate.Height = 25;
+            Users_with_data.Size = new Size(474, 232);
+            Users_with_data.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.RosyBrown;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(95, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Felhasználók\r\n";
+            label1.AutoSize = true;
+            label1.BackColor = Color.RosyBrown;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(95, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(150, 32);
+            label1.TabIndex = 2;
+            label1.Text = "Felhasználók\r\n";
             // 
             // filter_Text_Box
             // 
-            this.filter_Text_Box.Location = new System.Drawing.Point(170, 53);
-            this.filter_Text_Box.Name = "filter_Text_Box";
-            this.filter_Text_Box.Size = new System.Drawing.Size(172, 23);
-            this.filter_Text_Box.TabIndex = 3;
-            this.filter_Text_Box.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            filter_Text_Box.Location = new Point(170, 53);
+            filter_Text_Box.Name = "filter_Text_Box";
+            filter_Text_Box.Size = new Size(172, 23);
+            filter_Text_Box.TabIndex = 3;
+            filter_Text_Box.TextChanged += textBox1_TextChanged;
             // 
             // Items_with_data
             // 
-            this.Items_with_data.BackgroundColor = System.Drawing.Color.RosyBrown;
-            this.Items_with_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Items_with_data.Location = new System.Drawing.Point(506, 128);
-            this.Items_with_data.Name = "Items_with_data";
-            this.Items_with_data.RowTemplate.Height = 25;
-            this.Items_with_data.Size = new System.Drawing.Size(457, 232);
-            this.Items_with_data.TabIndex = 4;
+            Items_with_data.BackgroundColor = Color.RosyBrown;
+            Items_with_data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Items_with_data.Location = new Point(506, 128);
+            Items_with_data.Name = "Items_with_data";
+            Items_with_data.RowTemplate.Height = 25;
+            Items_with_data.Size = new Size(457, 232);
+            Items_with_data.TabIndex = 4;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.RosyBrown;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(314, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(377, 74);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "ADMIN FELÜLET\r\nMinden adat élesben módosul\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label2.AutoSize = true;
+            label2.BackColor = Color.RosyBrown;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(314, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(377, 74);
+            label2.TabIndex = 5;
+            label2.Text = "ADMIN FELÜLET\r\nMinden adat élesben módosul\r\n";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.RosyBrown;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(3, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Szűrés név alapján:";
+            label3.AutoSize = true;
+            label3.BackColor = Color.RosyBrown;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(3, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(142, 21);
+            label3.TabIndex = 6;
+            label3.Text = "Szűrés név alapján:";
             // 
             // roleBox
             // 
-            this.roleBox.FormattingEnabled = true;
-            this.roleBox.Location = new System.Drawing.Point(170, 90);
-            this.roleBox.Name = "roleBox";
-            this.roleBox.Size = new System.Drawing.Size(172, 23);
-            this.roleBox.TabIndex = 7;
-            this.roleBox.SelectedIndexChanged += new System.EventHandler(this.roleBox_SelectedIndexChanged);
+            roleBox.FormattingEnabled = true;
+            roleBox.Location = new Point(170, 90);
+            roleBox.Name = "roleBox";
+            roleBox.Size = new Size(172, 23);
+            roleBox.TabIndex = 7;
+            roleBox.SelectedIndexChanged += roleBox_SelectedIndexChanged;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.RosyBrown;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(3, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 21);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Jogosultság alapján:";
+            label4.AutoSize = true;
+            label4.BackColor = Color.RosyBrown;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(3, 92);
+            label4.Name = "label4";
+            label4.Size = new Size(149, 21);
+            label4.TabIndex = 8;
+            label4.Text = "Jogosultság alapján:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.RosyBrown;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(674, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 32);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Termékek";
+            label5.AutoSize = true;
+            label5.BackColor = Color.RosyBrown;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(674, 10);
+            label5.Name = "label5";
+            label5.Size = new Size(117, 32);
+            label5.TabIndex = 9;
+            label5.Text = "Termékek";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.RosyBrown;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(506, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 21);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Szűrés név alapján:";
+            label6.AutoSize = true;
+            label6.BackColor = Color.RosyBrown;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ActiveCaptionText;
+            label6.Location = new Point(506, 92);
+            label6.Name = "label6";
+            label6.Size = new Size(142, 21);
+            label6.TabIndex = 10;
+            label6.Text = "Szűrés név alapján:";
             // 
             // Filter_text_Box_Items
             // 
-            this.Filter_text_Box_Items.Location = new System.Drawing.Point(660, 90);
-            this.Filter_text_Box_Items.Name = "Filter_text_Box_Items";
-            this.Filter_text_Box_Items.Size = new System.Drawing.Size(173, 23);
-            this.Filter_text_Box_Items.TabIndex = 11;
+            Filter_text_Box_Items.Location = new Point(660, 90);
+            Filter_text_Box_Items.Name = "Filter_text_Box_Items";
+            Filter_text_Box_Items.Size = new Size(173, 23);
+            Filter_text_Box_Items.TabIndex = 11;
             // 
             // keresoPanel
             // 
-            this.keresoPanel.Controls.Add(this.Filter_text_Box_Items);
-            this.keresoPanel.Controls.Add(this.label6);
-            this.keresoPanel.Controls.Add(this.label5);
-            this.keresoPanel.Controls.Add(this.label4);
-            this.keresoPanel.Controls.Add(this.roleBox);
-            this.keresoPanel.Controls.Add(this.label3);
-            this.keresoPanel.Controls.Add(this.Items_with_data);
-            this.keresoPanel.Controls.Add(this.filter_Text_Box);
-            this.keresoPanel.Controls.Add(this.label1);
-            this.keresoPanel.Controls.Add(this.Users_with_data);
-            this.keresoPanel.Location = new System.Drawing.Point(12, 130);
-            this.keresoPanel.Name = "keresoPanel";
-            this.keresoPanel.Size = new System.Drawing.Size(969, 375);
-            this.keresoPanel.TabIndex = 12;
+            keresoPanel.Controls.Add(Filter_text_Box_Items);
+            keresoPanel.Controls.Add(label6);
+            keresoPanel.Controls.Add(label5);
+            keresoPanel.Controls.Add(label4);
+            keresoPanel.Controls.Add(roleBox);
+            keresoPanel.Controls.Add(label3);
+            keresoPanel.Controls.Add(Items_with_data);
+            keresoPanel.Controls.Add(filter_Text_Box);
+            keresoPanel.Controls.Add(label1);
+            keresoPanel.Controls.Add(Users_with_data);
+            keresoPanel.Location = new Point(12, 130);
+            keresoPanel.Name = "keresoPanel";
+            keresoPanel.Size = new Size(969, 375);
+            keresoPanel.TabIndex = 12;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.keresésToolStripMenuItem,
-            this.jogosultságokKezeléseToolStripMenuItem,
-            this.hozzáadásToolStripMenuItem,
-            this.statisztikákToolStripMenuItem,
-            this.visszajelzésekToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 637);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
-            this.menuStrip1.TabIndex = 13;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.Dock = DockStyle.Bottom;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { keresésToolStripMenuItem, jogosultságokKezeléseToolStripMenuItem, hozzáadásToolStripMenuItem, visszajelzésekToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 637);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(984, 24);
+            menuStrip1.TabIndex = 13;
+            menuStrip1.Text = "menuStrip1";
             // 
             // keresésToolStripMenuItem
             // 
-            this.keresésToolStripMenuItem.Name = "keresésToolStripMenuItem";
-            this.keresésToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.keresésToolStripMenuItem.Text = "keresés";
+            keresésToolStripMenuItem.Name = "keresésToolStripMenuItem";
+            keresésToolStripMenuItem.Size = new Size(57, 20);
+            keresésToolStripMenuItem.Text = "keresés";
             // 
             // jogosultságokKezeléseToolStripMenuItem
             // 
-            this.jogosultságokKezeléseToolStripMenuItem.Name = "jogosultságokKezeléseToolStripMenuItem";
-            this.jogosultságokKezeléseToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
-            this.jogosultságokKezeléseToolStripMenuItem.Text = "jogosultságok kezelése";
-            this.jogosultságokKezeléseToolStripMenuItem.Click += new System.EventHandler(this.jogosultságokKezeléseToolStripMenuItem_Click);
+            jogosultságokKezeléseToolStripMenuItem.Name = "jogosultságokKezeléseToolStripMenuItem";
+            jogosultságokKezeléseToolStripMenuItem.Size = new Size(139, 20);
+            jogosultságokKezeléseToolStripMenuItem.Text = "jogosultságok kezelése";
+            jogosultságokKezeléseToolStripMenuItem.Click += jogosultságokKezeléseToolStripMenuItem_Click;
             // 
             // hozzáadásToolStripMenuItem
             // 
-            this.hozzáadásToolStripMenuItem.Name = "hozzáadásToolStripMenuItem";
-            this.hozzáadásToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.hozzáadásToolStripMenuItem.Text = "hozzáadás";
-            this.hozzáadásToolStripMenuItem.Click += new System.EventHandler(this.hozzáadásToolStripMenuItem_Click);
-            // 
-            // statisztikákToolStripMenuItem
-            // 
-            this.statisztikákToolStripMenuItem.Name = "statisztikákToolStripMenuItem";
-            this.statisztikákToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.statisztikákToolStripMenuItem.Text = "statisztikák";
+            hozzáadásToolStripMenuItem.Name = "hozzáadásToolStripMenuItem";
+            hozzáadásToolStripMenuItem.Size = new Size(73, 20);
+            hozzáadásToolStripMenuItem.Text = "hozzáadás";
+            hozzáadásToolStripMenuItem.Click += hozzáadásToolStripMenuItem_Click;
             // 
             // visszajelzésekToolStripMenuItem
             // 
-            this.visszajelzésekToolStripMenuItem.Name = "visszajelzésekToolStripMenuItem";
-            this.visszajelzésekToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.visszajelzésekToolStripMenuItem.Text = "visszajelzések";
+            visszajelzésekToolStripMenuItem.Name = "visszajelzésekToolStripMenuItem";
+            visszajelzésekToolStripMenuItem.Size = new Size(89, 20);
+            visszajelzésekToolStripMenuItem.Text = "visszajelzések";
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.keresoPanel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.menuStrip1);
-            this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AdminForm";
-            this.Text = "Adminisztrátor";
-            this.Load += new System.EventHandler(this.AdminForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Users_with_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Items_with_data)).EndInit();
-            this.keresoPanel.ResumeLayout(false);
-            this.keresoPanel.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            ClientSize = new Size(984, 661);
+            Controls.Add(keresoPanel);
+            Controls.Add(label2);
+            Controls.Add(menuStrip1);
+            ForeColor = Color.Black;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = menuStrip1;
+            Name = "AdminForm";
+            Text = "Adminisztrátor";
+            Load += AdminForm_Load;
+            ((System.ComponentModel.ISupportInitialize)Users_with_data).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Items_with_data).EndInit();
+            keresoPanel.ResumeLayout(false);
+            keresoPanel.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -278,7 +265,6 @@
         private ToolStripMenuItem keresésToolStripMenuItem;
         private ToolStripMenuItem jogosultságokKezeléseToolStripMenuItem;
         private ToolStripMenuItem hozzáadásToolStripMenuItem;
-        private ToolStripMenuItem statisztikákToolStripMenuItem;
         private ToolStripMenuItem visszajelzésekToolStripMenuItem;
     }
 }

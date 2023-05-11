@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace fitnesz_terem.Admin_Funkciok
 {
@@ -21,43 +22,60 @@ namespace fitnesz_terem.Admin_Funkciok
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //ha az edzo ID-ja es az edzés tipusa együtt már szerepel az adatbázisban
-            // --> módosítás // ez nem feltétlen megfelelő, mivel lehet másik időpont, Ez TODO hogy dátumot is nézze.
-
-
-            // ha nem --> hozzáadás
-
-            using (var context = new FitnessDbContext())
+            try
             {
-                DateTime start = EdzesStartDate.Value;
-                DateTime end = EdzesBefejezesDate.Value;
-
-                string locationName = termekComboBox.SelectedItem.ToString();
-
-                // query the Locations DbSet for the location with the matching name
-                Location location = context.Locations.FirstOrDefault(l => l.LocationName == locationName);
-
-                string edzo = (string)EdzoComboBox.SelectedItem;
-
-                int coachID = context.Datas.Where(d => d.Name == edzo)
-                                            .Select(d => d.UserId)
-                                            .FirstOrDefault();
+                //ha az edzo ID-ja es az edzés tipusa együtt már szerepel az adatbázisban
+                // --> módosítás // ez nem feltétlen megfelelő, mivel lehet másik időpont, Ez TODO hogy dátumot is nézze.
 
 
-                // get the max people value from the TextBox
+                // ha nem --> hozzáadás
 
-                try
+                using (var context = new FitnessDbContext())
                 {
-                    int maxPeople = int.Parse(maxLetszamTextBox.Text);
+                    DateTime start = EdzesStartDate.Value;
+
+                    DateTime end = EdzesBefejezesDate.Value;
+
+                    string locationName = termekComboBox.SelectedItem == null ? String.Empty : termekComboBox.SelectedItem.ToString(); // <-- Exception
+
+                    if (locationName == "") throw new Exception("A terem nem lehet üres!");
+
+                    // query the Locations DbSet for the location with the matching name
+                    Location location = context.Locations.FirstOrDefault(l => l.LocationName == locationName);
+
+                    string edzo = EdzoComboBox.SelectedItem == null ? String.Empty : EdzoComboBox.SelectedItem.ToString(); // <-- Exception
+
+                    if (edzo == "") throw new Exception("Az edző nem lehet üres!");
+
+                    string className = EdzesComboBox.SelectedItem == null ? String.Empty : EdzesComboBox.SelectedItem.ToString(); // <-- Exception
+                    
+                    if (className == "") throw new Exception("Az edzés típusa nem lehet üres!");
+
+                    int coachID = context.Datas.Where(d => d.Name == edzo)
+                                                .Select(d => d.UserId)
+                                                .FirstOrDefault();
+
+                    // get the max people value from the TextBox
+
+                    string maxPeople = maxLetszamTextBox.Text;
+
+                    if (maxPeople == "") throw new Exception("A max létszám nem lehet üres!");
+
+                    if (!int.TryParse(maxPeople, out int value))
+                        throw new Exception("A max létszám csak szám lehet!");
+
+                    MessageBox.Show(maxPeople.ToString());
+
+                    // if (maxPeople == null) throw new Exception("A max létszám nem lehet üres!");
 
                     // create a new instance of TrainingClass
                     TrainingClass newClass = new TrainingClass()
                     {
                         StartTime = start,
                         EndTime = end,
-                        MaxPeople = (int)maxPeople,
+                        MaxPeople = int.Parse(maxPeople),
                         LocationID = location.LocationID, // example location ID
-                        ClassName = (string)EdzesComboBox.SelectedItem, // example class name
+                        ClassName = className, // example class name
                         CoachID = coachID // example coach ID
                     };
 
@@ -69,11 +87,15 @@ namespace fitnesz_terem.Admin_Funkciok
                     context.SaveChanges();
                     MessageBox.Show("Sikeres adatfelvitel!");
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                
+
+            }
+            catch (System.NullReferenceException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             // figyelni hogy terem abban az idopontban szabad legyen --> kulonben hibauzenet
