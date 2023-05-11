@@ -21,6 +21,9 @@ namespace fitnesz_terem
         {
             this.id = id;
             InitializeComponent();
+
+            keresoPanel.Visible = true;
+            visszajelzesekDataGrid.Visible = false;
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -258,6 +261,23 @@ namespace fitnesz_terem
             List<Item> items = itemC.GetItems();
 
             return items;
+        }
+
+        private void visszajelzésekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            visszajelzesekDataGrid.Visible = true;
+            keresoPanel.Visible = false;
+
+            ReviewController reviewController = new ReviewController();
+            // Call the GetUsers() function to get the list of view model objects
+            List<Review> reviews = reviewController.GetReviews();
+            visszajelzesekDataGrid.DataSource = reviews;
+        }
+
+        private void keresésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            keresoPanel.Visible = true;
+            visszajelzesekDataGrid.Visible = false;
         }
     }
 }

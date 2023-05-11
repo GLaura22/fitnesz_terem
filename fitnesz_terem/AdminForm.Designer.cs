@@ -45,10 +45,14 @@
             jogosultságokKezeléseToolStripMenuItem = new ToolStripMenuItem();
             hozzáadásToolStripMenuItem = new ToolStripMenuItem();
             visszajelzésekToolStripMenuItem = new ToolStripMenuItem();
+            panel1 = new Panel();
+            visszajelzesekDataGrid = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)Users_with_data).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Items_with_data).BeginInit();
             keresoPanel.SuspendLayout();
             menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)visszajelzesekDataGrid).BeginInit();
             SuspendLayout();
             // 
             // Users_with_data
@@ -202,6 +206,7 @@
             keresésToolStripMenuItem.Name = "keresésToolStripMenuItem";
             keresésToolStripMenuItem.Size = new Size(57, 20);
             keresésToolStripMenuItem.Text = "keresés";
+            keresésToolStripMenuItem.Click += keresésToolStripMenuItem_Click;
             // 
             // jogosultságokKezeléseToolStripMenuItem
             // 
@@ -222,6 +227,26 @@
             visszajelzésekToolStripMenuItem.Name = "visszajelzésekToolStripMenuItem";
             visszajelzésekToolStripMenuItem.Size = new Size(89, 20);
             visszajelzésekToolStripMenuItem.Text = "visszajelzések";
+            visszajelzésekToolStripMenuItem.Click += visszajelzésekToolStripMenuItem_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(visszajelzesekDataGrid);
+            panel1.Location = new Point(15, 130);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(963, 369);
+            panel1.TabIndex = 14;
+            // 
+            // visszajelzesekDataGrid
+            // 
+            visszajelzesekDataGrid.BackgroundColor = Color.RosyBrown;
+            visszajelzesekDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            visszajelzesekDataGrid.GridColor = SystemColors.ActiveCaptionText;
+            visszajelzesekDataGrid.Location = new Point(23, 23);
+            visszajelzesekDataGrid.Name = "visszajelzesekDataGrid";
+            visszajelzesekDataGrid.RowTemplate.Height = 25;
+            visszajelzesekDataGrid.Size = new Size(919, 325);
+            visszajelzesekDataGrid.TabIndex = 15;
             // 
             // AdminForm
             // 
@@ -229,9 +254,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(984, 661);
-            Controls.Add(keresoPanel);
             Controls.Add(label2);
             Controls.Add(menuStrip1);
+            Controls.Add(keresoPanel);
+            Controls.Add(panel1);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
@@ -244,6 +270,8 @@
             keresoPanel.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)visszajelzesekDataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,5 +294,7 @@
         private ToolStripMenuItem jogosultságokKezeléseToolStripMenuItem;
         private ToolStripMenuItem hozzáadásToolStripMenuItem;
         private ToolStripMenuItem visszajelzésekToolStripMenuItem;
+        private Panel panel1;
+        private DataGridView visszajelzesekDataGrid;
     }
 }
