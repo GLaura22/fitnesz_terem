@@ -228,5 +228,36 @@ namespace fitnesz_terem
             Admin_Feltoltes a2 = new Admin_Feltoltes();
             a2.ShowDialog();
         }
+
+        private void Filter_text_Box_Items_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string filterText = Filter_text_Box_Items.Text;
+                if (string.IsNullOrEmpty(filterText))
+                {
+                    Items_with_data.DataSource = resetData2(); // Reset the DataGridView to show all rows
+                }
+                else
+                {
+                    List<Item> items = resetData2();
+                    DataTable dt = ConvertToDataTable(items);
+                    DataView dv = new DataView(dt);
+                    dv.RowFilter = string.Format("Name LIKE '%{0}%'", filterText);
+                    Items_with_data.DataSource = dv.ToTable();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+        private List<Item> resetData2()
+        {
+            ItemController itemC = new ItemController();
+            List<Item> items = itemC.GetItems();
+
+            return items;
+        }
     }
 }
