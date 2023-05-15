@@ -430,45 +430,51 @@ namespace fitnesz_terem
 
         private void statisztikakButton_Click(object sender, EventArgs e)
         {
-
-            using (var db = new FitnessDbContext())
+            try
             {
-                // Összesen hány órányi órát tartott az edző
-                var totalHours = db.TrainingClasses
-              .Where(c => c.CoachID == id)
-              .Sum(c => EF.Functions.DateDiffHour(c.StartTime, c.EndTime));
+                using (var db = new FitnessDbContext())
+                {
+                    // Összesen hány órányi órát tartott az edző
+                    var totalHours = db.TrainingClasses
+                  .Where(c => c.CoachID == id)
+                  .Sum(c => EF.Functions.DateDiffHour(c.StartTime, c.EndTime));
 
 
-                // Aktuális hónapban hány órája lesz az edzőnek
-                var currentMonth = DateTime.Now.Month;
-                var currentMonthHours = db.TrainingClasses.Where(c => c.CoachID == id && c.StartTime.Month == currentMonth).AsEnumerable().Sum(c => (c.EndTime - c.StartTime).TotalHours);
+                    // Aktuális hónapban hány órája lesz az edzőnek
+                    var currentMonth = DateTime.Now.Month;
+                    var currentMonthHours = db.TrainingClasses.Where(c => c.CoachID == id && c.StartTime.Month == currentMonth).AsEnumerable().Sum(c => (c.EndTime - c.StartTime).TotalHours);
 
 
 
-                // Milyen órát tart a leggyakrabban az edző
-                var mostFrequentClass = db.TrainingClasses.Where(c => c.CoachID == id)
-                                                              .GroupBy(c => c.ClassName)
-                                                              .OrderByDescending(g => g.Count())
-                                                              .Select(g => g.Key)
-                                                              .FirstOrDefault();
+                    // Milyen órát tart a leggyakrabban az edző
+                    var mostFrequentClass = db.TrainingClasses.Where(c => c.CoachID == id)
+                                                                  .GroupBy(c => c.ClassName)
+                                                                  .OrderByDescending(g => g.Count())
+                                                                  .Select(g => g.Key)
+                                                                  .FirstOrDefault();
 
-                // Hány csillagos az edző értékelése
-                var avgRating = db.Reviews.Where(r => r.CoachID == id)
-                                          .Average(r => r.ReviewStars);
+                    // Hány csillagos az edző értékelése
+                    var avgRating = db.Reviews.Where(r => r.CoachID == id)
+                                              .Average(r => r.ReviewStars);
 
-                // Hány embernek tart személyi edzést
-                var personalTrainings = db.Personaltraining.Where(t => t.CoachID == id);
-                var personalTrainingCount = personalTrainings.Count();
-                var totalClients = personalTrainings.Select(t => t.SportoloId).Distinct().Count();
+                    // Hány embernek tart személyi edzést
+                    var personalTrainings = db.Personaltraining.Where(t => t.CoachID == id);
+                    var personalTrainingCount = personalTrainings.Count();
+                    var totalClients = personalTrainings.Select(t => t.SportoloId).Distinct().Count();
 
-                var message = $"Eddig tartott órák összesen: {totalHours}\n" +
-                              $"Havi óraszám: {currentMonthHours}\n" +
-                              $"legtöbbet tartott óra: {mostFrequentClass}\n" +
-                              $"Értékelések átlaga: {avgRating}\n" +
-                              $"Személyi edzője {personalTrainingCount} diáknak\n" +
-                              $"Összes diákja: {totalClients}";
+                    var message = $"Eddig tartott órák összesen: {totalHours}\n" +
+                                  $"Havi óraszám: {currentMonthHours}\n" +
+                                  $"legtöbbet tartott óra: {mostFrequentClass}\n" +
+                                  $"Értékelések átlaga: {avgRating}\n" +
+                                  $"Személyi edzője {personalTrainingCount} diáknak\n" +
+                                  $"Összes diákja: {totalClients}";
 
-                MessageBox.Show(message, "Statisztika");
+                    MessageBox.Show(message, "Statisztika");
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Hiba történt a statisztika megjelenítésénél: {exception.Message}");
             }
         }
     }
