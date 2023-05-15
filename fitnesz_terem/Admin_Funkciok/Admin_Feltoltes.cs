@@ -143,43 +143,51 @@ namespace fitnesz_terem.Admin_Funkciok
 
         private void ujTermekButton_Click(object sender, EventArgs e)
         {
-            using (var context = new FitnessDbContext())
+            try
             {
-                string tnev = termeknevTextBox.Text;
-
-                var existingItem = context.Items.FirstOrDefault(i => i.Name == tnev);
-
-                if (existingItem != null)
+                using (var context = new FitnessDbContext())
                 {
-                    MessageBox.Show("Már van ilyen nevű termék.");
-                    return;
+                    string tnev = termeknevTextBox.Text;
+
+                    var existingItem = context.Items.FirstOrDefault(i => i.Name == tnev);
+
+                    if (existingItem != null)
+                    {
+                        MessageBox.Show("Már van ilyen nevű termék.");
+                        return;
+                    }
+
+                    if (!int.TryParse(arTextBox.Text, out int value))
+                    {
+                        throw new Exception("Az ár mezős csak szám lehet!");
+                    }
+                    int ar = int.Parse(arTextBox.Text);
+
+                    if (!int.TryParse(raktaronTextBox.Text, out int value2))
+                    {
+                        throw new Exception("Az raktáron (db) mező csak szám lehet!");
+                    }
+                    int rakdb = int.Parse(raktaronTextBox.Text);
+
+                    var newItem = new Item
+                    {
+                        Name = tnev,
+                        Price = ar,
+                        NumberInStock = rakdb
+                    };
+
+                    context.Items.Add(newItem);
+                    context.SaveChanges();
+
+                    // Show a success message to the user, clear the form fields, etc.
+
+                    MessageBox.Show($"{tnev} nevű termék sikeresen hozzáadva.");
                 }
-
-                // The item doesn't exist yet, so you can add it to the database
-                int ar = int.Parse(arTextBox.Text);
-                int rakdb = int.Parse(raktaronTextBox.Text);
-
-                var newItem = new Item
-                {
-                    Name = tnev,
-                    Price = ar,
-                    NumberInStock = rakdb
-                };
-
-                context.Items.Add(newItem);
-                context.SaveChanges();
-
-                // Show a success message to the user, clear the form fields, etc.
-
-                MessageBox.Show($"{tnev} nevű termék sikeresen hozzáadva.");
             }
-
-
-
-
-
-
-
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }
